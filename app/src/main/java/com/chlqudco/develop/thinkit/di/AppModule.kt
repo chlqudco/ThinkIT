@@ -1,6 +1,10 @@
 package com.chlqudco.develop.thinkit.di
 
+import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
+import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.QuizViewModel
 import kotlinx.coroutines.Dispatchers
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 internal val appModule = module {
@@ -16,4 +20,7 @@ internal val appModule = module {
     //레포지토리
 
     //뷰모델
+    viewModel { MainViewModel() }
+    viewModel { QuizViewModel() }
+    viewModel { ConceptViewModel() }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/conceptFragment"
+        android:icon="@drawable/ic_book"
+        android:title="개념"/>
+
+    <item
+        android:id="@+id/quizFragment"
+        android:icon="@drawable/ic_quiz"
+        android:title="퀴즈"
+        />
+
+</menu>

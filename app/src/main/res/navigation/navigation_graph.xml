@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/conceptFragment">
+
+    <fragment
+        android:id="@+id/conceptFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.concept.ConceptFragment"
+        android:label="conceptFragment"
+        tools:layout="@layout/fragment_concept" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.quiz.QuizFragment"
+        android:label="quizFragment"
+        tools:layout="@layout/fragment_quiz" />
+</navigation>

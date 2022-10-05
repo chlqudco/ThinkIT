@@ -10,4 +10,5 @@
 
     <color name="content_background">#D3D3D3</color>
     <color name="no_jh">#66EBFF</color>
+    <color name="keyword_background">#152B16</color>
 </resources>

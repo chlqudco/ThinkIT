@@ -1,6 +1,7 @@
 package com.chlqudco.develop.thinkit.di
 
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
+import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
 import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.QuizViewModel
 import kotlinx.coroutines.Dispatchers
@@ -23,4 +24,5 @@ internal val appModule = module {
     viewModel { MainViewModel() }
     viewModel { QuizViewModel() }
     viewModel { ConceptViewModel() }
+    viewModel { KeywordsViewModel() }
 }

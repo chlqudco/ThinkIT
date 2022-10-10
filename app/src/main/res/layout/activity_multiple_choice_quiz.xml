@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.multiplechoice.quiz.MultipleChoiceQuizActivity">
+
+
+    <TextView
+        android:id="@+id/MultipleChoiceTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="1번째"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/MultipleChoiceGuideLineTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <View
+        android:id="@+id/MultipleChoiceGuideLineTextView"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/black"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/MultipleChoiceQuizTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceGuideLineTextView"
+        android:text="문제"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/MultipleChoiceQuizTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceQuizTitleTextView"
+        android:text="다음 중, 쓰레드에 관해 옳지 않은 것을 고르시오."
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:background="@drawable/background_explanation"
+        android:padding="10dp"
+        android:layout_margin="30dp"/>
+
+    <View
+        android:id="@+id/MultipleChoiceGuideLineTextView2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/black"
+        android:elevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceQuizTextView"/>
+
+
+    <TextView
+        android:id="@+id/MultipleChoiceBogiTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceGuideLineTextView2"
+        android:text="보기"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/MultipleChoiceSelectQuizLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_explanation"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceBogiTitleTextView">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="보기 1"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="보기 2"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="보기 3"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="보기 4"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/MultipleChoiceSendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/MultipleChoiceSelectQuizLayout"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceSelectQuizLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/MultipleChoiceNextButton"
+        android:text="제 출"
+        android:backgroundTint="@color/no_jh"/>
+
+    <Button
+        android:id="@+id/MultipleChoiceNextButton"
+        app:layout_constraintStart_toEndOf="@id/MultipleChoiceSendButton"
+        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceSelectQuizLayout"
+        app:layout_constraintEnd_toEndOf="@id/MultipleChoiceSelectQuizLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/no_jh"
+        android:text="다음 문제"
+       android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

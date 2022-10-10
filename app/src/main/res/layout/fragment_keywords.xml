@@ -17,7 +17,7 @@
         android:drawableStart="@drawable/icon_keyword_search"
         android:drawablePadding="6dp"
         android:elevation="8dp"
-        android:hint="이미지를 검색해보세요."
+        android:hint="키워드를 검색해보세요."
         android:imeOptions="actionSearch"
         android:importantForAutofill="no"
         android:inputType="text"
@@ -46,7 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/keyword_Fragment_searchEditText" >
 
-        <include layout="@layout/item_keyword"/>
+        <include layout="@layout/item_keyword"
+            android:id="@+id/testKeyword"/>
         <include layout="@layout/item_keyword"/>
         <include layout="@layout/item_keyword"/>
         <include layout="@layout/item_keyword"/>

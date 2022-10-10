@@ -21,6 +21,15 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
     }
 
     private fun initViews() {
+        //이름 바꾸기
+        (activity as MainActivity).setTopTextViewText("???")
+
+        //임시 이동
+        binding.testKeyword.root.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentKeywordsToExplanation()
+        }
+
         //키워드 받아오기
     }
 

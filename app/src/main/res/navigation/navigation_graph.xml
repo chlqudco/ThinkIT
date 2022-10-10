@@ -24,4 +24,9 @@
         android:name="com.chlqudco.develop.thinkit.presentation.keywords.KeywordsFragment"
         android:label="fragment_keywords"
         tools:layout="@layout/fragment_keywords" />
+    <fragment
+        android:id="@+id/explanationFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.explanation.ExplanationFragment"
+        android:label="fragment_explanation"
+        tools:layout="@layout/fragment_explanation" />
 </navigation>

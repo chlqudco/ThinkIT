@@ -34,7 +34,7 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
             //여기서 이름 바꾸기
             (activity as MainActivity).setTopTextViewText("자료 구조")
             //프래그먼트 전환
-            (activity as MainActivity).changeasd()
+            (activity as MainActivity).changeFragmentConceptToKeywords()
         }
     }
 }

@@ -9,6 +9,7 @@ import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.ActivityMainBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptFragment
+import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationFragment
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsFragment
 import com.chlqudco.develop.thinkit.presentation.quiz.QuizFragment
 import org.koin.android.ext.android.inject
@@ -57,10 +58,19 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         binding.MainTitleTextView.text = title
     }
 
-    fun changeasd(){
+    fun changeFragmentConceptToKeywords(){
 
         supportFragmentManager.beginTransaction().replace(
             R.id.mainNavigationHostFragment, KeywordsFragment()
+        ).commit()
+
+        //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
+    }
+
+    fun changeFragmentKeywordsToExplanation(){
+
+        supportFragmentManager.beginTransaction().replace(
+            R.id.mainNavigationHostFragment, ExplanationFragment()
         ).commit()
 
         //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)

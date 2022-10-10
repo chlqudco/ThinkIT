@@ -60,7 +60,7 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
 
     fun changeFragmentConceptToKeywords(){
 
-        supportFragmentManager.beginTransaction().replace(
+        supportFragmentManager.beginTransaction().add(
             R.id.mainNavigationHostFragment, KeywordsFragment()
         ).commit()
 
@@ -69,10 +69,11 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
 
     fun changeFragmentKeywordsToExplanation(){
 
-        supportFragmentManager.beginTransaction().replace(
+        supportFragmentManager.beginTransaction().add(
             R.id.mainNavigationHostFragment, ExplanationFragment()
         ).commit()
 
         //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
+
 }

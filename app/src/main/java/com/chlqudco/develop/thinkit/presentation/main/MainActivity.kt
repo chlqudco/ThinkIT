@@ -18,6 +18,9 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
 
     override val viewModel by inject<MainViewModel>()
 
+    var userChoiceConcept: String = ""
+    var userChoiceKeyword: String = ""
+
     override fun getViewBinding()= ActivityMainBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +53,7 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         }
     }
 
-    override fun observeData() {
-
-    }
+    override fun observeData() {}
 
     fun setTopTextViewText(title: String){
         binding.ActivityMainTitleTextView.text = title
@@ -68,6 +69,7 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
 
         //이름 바꾸기
         binding.ActivityMainTitleTextView.text = concept
+        userChoiceConcept = concept
 
         supportFragmentManager.beginTransaction().add(
             R.id.ActivityMainNavigationHostFragment, KeywordsFragment()
@@ -80,6 +82,7 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
 
         //이름 바꾸기
         binding.ActivityMainTitleTextView.text = keyword
+        userChoiceKeyword = keyword
 
         supportFragmentManager.beginTransaction().add(
             R.id.ActivityMainNavigationHostFragment, ExplanationFragment()
@@ -88,4 +91,14 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
 
+    fun getSubject(): String{
+        return when(binding.ActivityMainTitleTextView.text.toString()){
+            "자료 구조"-> "dataStructure"
+            "알고리즘"-> "algorithm"
+            "데이터베이스" -> "database"
+            "운영체제" -> "os"
+            "네트워크" -> "네트워크"
+            else -> "오류"
+        }
+    }
 }

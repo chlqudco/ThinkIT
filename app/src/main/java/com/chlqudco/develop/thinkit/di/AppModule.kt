@@ -6,6 +6,7 @@ import com.chlqudco.develop.thinkit.data.network.provideThinkITApiService
 import com.chlqudco.develop.thinkit.data.network.provideThinkITRetrofit
 import com.chlqudco.develop.thinkit.data.repository.ConceptRepository
 import com.chlqudco.develop.thinkit.data.repository.ConceptRepositoryImpl
+import com.chlqudco.develop.thinkit.domain.concept.GetContentUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
@@ -24,6 +25,7 @@ internal val appModule = module {
 
     // UseCase
     factory { GetKeywordsUseCase(get()) }
+    factory { GetContentUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -43,7 +45,7 @@ internal val appModule = module {
     viewModel { QuizChoiceViewModel() }
     viewModel { ConceptViewModel() }
     viewModel { KeywordsViewModel(get()) }
-    viewModel { ExplanationViewModel() }
+    viewModel { ExplanationViewModel(get()) }
     viewModel { MultipleChoiceQuizViewModel() }
     viewModel { MultipleChoiceResultViewModel() }
     viewModel { SubjectiveQuizViewModel() }

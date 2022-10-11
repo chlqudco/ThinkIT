@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.data.repository
 
+import android.util.Log
 import com.chlqudco.develop.thinkit.data.network.ConceptApiService
 import com.chlqudco.develop.thinkit.data.response.KeywordsResponse
 import kotlinx.coroutines.CoroutineDispatcher
@@ -19,8 +20,21 @@ class ConceptRepositoryImpl(
                 listOf()
             }
         } catch (exception: Exception){
-            return@withContext listOf("오류","가","발생했","습니다","111","111","111","111","111","111","111","111","111")
+            Log.e("ERROOR",exception.message ?: "")
+            return@withContext listOf()
         }
+    }
 
+    override suspend fun getContent(keyword: String): String = withContext(ioDispatcher) {
+        try {
+            val response = conceptApiService.getContent(keyword)
+            return@withContext if (response.isSuccessful){
+                response.body()?.content ?: ""
+            } else{
+                ""
+            }
+        } catch (exception: Exception){
+            return@withContext ""
+        }
     }
 }

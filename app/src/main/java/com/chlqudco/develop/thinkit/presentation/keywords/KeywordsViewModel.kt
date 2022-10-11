@@ -17,12 +17,20 @@ internal class KeywordsViewModel(
 
     override fun fetchData(): Job = viewModelScope.launch {
         _keywordsStateLiveData.postValue(KeywordsState.Loading)
-        val response = getKeywordsUseCase("dataStructure")
-        if (response.isEmpty()){
-            _keywordsStateLiveData.postValue(KeywordsState.Error)
-        } else {
-            _keywordsStateLiveData.postValue(KeywordsState.Success(response))
-        }
     }
 
+    fun getKeywords(subject: String){
+        if (subject == "오류"){
+            _keywordsStateLiveData.postValue(KeywordsState.Error)
+            return
+        }
+        viewModelScope.launch {
+            val response = getKeywordsUseCase(subject)
+            if (response.isEmpty()){
+                _keywordsStateLiveData.postValue(KeywordsState.Error)
+            } else {
+                _keywordsStateLiveData.postValue(KeywordsState.Success(response))
+            }
+        }
+    }
 }

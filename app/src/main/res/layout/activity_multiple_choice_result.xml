@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.multiplechoice.result.MultipleChoiceResultActivity">
+    tools:context=".presentation.quiz.multiplechoice.result.MultipleChoiceResultActivity">
 
     <TextView
-        android:id="@+id/MultipleChoiceResultTitleTextView"
+        android:id="@+id/ActivityMultipleChoiceResultTopTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="결과"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@id/MultipleChoiceResultGuideLineTextView"
+        app:layout_constraintBottom_toBottomOf="@id/ActivityMultipleChoiceResultGuideLineTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/MultipleChoiceResultGuideLineTextView"
+        android:id="@+id/ActivityMultipleChoiceResultGuideLineTextView"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="?attr/actionBarSize"
@@ -32,31 +32,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/MultipleChoiceCorrectCountTextView"
+        android:id="@+id/ActivityMultipleChoiceResultCorrectCountTopTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceResultGuideLineTextView"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultGuideLineTextView"
         android:text="맞은 개수"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/MultipleChoiceResultCorrectResultTextView"
+        android:id="@+id/ActivityMultipleChoiceResultCorrectCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/MultipleChoiceCorrectCountTextView"
-        app:layout_constraintEnd_toEndOf="@id/MultipleChoiceCorrectCountTextView"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceCorrectCountTextView"
+        app:layout_constraintStart_toStartOf="@id/ActivityMultipleChoiceResultCorrectCountTopTextView"
+        app:layout_constraintEnd_toEndOf="@id/ActivityMultipleChoiceResultCorrectCountTopTextView"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultCorrectCountTopTextView"
         android:text="8 / 10 개"
         android:textSize="50sp"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/MultipleChoiceResultGuideLineTextView2"
+        android:id="@+id/ActivityMultipleChoiceResultGuideLineTextView2"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="20dp"
@@ -64,34 +66,36 @@
         android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceResultCorrectResultTextView" />
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultCorrectCountTextView" />
 
     <TextView
-        android:id="@+id/MultipleChoiceTimeTextView"
+        android:id="@+id/ActivityMultipleChoiceResultTimeTopTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceResultGuideLineTextView2"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultGuideLineTextView2"
         android:text="걸린 시간"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/MultipleChoiceResultTimeTextView"
+        android:id="@+id/ActivityMultipleChoiceResultTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/MultipleChoiceTimeTextView"
-        app:layout_constraintEnd_toEndOf="@id/MultipleChoiceTimeTextView"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceTimeTextView"
+        app:layout_constraintStart_toStartOf="@id/ActivityMultipleChoiceResultTimeTopTextView"
+        app:layout_constraintEnd_toEndOf="@id/ActivityMultipleChoiceResultTimeTopTextView"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultTimeTopTextView"
         android:text="2분 36초"
         android:textSize="50sp"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/MultipleChoiceResultGuideLineTextView3"
+        android:id="@+id/ActivityMultipleChoiceResultGuideLineTextView3"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="30dp"
@@ -99,29 +103,33 @@
         android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceResultTimeTextView" />
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultTimeTextView" />
 
     <Button
-        android:id="@+id/MultipleChoiceResultShowIncorrectQuiz"
+        android:id="@+id/ActivityMultipleChoiceResultShowIncorrectQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceResultGuideLineTextView3"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultGuideLineTextView3"
         android:backgroundTint="@color/no_jh"
         android:layout_marginTop="30dp"
-        android:text="틀린 문제 보기"/>
+        android:text="틀린문제 보기"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/MultipleChoiceResultExitButton"
+        android:id="@+id/ActivityMultipleChoiceResultExitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceResultShowIncorrectQuiz"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceResultShowIncorrectQuizButton"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/no_jh"
-        android:text="나가기"/>
+        android:text="나가기"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

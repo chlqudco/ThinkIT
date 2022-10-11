@@ -14,28 +14,28 @@
         android:theme="@style/Theme.ThinkIT"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.subjective.quiz.SubjectiveQuizActivity"
+            android:name=".presentation.quiz.subjective.quiz.SubjectiveQuizActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.subjective.result.SubjectiveResultActivity"
+            android:name=".presentation.quiz.subjective.result.SubjectiveResultActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.multiplechoice.result.MultipleChoiceResultActivity"
+            android:name=".presentation.quiz.multiplechoice.result.MultipleChoiceResultActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".presentation.multiplechoice.quiz.MultipleChoiceQuizActivity"
+            android:name=".presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -8,7 +8,7 @@
     tools:context=".presentation.keywords.KeywordsFragment">
 
     <EditText
-        android:id="@+id/keyword_Fragment_searchEditText"
+        android:id="@+id/FragmentKeywordsSearchEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,18 +24,18 @@
         android:inputType="text"
         android:paddingHorizontal="12dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@id/keyword_fragment_recyclerView"
+        app:layout_constraintBottom_toTopOf="@id/FragmentKeywordsRecyclerView"
         tools:ignore="HardcodedText" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/keyword_fragment_recyclerView"
+        android:id="@+id/FragmentKeywordsRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/keyword_Fragment_searchEditText"/>
+        app:layout_constraintTop_toBottomOf="@id/FragmentKeywordsSearchEditText"/>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -45,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/keyword_Fragment_searchEditText" >
+        app:layout_constraintTop_toBottomOf="@id/FragmentKeywordsSearchEditText" >
 
         <include layout="@layout/item_keyword"
             android:id="@+id/testKeyword"/>
@@ -71,10 +71,10 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/keywords_empty_textView"
+        android:id="@+id/FragmentKeywordsEmptyTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="데이터가 없습니다."
+        tools:text="데이터가 없습니다."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

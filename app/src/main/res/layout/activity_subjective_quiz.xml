@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.subjective.quiz.SubjectiveQuizActivity">
+    tools:context=".presentation.quiz.subjective.quiz.SubjectiveQuizActivity">
 
     <TextView
-        android:id="@+id/SubjectiveQuizTitleTextView"
+        android:id="@+id/ActivitySubjectiveQuizTopTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="1번째"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@id/SubjectiveQuizGuideLineTextView"
+        app:layout_constraintBottom_toBottomOf="@id/ActivitySubjectiveQuizGuideLineTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/SubjectiveQuizGuideLineTextView"
+        android:id="@+id/ActivitySubjectiveQuizGuideLineTextView"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="?attr/actionBarSize"
@@ -32,33 +32,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/SubjectiveQuizQuizTitleTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveQuizGuideLineTextView"
+        android:id="@+id/ActivitySubjectiveQuizQuizTopTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="문제"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveQuizGuideLineTextView"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/SubjectiveQuizQuizTextView"
+        android:id="@+id/ActivitySubjectiveQuizQuizTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveQuizQuizTitleTextView"
+        android:layout_margin="30dp"
+        android:background="@drawable/background_explanation"
+        android:padding="10dp"
         android:text="프로세스와 쓰레드의 차이에 대해 말하시오"
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:background="@drawable/background_explanation"
-        android:padding="10dp"
-        android:layout_margin="30dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveQuizQuizTopTextView"
+        tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/SubjectiveQuizGuideLineTextView2"
+        android:id="@+id/ActivitySubjectiveQuizGuideLineTextView2"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="?attr/actionBarSize"
@@ -66,51 +68,57 @@
         android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveQuizQuizTextView"/>
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveQuizQuizTextView" />
 
     <View
-        android:id="@+id/SubjectiveQuizBestAnswerView"
+        android:id="@+id/ActivitySubjectiveQuizBestAnswerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveQuizGuideLineTextView2"
-        app:layout_constraintBottom_toTopOf="@id/SubjectiveQuizNextButton"
+        android:layout_margin="30dp"
         android:background="@drawable/background_explanation"
-        android:layout_margin="30dp"/>
+        app:layout_constraintBottom_toTopOf="@id/ActivitySubjectiveQuizNextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveQuizGuideLineTextView2" />
 
     <TextView
-        android:id="@+id/SubjectiveQuizBestAnswerTextView"
-        app:layout_constraintStart_toStartOf="@id/SubjectiveQuizBestAnswerView"
-        app:layout_constraintEnd_toEndOf="@id/SubjectiveQuizBestAnswerView"
-        app:layout_constraintTop_toTopOf="@id/SubjectiveQuizBestAnswerView"
-        app:layout_constraintBottom_toBottomOf="@id/SubjectiveQuizBestAnswerView"
-        android:layout_margin="10dp"
-        tools:text="asddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasddddddddddddddddddddddddddddddddddddddddddddddddddasdddddddddddddddddddddddddddddddddddddddddddddddddd"
+        android:id="@+id/ActivitySubjectiveQuizBestAnswerTextView"
         android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:text="프로세\스는 프로세스고 쓰레드는 쓰레드입니다. 이것도 모르셨나요? 깔깔깔"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/ActivitySubjectiveQuizBestAnswerView"
+        app:layout_constraintEnd_toEndOf="@id/ActivitySubjectiveQuizBestAnswerView"
+        app:layout_constraintStart_toStartOf="@id/ActivitySubjectiveQuizBestAnswerView"
+        app:layout_constraintTop_toTopOf="@id/ActivitySubjectiveQuizBestAnswerView"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/SubjectiveQuizShowBestAnswerButton"
+        android:id="@+id/ActivitySubjectiveQuizShowBestAnswerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/SubjectiveQuizBestAnswerView"
-        app:layout_constraintBottom_toBottomOf="@id/SubjectiveQuizBestAnswerView"
+        android:backgroundTint="@color/no_jh"
+        android:stateListAnimator="@null"
         android:text="모범 답안 보기"
-        android:backgroundTint="@color/no_jh"/>
+        app:layout_constraintBottom_toBottomOf="@id/ActivitySubjectiveQuizBestAnswerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ActivitySubjectiveQuizBestAnswerView"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/SubjectiveQuizNextButton"
+        android:id="@+id/ActivitySubjectiveQuizNextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/no_jh"
-        android:text="다음 문제"/>
+        android:stateListAnimator="@null"
+        android:text="다음 문제"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

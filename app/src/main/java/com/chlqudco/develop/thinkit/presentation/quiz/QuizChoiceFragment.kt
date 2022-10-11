@@ -5,20 +5,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.chlqudco.develop.thinkit.databinding.FragmentQuizBinding
+import com.chlqudco.develop.thinkit.databinding.FragmentQuizChoiceBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
-import com.chlqudco.develop.thinkit.presentation.multiplechoice.quiz.MultipleChoiceQuizActivity
-import com.chlqudco.develop.thinkit.presentation.subjective.quiz.SubjectiveQuizActivity
+import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity
+import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizActivity
 import org.koin.android.ext.android.inject
 
-internal class QuizFragment : BaseFragment<QuizViewModel, FragmentQuizBinding>() {
+internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQuizChoiceBinding>() {
 
     private var sToast: Toast? = null
 
-    override val viewModel by inject<QuizViewModel>()
+    override val viewModel by inject<QuizChoiceViewModel>()
 
-    override fun getViewBinding(): FragmentQuizBinding = FragmentQuizBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentQuizChoiceBinding = FragmentQuizChoiceBinding.inflate(layoutInflater)
 
     override fun observeData() {
     }
@@ -34,16 +34,16 @@ internal class QuizFragment : BaseFragment<QuizViewModel, FragmentQuizBinding>()
         (activity as MainActivity).setTopTextViewText("퀴즈 선택")
 
         //시작 버튼
-        binding.QuizStartButton.setOnClickListener {
+        binding.FragmentQuizChoiceStartButton.setOnClickListener {
 
             //라디오버튼 아무것도 안누른 경우
-            if (binding.quizRadioGroup.checkedRadioButtonId == -1){
+            if (binding.FragmentQuizChoiceRadioGroup.checkedRadioButtonId == -1){
                 context?.let { context -> showToastMessage(context, "운동을 선택해 주세요") }
                 return@setOnClickListener
             }
 
             //객관식 누른 경우
-            if (binding.quizMultipleChoiceButton.isChecked){
+            if (binding.FragmentQuizChoiceMultipleChoiceButton.isChecked){
                 val intent = Intent(activity, MultipleChoiceQuizActivity::class.java)
                 startActivity(intent)
             }

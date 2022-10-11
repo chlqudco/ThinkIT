@@ -27,7 +27,7 @@ internal class ExplanationFragment : BaseFragment<ExplanationViewModel, Fragment
         (activity as MainActivity).setTopTextViewText("???")
 
         //스크롤설정
-        binding.ExplanationMainTextView.movementMethod = ScrollingMovementMethod()
+        binding.FragmentExplanationMainTextView.movementMethod = ScrollingMovementMethod()
 
         //키워드 받아오기
     }

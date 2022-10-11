@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.subjective.result.SubjectiveResultActivity">
+    tools:context=".presentation.quiz.subjective.result.SubjectiveResultActivity">
 
     <TextView
-        android:id="@+id/SubjectiveResultTitleTextView"
+        android:id="@+id/ActivitySubjectiveResultTopTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="결과"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@id/SubjectiveResultGuideLineTextView"
+        app:layout_constraintBottom_toBottomOf="@id/ActivitySubjectiveResultGuideLineTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/SubjectiveResultGuideLineTextView"
+        android:id="@+id/ActivitySubjectiveResultGuideLineTextView"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="?attr/actionBarSize"
@@ -32,31 +32,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/SubjectiveTimeTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveResultGuideLineTextView"
+        android:id="@+id/ActivitySubjectiveResultTimeTopTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="걸린 시간"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveResultGuideLineTextView"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/SubjectiveResultResultTimeTextView"
+        android:id="@+id/ActivitySubjectiveResultTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/SubjectiveTimeTextView"
-        app:layout_constraintEnd_toEndOf="@id/SubjectiveTimeTextView"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveTimeTextView"
+        android:layout_marginTop="30dp"
         android:text="8분 32초"
-        android:textSize="50sp"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"/>
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@id/ActivitySubjectiveResultTimeTopTextView"
+        app:layout_constraintStart_toStartOf="@id/ActivitySubjectiveResultTimeTopTextView"
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveResultTimeTopTextView"
+        tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/SubjectiveResultGuideLineTextView2"
+        android:id="@+id/ActivitySubjectiveResultGuideLineTextView2"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="20dp"
@@ -64,28 +66,32 @@
         android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveResultResultTimeTextView" />
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveResultTimeTextView" />
 
     <Button
-        android:id="@+id/SubjectiveReShowQuizButton"
+        android:id="@+id/ActivitySubjectiveResultReShowQuizButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SubjectiveResultGuideLineTextView2"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:backgroundTint="@color/no_jh"
-        android:text="문제 다시 보기" />
+        android:stateListAnimator="@null"
+        android:text="문제 다시 보기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveResultGuideLineTextView2"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/SubjectiveExitButton"
+        android:id="@+id/ActivitySubjectiveResultExitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/no_jh"
-        android:text="나가기"/>
+        android:stateListAnimator="@null"
+        android:text="나가기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

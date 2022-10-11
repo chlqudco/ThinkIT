@@ -4,11 +4,11 @@ import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
 import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
-import com.chlqudco.develop.thinkit.presentation.multiplechoice.quiz.MultipleChoiceQuizViewModel
-import com.chlqudco.develop.thinkit.presentation.multiplechoice.result.MultipleChoiceResultViewModel
-import com.chlqudco.develop.thinkit.presentation.quiz.QuizViewModel
-import com.chlqudco.develop.thinkit.presentation.subjective.quiz.SubjectiveQuizViewModel
-import com.chlqudco.develop.thinkit.presentation.subjective.result.SubjectiveResultViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result.MultipleChoiceResultViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultViewModel
 import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -27,7 +27,7 @@ internal val appModule = module {
 
     //뷰모델
     viewModel { MainViewModel() }
-    viewModel { QuizViewModel() }
+    viewModel { QuizChoiceViewModel() }
     viewModel { ConceptViewModel() }
     viewModel { KeywordsViewModel() }
     viewModel { ExplanationViewModel() }

@@ -8,13 +8,13 @@
     tools:context=".presentation.concept.ConceptFragment">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ConceptDataStructureLayout"
+        android:id="@+id/FragmentConceptDataStructureLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/content_cardView_corner"
         app:cardElevation="@dimen/content_cardView_elevation"
-        app:layout_constraintBottom_toTopOf="@id/ConceptOperatingSystemLayout"
-        app:layout_constraintEnd_toStartOf="@id/ConceptAlgorithmLayout"
+        app:layout_constraintBottom_toTopOf="@id/FragmentConceptOperatingSystemLayout"
+        app:layout_constraintEnd_toStartOf="@id/FragmentConceptAlgorithmLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,44 +24,45 @@
             android:background="@color/no_jh">
 
             <ImageView
-                android:id="@+id/ConceptDataStructureImageView"
+                android:id="@+id/FragmentConceptDataStructureImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:src="@drawable/icon_data_structure"
-                app:layout_constraintBottom_toTopOf="@id/ConceptDataStructureTextView"
+                app:layout_constraintBottom_toTopOf="@id/FragmentConceptDataStructureTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="ContentDescription,MissingPrefix" />
 
             <TextView
-                android:id="@+id/ConceptDataStructureTextView"
+                android:id="@+id/FragmentConceptDataStructureTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="자료구조"
+                android:text="@string/data_structure"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ConceptDataStructureImageView" />
+                app:layout_constraintTop_toBottomOf="@id/FragmentConceptDataStructureImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ConceptAlgorithmLayout"
+        android:id="@+id/FragmentConceptAlgorithmLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/content_cardView_corner"
         app:cardElevation="@dimen/content_cardView_elevation"
-        app:layout_constraintBottom_toTopOf="@id/ConceptDatabaseLayout"
+        app:layout_constraintBottom_toTopOf="@id/FragmentConceptDatabaseLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ConceptDataStructureLayout"
+        app:layout_constraintStart_toEndOf="@id/FragmentConceptDataStructureLayout"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,45 +71,46 @@
             android:background="@color/content_background">
 
             <ImageView
-                android:id="@+id/ConceptAlgorithmImageView"
+                android:id="@+id/FragmentConceptAlgorithmImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:src="@drawable/icon_algorithm"
-                app:layout_constraintBottom_toTopOf="@id/ConceptAlgorithmTextView"
+                app:layout_constraintBottom_toTopOf="@id/FragmentConceptAlgorithmTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/ConceptAlgorithmTextView"
+                android:id="@+id/FragmentConceptAlgorithmTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="알고리즘"
+                android:text="@string/algorithm"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ConceptAlgorithmImageView" />
+                app:layout_constraintTop_toBottomOf="@id/FragmentConceptAlgorithmImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ConceptOperatingSystemLayout"
+        android:id="@+id/FragmentConceptOperatingSystemLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/content_cardView_corner"
         app:cardElevation="@dimen/content_cardView_elevation"
-        app:layout_constraintBottom_toTopOf="@id/ConceptNetworkLayout"
-        app:layout_constraintEnd_toEndOf="@id/ConceptDataStructureLayout"
-        app:layout_constraintStart_toStartOf="@id/ConceptDataStructureLayout"
-        app:layout_constraintTop_toBottomOf="@id/ConceptDataStructureLayout">
+        app:layout_constraintBottom_toTopOf="@id/FragmentConceptNetworkLayout"
+        app:layout_constraintEnd_toEndOf="@id/FragmentConceptDataStructureLayout"
+        app:layout_constraintStart_toStartOf="@id/FragmentConceptDataStructureLayout"
+        app:layout_constraintTop_toBottomOf="@id/FragmentConceptDataStructureLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -116,45 +118,46 @@
             android:background="@color/content_background">
 
             <ImageView
-                android:id="@+id/ConceptOperatingSystemImageView"
+                android:id="@+id/FragmentConceptOperatingSystemImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:src="@drawable/icon_os"
-                app:layout_constraintBottom_toTopOf="@id/ConceptOperatingSystemTextView"
+                app:layout_constraintBottom_toTopOf="@id/FragmentConceptOperatingSystemTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/ConceptOperatingSystemTextView"
+                android:id="@+id/FragmentConceptOperatingSystemTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="운영체제"
+                android:text="@string/operating_system"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ConceptOperatingSystemImageView" />
+                app:layout_constraintTop_toBottomOf="@id/FragmentConceptOperatingSystemImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ConceptDatabaseLayout"
+        android:id="@+id/FragmentConceptDatabaseLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/content_cardView_corner"
         app:cardElevation="@dimen/content_cardView_elevation"
-        app:layout_constraintBottom_toBottomOf="@id/ConceptOperatingSystemLayout"
-        app:layout_constraintEnd_toEndOf="@id/ConceptAlgorithmLayout"
-        app:layout_constraintStart_toStartOf="@id/ConceptAlgorithmLayout"
-        app:layout_constraintTop_toTopOf="@id/ConceptOperatingSystemLayout">
+        app:layout_constraintBottom_toBottomOf="@id/FragmentConceptOperatingSystemLayout"
+        app:layout_constraintEnd_toEndOf="@id/FragmentConceptAlgorithmLayout"
+        app:layout_constraintStart_toStartOf="@id/FragmentConceptAlgorithmLayout"
+        app:layout_constraintTop_toTopOf="@id/FragmentConceptOperatingSystemLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -162,44 +165,45 @@
             android:background="@color/content_background">
 
             <ImageView
-                android:id="@+id/ConceptDatabaseImageView"
+                android:id="@+id/FragmentConceptDatabaseImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:src="@drawable/icon_database"
-                app:layout_constraintBottom_toTopOf="@id/ConceptDatabaseTextView"
+                app:layout_constraintBottom_toTopOf="@id/FragmentConceptDatabaseTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/ConceptDatabaseTextView"
+                android:id="@+id/FragmentConceptDatabaseTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="데이터베이스"
+                android:text="@string/database"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ConceptDatabaseImageView" />
+                app:layout_constraintTop_toBottomOf="@id/FragmentConceptDatabaseImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/ConceptNetworkLayout"
+        android:id="@+id/FragmentConceptNetworkLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/content_cardView_corner"
         app:cardElevation="@dimen/content_cardView_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/ConceptDataStructureLayout"
-        app:layout_constraintStart_toStartOf="@id/ConceptDataStructureLayout"
-        app:layout_constraintTop_toBottomOf="@id/ConceptOperatingSystemLayout">
+        app:layout_constraintEnd_toEndOf="@id/FragmentConceptDataStructureLayout"
+        app:layout_constraintStart_toStartOf="@id/FragmentConceptDataStructureLayout"
+        app:layout_constraintTop_toBottomOf="@id/FragmentConceptOperatingSystemLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -207,33 +211,48 @@
             android:background="@color/content_background">
 
             <ImageView
-                android:id="@+id/ConceptNetworkImageView"
+                android:id="@+id/FragmentConceptNetworkImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:src="@drawable/icon_network"
-                app:layout_constraintBottom_toTopOf="@id/ConceptNetworkTextView"
+                app:layout_constraintBottom_toTopOf="@id/FragmentConceptNetworkTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/ConceptNetworkTextView"
+                android:id="@+id/FragmentConceptNetworkTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="네트워크"
+                android:text="@string/network"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ConceptNetworkImageView" />
+                app:layout_constraintTop_toBottomOf="@id/FragmentConceptNetworkImageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/FragmentConceptFeedbackButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:drawableTop="@drawable/icon_error_send_64dp"
+        android:text="@string/feedback"
+        android:textStyle="bold"
+        android:layout_margin="30dp"
+        android:layout_width="80dp"
+        android:backgroundTint="@color/no_jh"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

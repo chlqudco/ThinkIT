@@ -7,26 +7,27 @@
     tools:context=".presentation.splash.SplashActivity">
 
     <TextView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Think IT!"
-        android:textSize="50sp"
-        android:textColor="@color/black"
+        android:id="@+id/ActivitySplashTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Think IT!"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/SplashMadeByTextView"
+        android:id="@+id/ActivitySplashMadeByTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="made by"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/SplashTeamLogoImageView"
+        app:layout_constraintEnd_toStartOf="@id/ActivitySplashTeamLogoImageView"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginEnd="20dp"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -34,12 +35,13 @@
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/SplashTeamLogoImageView"
+        android:id="@+id/ActivitySplashTeamLogoImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/teamlogo2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/SplashMadeByTextView"
-        app:layout_constraintStart_toEndOf="@id/SplashMadeByTextView" />
+        app:layout_constraintBottom_toBottomOf="@id/ActivitySplashMadeByTextView"
+        app:layout_constraintStart_toEndOf="@id/ActivitySplashMadeByTextView"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

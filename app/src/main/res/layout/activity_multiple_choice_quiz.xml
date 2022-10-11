@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.multiplechoice.quiz.MultipleChoiceQuizActivity">
+    tools:context=".presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity">
 
 
     <TextView
-        android:id="@+id/MultipleChoiceTitleTextView"
+        android:id="@+id/ActivityMultipleChoiceQuizNumberTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="1번째"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@id/MultipleChoiceGuideLineTextView"
+        app:layout_constraintBottom_toBottomOf="@id/ActivityMultipleChoiceQuizGuideLineTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/MultipleChoiceGuideLineTextView"
+        android:id="@+id/ActivityMultipleChoiceQuizGuideLineTextView"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="?attr/actionBarSize"
@@ -33,33 +33,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/MultipleChoiceQuizTitleTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceGuideLineTextView"
+        android:id="@+id/ActivityMultipleChoiceQuizTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="문제"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizGuideLineTextView"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/MultipleChoiceQuizTextView"
+        android:id="@+id/ActivityMultipleChoiceQuizTextTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceQuizTitleTextView"
+        android:layout_margin="30dp"
+        android:background="@drawable/background_explanation"
+        android:padding="10dp"
         android:text="다음 중, 쓰레드에 관해 옳지 않은 것을 고르시오."
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:background="@drawable/background_explanation"
-        android:padding="10dp"
-        android:layout_margin="30dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizTitleTextView"
+        tools:ignore="HardcodedText" />
 
     <View
-        android:id="@+id/MultipleChoiceGuideLineTextView2"
+        android:id="@+id/ActivityMultipleChoiceQuizGuideLineTextView2"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="?attr/actionBarSize"
@@ -67,85 +69,102 @@
         android:elevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceQuizTextView"/>
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizTextTextView" />
 
 
     <TextView
-        android:id="@+id/MultipleChoiceBogiTitleTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceGuideLineTextView2"
+        android:id="@+id/ActivityMultipleChoiceQuizChoiceTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="보기"
         android:textColor="@color/black"
         android:textSize="30sp"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizGuideLineTextView2"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
-        android:id="@+id/MultipleChoiceSelectQuizLayout"
+        android:id="@+id/ActivityMultipleChoiceQuizSelectChoiceLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/background_explanation"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceBogiTitleTextView">
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizChoiceTitleTextView">
 
         <RadioGroup
+            android:id="@+id/ActivityMultipleChoiceQuizRadioGroup"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
 
             <RadioButton
+                android:id="@+id/ActivityMultipleChoiceQuizSelect1RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="보기 1"/>
+                android:text="쓰레드는 쓰레기라는 단어에서 유래했다"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
+                android:id="@+id/ActivityMultipleChoiceQuizSelect2RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="보기 2"/>
+                android:text="쓰레드래곤볼링장독대나무다리어카센터"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
+                android:id="@+id/ActivityMultipleChoiceQuizSelect3RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="보기 3"/>
+                android:text="쓰레드는 최대 1개만 존재할 수 있다"
+                tools:ignore="HardcodedText" />
 
             <RadioButton
+                android:id="@+id/ActivityMultipleChoiceQuizSelect4RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="보기 4"/>
+                android:text="쓰레드는 프로세스와 아무런 연관이 없다."
+                tools:ignore="HardcodedText" />
 
         </RadioGroup>
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/MultipleChoiceSendButton"
+        android:id="@+id/ActivityMultipleChoiceQuizCheckCorrectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/MultipleChoiceSelectQuizLayout"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceSelectQuizLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/MultipleChoiceNextButton"
+        android:backgroundTint="@color/no_jh"
+        android:stateListAnimator="@null"
         android:text="제 출"
-        android:backgroundTint="@color/no_jh"/>
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ActivityMultipleChoiceQuizNextButton"
+        app:layout_constraintStart_toStartOf="@id/ActivityMultipleChoiceQuizSelectChoiceLayout"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizSelectChoiceLayout"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
     <Button
-        android:id="@+id/MultipleChoiceNextButton"
-        app:layout_constraintStart_toEndOf="@id/MultipleChoiceSendButton"
-        app:layout_constraintTop_toBottomOf="@id/MultipleChoiceSelectQuizLayout"
-        app:layout_constraintEnd_toEndOf="@id/MultipleChoiceSelectQuizLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/ActivityMultipleChoiceQuizNextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/no_jh"
+        android:stateListAnimator="@null"
+        android:textSize="25sp"
         android:text="다음 문제"
-       android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/ActivityMultipleChoiceQuizSelectChoiceLayout"
+        app:layout_constraintStart_toEndOf="@id/ActivityMultipleChoiceQuizCheckCorrectButton"
+        app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizSelectChoiceLayout"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

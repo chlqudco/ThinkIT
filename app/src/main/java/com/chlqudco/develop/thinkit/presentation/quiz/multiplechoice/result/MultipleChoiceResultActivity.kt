@@ -1,4 +1,4 @@
-package com.chlqudco.develop.thinkit.presentation.multiplechoice.result
+package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result
 
 import android.os.Bundle
 import com.chlqudco.develop.thinkit.databinding.ActivityMultipleChoiceResultBinding
@@ -21,7 +21,7 @@ internal class MultipleChoiceResultActivity : BaseActivity<MultipleChoiceResultV
     }
 
     private fun initViews() {
-        binding.MultipleChoiceResultExitButton.setOnClickListener {
+        binding.ActivityMultipleChoiceResultExitButton.setOnClickListener {
             finish()
         }
     }

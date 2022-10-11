@@ -5,7 +5,7 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-internal class QuizViewModel: BaseViewModel() {
+internal class QuizChoiceViewModel: BaseViewModel() {
 
     override fun fetchData(): Job = viewModelScope.launch{ }
 

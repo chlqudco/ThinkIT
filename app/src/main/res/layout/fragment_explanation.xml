@@ -8,12 +8,12 @@
     tools:context=".presentation.explanation.ExplanationFragment">
 
     <TextView
-        android:id="@+id/ExplanationMainTextView"
+        android:id="@+id/FragmentExplanationMainTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbars="vertical"
         android:background="@drawable/background_explanation"
-        app:layout_constraintBottom_toTopOf="@id/ExplanationAdView"
+        app:layout_constraintBottom_toTopOf="@id/FragmentExplanationAdView"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -61,7 +61,7 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/ExplanationAdView"
+        android:id="@+id/FragmentExplanationAdView"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="#FFD2D2"
@@ -70,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ExplanationMainTextView"
+        app:layout_constraintTop_toBottomOf="@id/FragmentExplanationMainTextView"
         tools:ignore="HardcodedText,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

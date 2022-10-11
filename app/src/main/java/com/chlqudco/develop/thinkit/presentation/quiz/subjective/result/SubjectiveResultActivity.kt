@@ -1,4 +1,4 @@
-package com.chlqudco.develop.thinkit.presentation.subjective.result
+package com.chlqudco.develop.thinkit.presentation.quiz.subjective.result
 
 import android.os.Bundle
 import com.chlqudco.develop.thinkit.databinding.ActivitySubjectiveResultBinding
@@ -6,7 +6,6 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import org.koin.android.ext.android.inject
 
 internal class SubjectiveResultActivity : BaseActivity<SubjectiveResultViewModel, ActivitySubjectiveResultBinding>() {
-
 
     override val viewModel: SubjectiveResultViewModel by inject()
 
@@ -22,7 +21,7 @@ internal class SubjectiveResultActivity : BaseActivity<SubjectiveResultViewModel
     }
 
     private fun initViews() {
-        binding.SubjectiveExitButton.setOnClickListener {
+        binding.ActivitySubjectiveResultExitButton.setOnClickListener {
             finish()
         }
     }

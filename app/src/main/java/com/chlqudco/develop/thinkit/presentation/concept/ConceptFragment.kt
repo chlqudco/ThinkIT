@@ -30,7 +30,7 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         (activity as MainActivity).setTopTextViewText("컴퓨터 공학")
 
         //리스너 달기
-        binding.ConceptDataStructureLayout.setOnClickListener {
+        binding.FragmentConceptDataStructureLayout.setOnClickListener {
             //여기서 이름 바꾸기
             (activity as MainActivity).setTopTextViewText("자료 구조")
             //프래그먼트 전환

@@ -2,6 +2,7 @@ package com.chlqudco.develop.thinkit.presentation.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -21,12 +22,18 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
     var userChoiceConcept: String = ""
     var userChoiceKeyword: String = ""
 
+    private var isKeywordsView: Boolean = false
+    private var isExplanationView: Boolean = false
+
     override fun getViewBinding()= ActivityMainBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         initViews()
+
+        isKeywordsView = false
+        isExplanationView = false
     }
 
     //네비그래프와 바텀네비 연결
@@ -49,6 +56,8 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
                     ).commit()
                 }
             }
+            isKeywordsView = false
+            isExplanationView = false
             true
         }
     }
@@ -71,9 +80,12 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         binding.ActivityMainTitleTextView.text = concept
         userChoiceConcept = concept
 
+        isKeywordsView = true
+        isExplanationView = false
+
         supportFragmentManager.beginTransaction().add(
-            R.id.ActivityMainNavigationHostFragment, KeywordsFragment()
-        ).commit()
+            R.id.ActivityMainNavigationHostFragment, KeywordsFragment(), "ConceptToKeywords"
+        ).addToBackStack("ConceptToKeywords").commit()
 
         //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
@@ -84,9 +96,13 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         binding.ActivityMainTitleTextView.text = keyword
         userChoiceKeyword = keyword
 
+
+        isKeywordsView = false
+        isExplanationView = true
+
         supportFragmentManager.beginTransaction().add(
-            R.id.ActivityMainNavigationHostFragment, ExplanationFragment()
-        ).commit()
+            R.id.ActivityMainNavigationHostFragment, ExplanationFragment(), "KeywordsToExplanation"
+        ).addToBackStack("KeywordsToExplanation").commit()
 
         //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
@@ -101,4 +117,20 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
             else -> "오류"
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        if(isKeywordsView){
+            binding.ActivityMainTitleTextView.text = "컴퓨터 공학"
+
+            isKeywordsView = false
+        } else if(isExplanationView){
+            binding.ActivityMainTitleTextView.text = userChoiceConcept
+
+            isKeywordsView = true
+        }
+        isExplanationView = false
+    }
+
 }

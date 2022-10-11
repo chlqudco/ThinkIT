@@ -10,6 +10,7 @@ import com.chlqudco.develop.thinkit.databinding.FragmentExplanationBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import org.koin.android.ext.android.inject
+import org.koin.java.KoinJavaComponent.inject
 
 internal class ExplanationFragment : BaseFragment<ExplanationViewModel, FragmentExplanationBinding>() {
 
@@ -58,6 +59,5 @@ internal class ExplanationFragment : BaseFragment<ExplanationViewModel, Fragment
         Toast.makeText(context, "오류가 발생했습니다", Toast.LENGTH_SHORT).show()
         binding.FragmentExplanationProgressBar.isVisible = false
     }
-
 
 }

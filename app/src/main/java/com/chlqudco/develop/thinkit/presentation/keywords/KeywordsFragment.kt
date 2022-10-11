@@ -9,7 +9,7 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import org.koin.android.ext.android.inject
 
-internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>() {
+internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>(){
 
     private lateinit var adapter : KeywordAdapter
 
@@ -18,6 +18,8 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
     override fun getViewBinding(): FragmentKeywordsBinding = FragmentKeywordsBinding.inflate(layoutInflater)
 
     private fun initViews() {
+
+        //로딩바 초기화
         binding.FragmentKeywordsProgressBar.isVisible = true
         binding.FragmentKeywordsEmptyTextView.isVisible = false
 
@@ -27,7 +29,13 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         })
         binding.FragmentKeywordsRecyclerView.adapter = adapter
         binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
+    }
 
+    override fun onResume() {
+        super.onResume()
+
+        //제목 초기화
+        (activity as MainActivity).setTopTextViewText((activity as MainActivity).userChoiceConcept)
     }
 
     override fun observeData() {

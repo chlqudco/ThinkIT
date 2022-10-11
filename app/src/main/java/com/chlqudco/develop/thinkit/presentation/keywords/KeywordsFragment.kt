@@ -6,11 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.chlqudco.develop.thinkit.databinding.FragmentKeywordsBinding
 import com.chlqudco.develop.thinkit.presentation.adapter.KeywordAdapter
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
+import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import org.koin.android.ext.android.inject
 
 internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>() {
 
-    private val adapter = KeywordAdapter()
+    private lateinit var adapter : KeywordAdapter
 
     override val viewModel by inject<KeywordsViewModel>()
 
@@ -18,6 +19,9 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
 
     private fun initViews() {
         //어댑터 연결
+        adapter = KeywordAdapter(keywordClickListener = {
+            (activity as MainActivity).changeFragmentKeywordsToExplanation(it)
+        })
         binding.FragmentKeywordsRecyclerView.adapter = adapter
         binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
 
@@ -37,7 +41,7 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
                     handleSuccessState(it)
                 }
                 is KeywordsState.Error -> {
-
+                    handleErrorState()
                 }
             }
         }
@@ -55,6 +59,10 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
             binding.FragmentKeywordsEmptyTextView.isVisible = false
             binding.FragmentKeywordsRecyclerView.isVisible = true
         }
+    }
+
+    private fun handleErrorState(){
+        Toast.makeText(context, "오류가 발생했습니다", Toast.LENGTH_SHORT).show()
     }
 
 }

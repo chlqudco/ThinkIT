@@ -31,10 +31,8 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
 
         //리스너 달기
         binding.FragmentConceptDataStructureLayout.setOnClickListener {
-            //여기서 이름 바꾸기
-            (activity as MainActivity).setTopTextViewText("자료 구조")
             //프래그먼트 전환
-            (activity as MainActivity).changeFragmentConceptToKeywords()
+            (activity as MainActivity).changeFragmentConceptToKeywords("자료 구조")
         }
     }
 }

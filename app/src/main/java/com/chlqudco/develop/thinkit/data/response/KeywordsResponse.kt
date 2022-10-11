@@ -1,7 +1,7 @@
 package com.chlqudco.develop.thinkit.data.response
 
-data class KeywordsResponse(
-    val keywordsList: List<String>
-) {
+import com.google.gson.annotations.SerializedName
 
-}
+data class KeywordsResponse(
+    @SerializedName("keywords") val keywordsList: List<String>
+)

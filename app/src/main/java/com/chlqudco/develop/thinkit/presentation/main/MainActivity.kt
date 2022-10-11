@@ -64,7 +64,10 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         ).commit()
     }
 
-    fun changeFragmentConceptToKeywords(){
+    fun changeFragmentConceptToKeywords(concept: String){
+
+        //이름 바꾸기
+        binding.ActivityMainTitleTextView.text = concept
 
         supportFragmentManager.beginTransaction().add(
             R.id.ActivityMainNavigationHostFragment, KeywordsFragment()
@@ -73,7 +76,10 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
 
-    fun changeFragmentKeywordsToExplanation(){
+    fun changeFragmentKeywordsToExplanation(keyword: String){
+
+        //이름 바꾸기
+        binding.ActivityMainTitleTextView.text = keyword
 
         supportFragmentManager.beginTransaction().add(
             R.id.ActivityMainNavigationHostFragment, ExplanationFragment()

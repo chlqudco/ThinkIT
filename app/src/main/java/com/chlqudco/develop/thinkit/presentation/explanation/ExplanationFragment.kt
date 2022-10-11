@@ -23,8 +23,6 @@ internal class ExplanationFragment : BaseFragment<ExplanationViewModel, Fragment
     }
 
     private fun initViews() {
-        //이름 바꾸기
-        (activity as MainActivity).setTopTextViewText("???")
 
         //스크롤설정
         binding.FragmentExplanationMainTextView.movementMethod = ScrollingMovementMethod()

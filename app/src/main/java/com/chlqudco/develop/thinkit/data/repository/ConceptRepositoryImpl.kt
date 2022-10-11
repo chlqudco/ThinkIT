@@ -11,11 +11,16 @@ class ConceptRepositoryImpl(
 ): ConceptRepository {
 
     override suspend fun getKeywordsList(subject: String): List<String> = withContext(ioDispatcher) {
-        val response = conceptApiService.getKeywords(subject)
-        return@withContext if (response.isSuccessful){
-            response.body()!!.keywordsList
-        } else{
-            listOf()
+        try {
+            val response = conceptApiService.getKeywords(subject)
+            return@withContext if (response.isSuccessful){
+                response.body()?.keywordsList ?: listOf()
+            } else{
+                listOf()
+            }
+        } catch (exception: Exception){
+            return@withContext listOf("오류","가","발생했","습니다","111","111","111","111","111","111","111","111","111")
         }
+
     }
 }

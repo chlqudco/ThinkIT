@@ -29,10 +29,34 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         //이름 바꾸기
         (activity as MainActivity).setTopTextViewText("컴퓨터 공학")
 
-        //리스너 달기
+        //자료구조
         binding.FragmentConceptDataStructureLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords("자료 구조")
+        }
+
+        //알고리즘
+        binding.FragmentConceptAlgorithmLayout.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentConceptToKeywords("알고리즘")
+        }
+
+        //운영체제
+        binding.FragmentConceptOperatingSystemLayout.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentConceptToKeywords("운영체제")
+        }
+
+        //데이터베이스
+        binding.FragmentConceptDatabaseLayout.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentConceptToKeywords("데이터베이스")
+        }
+
+        //네트워크
+        binding.FragmentConceptNetworkLayout.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentConceptToKeywords("네트워크")
         }
     }
 }

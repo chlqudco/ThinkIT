@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result
 
+import android.content.Intent
 import android.os.Bundle
 import com.chlqudco.develop.thinkit.databinding.ActivityMultipleChoiceResultBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
@@ -18,6 +19,13 @@ internal class MultipleChoiceResultActivity : BaseActivity<MultipleChoiceResultV
         super.onCreate(savedInstanceState)
 
         initViews()
+
+        val delayTime = Intent().getLongExtra("time",9999L)
+
+        val minute = delayTime/1000/60
+        val seconds = delayTime
+
+        binding.ActivityMultipleChoiceResultTimeTextView.text = "${minute}분 ${seconds}초"
     }
 
     private fun initViews() {

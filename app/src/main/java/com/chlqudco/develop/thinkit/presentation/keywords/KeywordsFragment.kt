@@ -1,36 +1,60 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
-import android.os.Bundle
-import android.view.View
+import android.widget.Toast
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chlqudco.develop.thinkit.databinding.FragmentKeywordsBinding
+import com.chlqudco.develop.thinkit.presentation.adapter.KeywordAdapter
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
-import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import org.koin.android.ext.android.inject
 
 internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>() {
+
+    private val adapter = KeywordAdapter()
+
     override val viewModel by inject<KeywordsViewModel>()
 
     override fun getViewBinding(): FragmentKeywordsBinding = FragmentKeywordsBinding.inflate(layoutInflater)
 
-    override fun observeData() {}
+    private fun initViews() {
+        //어댑터 연결
+        binding.FragmentKeywordsRecyclerView.adapter = adapter
+        binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        initViews()
     }
 
-    private fun initViews() {
-        //이름 바꾸기
-        (activity as MainActivity).setTopTextViewText("???")
+    override fun observeData() {
+        viewModel.keywordsStateLiveData.observe(this){
+            when(it){
+                is KeywordsState.UnInitialized -> {
+                    initViews()
+                }
+                is KeywordsState.Loading -> {
 
-        //임시 이동
-        binding.testKeyword.root.setOnClickListener {
-            //프래그먼트 전환
-            (activity as MainActivity).changeFragmentKeywordsToExplanation()
+                }
+                is KeywordsState.Success -> {
+                    handleSuccessState(it)
+                }
+                is KeywordsState.Error -> {
+
+                }
+            }
         }
+    }
 
-        //키워드 받아오기
+    private fun handleSuccessState(state: KeywordsState.Success){
+        //비어있는 경우
+        if (state.keywordsList.isEmpty()){
+            Toast.makeText(context,"불러오지 못했습니다", Toast.LENGTH_SHORT).show()
+            binding.FragmentKeywordsEmptyTextView.isVisible = true
+            binding.FragmentKeywordsRecyclerView.isVisible = false
+        } else{
+            adapter.keywordList = state.keywordsList
+            adapter.notifyDataSetChanged()
+            binding.FragmentKeywordsEmptyTextView.isVisible = false
+            binding.FragmentKeywordsRecyclerView.isVisible = true
+        }
     }
 
 }

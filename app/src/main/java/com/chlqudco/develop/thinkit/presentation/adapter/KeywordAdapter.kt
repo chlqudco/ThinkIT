@@ -11,7 +11,7 @@ class KeywordAdapter: RecyclerView.Adapter<KeywordAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ItemKeywordBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(keyword: String){
-
+            binding.itemKeywordTextView.text = keyword
         }
     }
 

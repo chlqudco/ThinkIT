@@ -1,13 +1,18 @@
 package com.chlqudco.develop.thinkit.di
 
+import com.chlqudco.develop.thinkit.data.network.*
 import com.chlqudco.develop.thinkit.data.network.buildOkHttpClient
 import com.chlqudco.develop.thinkit.data.network.provideGsonConverterFactory
 import com.chlqudco.develop.thinkit.data.network.provideThinkITApiService
+import com.chlqudco.develop.thinkit.data.network.provideThinkITQuizApiService
 import com.chlqudco.develop.thinkit.data.network.provideThinkITRetrofit
 import com.chlqudco.develop.thinkit.data.repository.ConceptRepository
 import com.chlqudco.develop.thinkit.data.repository.ConceptRepositoryImpl
+import com.chlqudco.develop.thinkit.data.repository.QuizRepository
+import com.chlqudco.develop.thinkit.data.repository.QuizRepositoryImpl
 import com.chlqudco.develop.thinkit.domain.concept.GetContentUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
+import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
@@ -26,6 +31,7 @@ internal val appModule = module {
     // UseCase
     factory { GetKeywordsUseCase(get()) }
     factory { GetContentUseCase(get()) }
+    factory { GetMultipleQuizUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -36,9 +42,11 @@ internal val appModule = module {
     single { buildOkHttpClient() }
     single { provideThinkITApiService(get()) }
     single { provideThinkITRetrofit(get(), get()) }
+    single { provideThinkITQuizApiService(get()) }
 
     //레포지토리
     single<ConceptRepository> { ConceptRepositoryImpl(get(), get()) }
+    single<QuizRepository> { QuizRepositoryImpl(get(), get()) }
 
     //뷰모델
     viewModel { MainViewModel() }
@@ -46,7 +54,7 @@ internal val appModule = module {
     viewModel { ConceptViewModel() }
     viewModel { KeywordsViewModel(get()) }
     viewModel { ExplanationViewModel(get()) }
-    viewModel { MultipleChoiceQuizViewModel() }
+    viewModel { MultipleChoiceQuizViewModel(get()) }
     viewModel { MultipleChoiceResultViewModel() }
     viewModel { SubjectiveQuizViewModel() }
     viewModel { SubjectiveResultViewModel() }

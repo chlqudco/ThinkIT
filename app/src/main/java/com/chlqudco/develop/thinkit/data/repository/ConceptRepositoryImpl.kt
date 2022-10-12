@@ -1,8 +1,9 @@
 package com.chlqudco.develop.thinkit.data.repository
 
 import android.util.Log
+import com.chlqudco.develop.thinkit.data.entity.MultipleChoiceEntity
 import com.chlqudco.develop.thinkit.data.network.ConceptApiService
-import com.chlqudco.develop.thinkit.data.response.KeywordsResponse
+import com.chlqudco.develop.thinkit.data.response.MultipleChoiceQuizResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -37,4 +38,6 @@ class ConceptRepositoryImpl(
             return@withContext ""
         }
     }
+
+
 }

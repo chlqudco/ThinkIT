@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity">
 
-
     <TextView
         android:id="@+id/ActivityMultipleChoiceQuizNumberTextView"
         android:layout_width="wrap_content"
@@ -52,7 +51,7 @@
         android:layout_margin="30dp"
         android:background="@drawable/background_explanation"
         android:padding="10dp"
-        android:text="다음 중, 쓰레드에 관해 옳지 않은 것을 고르시오."
+        tools:text="다음 중, 쓰레드에 관해 옳지 않은 것을 고르시오."
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ActivityMultipleChoiceQuizTextTextView" />
-
 
     <TextView
         android:id="@+id/ActivityMultipleChoiceQuizChoiceTitleTextView"
@@ -110,28 +108,28 @@
                 android:id="@+id/ActivityMultipleChoiceQuizSelect1RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="쓰레드는 쓰레기라는 단어에서 유래했다"
+                tools:text="쓰레드는 쓰레기라는 단어에서 유래했다"
                 tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/ActivityMultipleChoiceQuizSelect2RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="쓰레드래곤볼링장독대나무다리어카센터"
+                tools:text="쓰레드래곤볼링장독대나무다리어카센터"
                 tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/ActivityMultipleChoiceQuizSelect3RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="쓰레드는 최대 1개만 존재할 수 있다"
+                tools:text="쓰레드는 최대 1개만 존재할 수 있다"
                 tools:ignore="HardcodedText" />
 
             <RadioButton
                 android:id="@+id/ActivityMultipleChoiceQuizSelect4RadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="쓰레드는 프로세스와 아무런 연관이 없다."
+                tools:text="쓰레드는 프로세스와 아무런 연관이 없다."
                 tools:ignore="HardcodedText" />
 
         </RadioGroup>

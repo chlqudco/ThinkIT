@@ -1,7 +1,9 @@
 package com.chlqudco.develop.thinkit.presentation.concept
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import androidx.navigation.Navigation
 import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding
@@ -58,5 +60,24 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords("네트워크")
         }
+
+        //오류 제보
+        binding.FragmentConceptFeedbackButton.setOnClickListener {
+            val editText = EditText(context)
+
+            AlertDialog.Builder(context)
+                .setTitle("오류를 적어주세요")
+                .setView(editText)
+                .setPositiveButton("전송") { _, _ ->
+                    sendFeedback()
+                }
+                .setNegativeButton("나가기") { _, _ -> }
+                .create()
+                .show()
+        }
+    }
+
+    private fun sendFeedback() {
+
     }
 }

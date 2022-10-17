@@ -69,6 +69,7 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
             //면접대비 누른 경우
             else{
                 val intent = Intent(activity, SubjectiveQuizActivity::class.java)
+                intent.putStringArrayListExtra(QUIZ_SUBJECT_LIST, subjectList)
                 startActivity(intent)
             }
         }

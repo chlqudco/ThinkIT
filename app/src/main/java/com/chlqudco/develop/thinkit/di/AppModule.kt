@@ -12,6 +12,7 @@ import com.chlqudco.develop.thinkit.data.repository.QuizRepositoryImpl
 import com.chlqudco.develop.thinkit.domain.concept.GetContentUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
+import com.chlqudco.develop.thinkit.domain.quiz.GetSubjectiveQuizUseCase
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
@@ -32,6 +33,7 @@ internal val appModule = module {
     factory { GetKeywordsUseCase(get()) }
     factory { GetContentUseCase(get()) }
     factory { GetMultipleQuizUseCase(get()) }
+    factory { GetSubjectiveQuizUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -56,7 +58,7 @@ internal val appModule = module {
     viewModel { ExplanationViewModel(get()) }
     viewModel { MultipleChoiceQuizViewModel(get()) }
     viewModel { MultipleChoiceResultViewModel() }
-    viewModel { SubjectiveQuizViewModel() }
+    viewModel { SubjectiveQuizViewModel(get()) }
     viewModel { SubjectiveResultViewModel() }
     viewModel { ShowIncorrectQuizViewModel() }
 

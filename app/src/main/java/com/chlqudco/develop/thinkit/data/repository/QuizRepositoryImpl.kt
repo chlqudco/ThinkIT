@@ -27,4 +27,17 @@ class QuizRepositoryImpl(
         }
     }
 
+    override suspend fun getSubjectiveQuizList(subjects: List<String>): List<String> = withContext(ioDispatcher){
+        try {
+            val response = quizApiService.getSubjectiveQuiz(subjects)
+            if (response.isSuccessful){
+                return@withContext response.body() ?: listOf()
+            } else{
+                return@withContext listOf()
+            }
+        } catch (exception: Exception){
+            return@withContext listOf()
+        }
+    }
+
 }

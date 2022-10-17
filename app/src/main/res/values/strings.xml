@@ -8,4 +8,5 @@
     <string name="database">데이터베이스</string>
     <string name="network">네트워크</string>
     <string name="feedback">피드백</string>
+    <string name="button_close">닫기</string>
 </resources>

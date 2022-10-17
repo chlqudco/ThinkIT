@@ -7,6 +7,8 @@ import android.widget.Toast
 import com.chlqudco.develop.thinkit.databinding.ActivityMultipleChoiceQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result.MultipleChoiceResultActivity
+import com.chlqudco.develop.thinkit.utility.AppKey.MULTIPLE_INCORRECT_BOGI
+import com.chlqudco.develop.thinkit.utility.AppKey.MULTIPLE_INCORRECT_QUIZ
 import com.chlqudco.develop.thinkit.utility.AppKey.MULTIPLE_QUIZ_SCORE
 import com.chlqudco.develop.thinkit.utility.AppKey.MULTIPLE_QUIZ_TIME
 import com.chlqudco.develop.thinkit.utility.AppKey.QUIZ_SUBJECT_LIST
@@ -69,6 +71,8 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
                 viewModel.totalScore += 10
             } else{
                 Toast.makeText(this, "오답입니다", Toast.LENGTH_SHORT).show()
+                //뷰모델에 틀린 문제 넘기기
+                viewModel.addInCorrectQuiz(binding.ActivityMultipleChoiceQuizTextTextView.text.toString(), originAnswer)
             }
 
             isSendButtonChecked = true
@@ -102,8 +106,15 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
 
     private fun goResultActivity() {
         val intent = Intent(this, MultipleChoiceResultActivity::class.java)
+        //걸린 시간
         intent.putExtra(MULTIPLE_QUIZ_TIME,System.currentTimeMillis() - startTime)
+        //총 점수
         intent.putExtra(MULTIPLE_QUIZ_SCORE, viewModel.totalScore)
+        //틀린 문제
+        intent.putStringArrayListExtra(MULTIPLE_INCORRECT_QUIZ, viewModel.inCorrectQuizList)
+        //틀린 보기
+        intent.putStringArrayListExtra(MULTIPLE_INCORRECT_BOGI, viewModel.inCorrectBogiList)
+
         startActivity(intent)
         finish()
     }

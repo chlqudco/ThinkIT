@@ -16,8 +16,16 @@ internal class MultipleChoiceQuizViewModel(
     private val _multipleChoiceQuizLiveData = MutableLiveData<MultipleChoiceQuizState>(MultipleChoiceQuizState.UnInitialized)
     val multipleChoiceQuizLiveData: LiveData<MultipleChoiceQuizState> = _multipleChoiceQuizLiveData
 
+    //전체 퀴즈 리스트
     lateinit var quizList: List<MultipleChoiceEntity>
+
+    //사용자의 점수
     var totalScore: Int = 0
+
+    //사용자의 틀린 문제
+    var inCorrectQuizList: ArrayList<String> = arrayListOf()
+    //시용자의 틀린 문제 정답
+    var inCorrectBogiList: ArrayList<String> = arrayListOf()
 
     override fun fetchData(): Job = viewModelScope.launch {
         _multipleChoiceQuizLiveData.postValue(MultipleChoiceQuizState.Loading)
@@ -43,4 +51,10 @@ internal class MultipleChoiceQuizViewModel(
     fun getSelectText(index: Int): String{
         return quizList[index].quizSelect
     }
+
+    fun addInCorrectQuiz(quiz: String, bogi: String){
+        inCorrectQuizList.add(quiz)
+        inCorrectBogiList.add(bogi)
+    }
+
 }

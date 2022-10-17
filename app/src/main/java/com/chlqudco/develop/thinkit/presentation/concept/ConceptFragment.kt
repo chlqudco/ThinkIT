@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding
@@ -69,7 +70,7 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
                 .setTitle("오류를 적어주세요")
                 .setView(editText)
                 .setPositiveButton("전송") { _, _ ->
-                    sendFeedback()
+                    sendFeedback(editText.text.toString())
                 }
                 .setNegativeButton("나가기") { _, _ -> }
                 .create()
@@ -77,7 +78,13 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         }
     }
 
-    private fun sendFeedback() {
+    private fun sendFeedback(feedback: String) {
+        //예외처리 : 아무것도 안적은 경우
+        if (feedback.isEmpty()){
+            return
+        }
+
+        //전송하기
 
     }
 }

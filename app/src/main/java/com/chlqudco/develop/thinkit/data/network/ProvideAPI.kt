@@ -17,6 +17,10 @@ internal fun provideThinkITQuizApiService(retrofit: Retrofit): QuizApiService {
     return retrofit.create(QuizApiService::class.java)
 }
 
+internal fun provideThinkITFeedbackApiService(retrofit: Retrofit): FeedbackApiService {
+    return retrofit.create(FeedbackApiService::class.java)
+}
+
 internal fun provideThinkITRetrofit(
     okHttpClient: OkHttpClient,
     gsonConverterFactory: GsonConverterFactory,

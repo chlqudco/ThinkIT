@@ -1,16 +1,16 @@
 package com.chlqudco.develop.thinkit.di
 
+import com.chlqudco.develop.thinkit.data.network.*
 import com.chlqudco.develop.thinkit.data.network.buildOkHttpClient
 import com.chlqudco.develop.thinkit.data.network.provideGsonConverterFactory
 import com.chlqudco.develop.thinkit.data.network.provideThinkITApiService
+import com.chlqudco.develop.thinkit.data.network.provideThinkITFeedbackApiService
 import com.chlqudco.develop.thinkit.data.network.provideThinkITQuizApiService
 import com.chlqudco.develop.thinkit.data.network.provideThinkITRetrofit
-import com.chlqudco.develop.thinkit.data.repository.ConceptRepository
-import com.chlqudco.develop.thinkit.data.repository.ConceptRepositoryImpl
-import com.chlqudco.develop.thinkit.data.repository.QuizRepository
-import com.chlqudco.develop.thinkit.data.repository.QuizRepositoryImpl
+import com.chlqudco.develop.thinkit.data.repository.*
 import com.chlqudco.develop.thinkit.domain.concept.GetContentUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
+import com.chlqudco.develop.thinkit.domain.feedback.PostFeedbackUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetSubjectiveQuizUseCase
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
@@ -34,6 +34,7 @@ internal val appModule = module {
     factory { GetContentUseCase(get()) }
     factory { GetMultipleQuizUseCase(get()) }
     factory { GetSubjectiveQuizUseCase(get()) }
+    factory { PostFeedbackUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -45,15 +46,17 @@ internal val appModule = module {
     single { provideThinkITApiService(get()) }
     single { provideThinkITRetrofit(get(), get()) }
     single { provideThinkITQuizApiService(get()) }
+    single { provideThinkITFeedbackApiService(get()) }
 
     //레포지토리
     single<ConceptRepository> { ConceptRepositoryImpl(get(), get()) }
     single<QuizRepository> { QuizRepositoryImpl(get(), get()) }
+    single<FeedbackRepository> {FeedbackRepositoryImpl(get(), get())}
 
     //뷰모델
     viewModel { MainViewModel() }
     viewModel { QuizChoiceViewModel() }
-    viewModel { ConceptViewModel() }
+    viewModel { ConceptViewModel(get()) }
     viewModel { KeywordsViewModel(get()) }
     viewModel { ExplanationViewModel(get()) }
     viewModel { MultipleChoiceQuizViewModel(get()) }

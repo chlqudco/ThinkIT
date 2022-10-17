@@ -69,19 +69,6 @@
         app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveResultTimeTextView" />
 
     <Button
-        android:id="@+id/ActivitySubjectiveResultReShowQuizButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/no_jh"
-        android:stateListAnimator="@null"
-        android:text="문제 다시 보기"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveResultGuideLineTextView2"
-        tools:ignore="HardcodedText" />
-
-    <Button
         android:id="@+id/ActivitySubjectiveResultExitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -45,6 +45,10 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
     }
 
     private fun handleSuccessState(state: SubjectiveQuizState.Success) {
+        //그만 돌아
+        binding.ActivitySubjectiveQuizProgressBar.isVisible = false
+        binding.ActivitySubjectiveQuizGroup.isVisible = true
+
         //시작 시간 측정
         startTime = System.currentTimeMillis()
 

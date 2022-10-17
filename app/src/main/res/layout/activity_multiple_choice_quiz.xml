@@ -6,6 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity">
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ActivityMultipleChoiceQuizGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="ActivityMultipleChoiceQuizCheckCorrectButton,
+        ActivityMultipleChoiceQuizChoiceTitleTextView,
+        ActivityMultipleChoiceQuizGuideLineTextView,
+        ActivityMultipleChoiceQuizGuideLineTextView2,
+        ActivityMultipleChoiceQuizNextButton,
+        ActivityMultipleChoiceQuizNumberTextView,
+        ActivityMultipleChoiceQuizRadioGroup,
+        ActivityMultipleChoiceQuizSelect1RadioButton,
+        ActivityMultipleChoiceQuizSelect2RadioButton,
+        ActivityMultipleChoiceQuizSelect3RadioButton,
+        ActivityMultipleChoiceQuizSelect4RadioButton,
+        ActivityMultipleChoiceQuizSelectChoiceLayout,
+        ActivityMultipleChoiceQuizTextTextView,
+        ActivityMultipleChoiceQuizTitleTextView"
+        tools:ignore="NotSibling" />
+    <ProgressBar
+        android:id="@+id/ActivityMultipleChoiceQuizProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <TextView
         android:id="@+id/ActivityMultipleChoiceQuizNumberTextView"
         android:layout_width="wrap_content"

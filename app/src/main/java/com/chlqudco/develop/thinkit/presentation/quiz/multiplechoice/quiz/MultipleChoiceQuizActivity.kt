@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils.split
 import android.widget.Toast
+import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.ActivityMultipleChoiceQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result.MultipleChoiceResultActivity
@@ -139,6 +140,9 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
     }
 
     private fun handleSuccessState(state: MultipleChoiceQuizState.Success) {
+        binding.ActivityMultipleChoiceQuizGroup.isVisible = true
+        binding.ActivityMultipleChoiceQuizProgressBar.isVisible = false
+
         //시작 시간 측정
         startTime = System.currentTimeMillis()
 

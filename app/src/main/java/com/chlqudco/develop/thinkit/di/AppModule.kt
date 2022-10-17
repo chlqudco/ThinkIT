@@ -1,6 +1,5 @@
 package com.chlqudco.develop.thinkit.di
 
-import com.chlqudco.develop.thinkit.data.network.*
 import com.chlqudco.develop.thinkit.data.network.buildOkHttpClient
 import com.chlqudco.develop.thinkit.data.network.provideGsonConverterFactory
 import com.chlqudco.develop.thinkit.data.network.provideThinkITApiService
@@ -20,6 +19,7 @@ import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result.MultipleChoiceResultViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.incorrectquiz.ShowIncorrectQuizViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultViewModel
 import kotlinx.coroutines.Dispatchers
@@ -58,5 +58,6 @@ internal val appModule = module {
     viewModel { MultipleChoiceResultViewModel() }
     viewModel { SubjectiveQuizViewModel() }
     viewModel { SubjectiveResultViewModel() }
+    viewModel { ShowIncorrectQuizViewModel() }
 
 }

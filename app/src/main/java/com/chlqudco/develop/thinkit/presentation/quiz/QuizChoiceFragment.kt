@@ -1,10 +1,8 @@
 package com.chlqudco.develop.thinkit.presentation.quiz
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import com.chlqudco.develop.thinkit.databinding.FragmentQuizChoiceBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
@@ -14,8 +12,6 @@ import com.chlqudco.develop.thinkit.utility.AppKey.QUIZ_SUBJECT_LIST
 import org.koin.android.ext.android.inject
 
 internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQuizChoiceBinding>() {
-
-    private var sToast: Toast? = null
 
     override val viewModel by inject<QuizChoiceViewModel>()
 
@@ -48,13 +44,13 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
 
             //아무것도 체크 안한 경우 나가기
             if (subjectList.isEmpty()){
-                context?.let { context -> showToastMessage(context, "과목을 선택해 주세요") }
+                showToastMessage("과목을 선택해 주세요")
                 return@setOnClickListener
             }
 
             //라디오버튼 아무것도 안누른 경우
             if (binding.FragmentQuizChoiceRadioGroup.checkedRadioButtonId == -1){
-                context?.let { context -> showToastMessage(context, "퀴즈 종류를 선택해 주세요") }
+                showToastMessage("퀴즈 종류를 선택해 주세요")
                 return@setOnClickListener
             }
 
@@ -75,13 +71,4 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
         }
     }
 
-    //토스트 메세지 띄우기
-    private fun showToastMessage(context: Context, message: String) {
-        if (sToast == null) {
-            sToast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
-        } else {
-            sToast!!.setText(message)
-        }
-        sToast?.show()
-    }
 }

@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.text.Html
 import android.text.method.ScrollingMovementMethod
 import android.view.View
-import android.widget.Toast
 import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.FragmentExplanationBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import org.koin.android.ext.android.inject
-import org.koin.java.KoinJavaComponent.inject
 
 internal class ExplanationFragment : BaseFragment<ExplanationViewModel, FragmentExplanationBinding>() {
 
@@ -56,7 +54,7 @@ internal class ExplanationFragment : BaseFragment<ExplanationViewModel, Fragment
     }
 
     private fun handleErrorState(){
-        Toast.makeText(context, "오류가 발생했습니다", Toast.LENGTH_SHORT).show()
+        showToastMessage("오류가 발생했습니다")
         binding.FragmentExplanationProgressBar.isVisible = false
     }
 

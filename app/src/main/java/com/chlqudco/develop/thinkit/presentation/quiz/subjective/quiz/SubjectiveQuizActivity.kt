@@ -2,8 +2,6 @@ package com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
-import android.widget.Toast
 import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.ActivitySubjectiveQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
@@ -40,8 +38,7 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
     }
 
     private fun handleErrorState() {
-        Toast.makeText(this, "오류가 발생했습니다", Toast.LENGTH_SHORT).show()
-        finish()
+        showToastMessage("오류가 발생했습니다")
     }
 
     private fun handleSuccessState(state: SubjectiveQuizState.Success) {
@@ -51,6 +48,8 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
 
         //시작 시간 측정
         startTime = System.currentTimeMillis()
+
+        state.quizList
 
         //첫번째 문제 세팅하기
         setQuizByIndex(0)

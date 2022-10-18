@@ -1,9 +1,7 @@
 package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.os.Bundle
-import android.text.TextUtils.split
-import android.widget.Toast
 import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.ActivityMultipleChoiceQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
@@ -37,7 +35,7 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
 
             //아직 제출 안한 경우
             if (!isSendButtonChecked){
-                Toast.makeText(this, "아직 제출하지 않았습니다.", Toast.LENGTH_SHORT).show()
+                showToastMessage("아직 제출하지 않았습니다")
                 return@setOnClickListener
             }
 
@@ -56,22 +54,22 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
 
             //아무것도 안 누른 경우
             if (binding.ActivityMultipleChoiceQuizRadioGroup.checkedRadioButtonId == -1){
-                Toast.makeText(this, "보기를 골라주세요", Toast.LENGTH_SHORT).show()
+                showToastMessage("보기를 골라주세요")
                 return@setOnClickListener
             }
 
             //이미 제출한 경우
             if (isSendButtonChecked){
-                Toast.makeText(this, "한 번만 제출할 수 있습니다", Toast.LENGTH_SHORT).show()
+                showToastMessage("한 번만 제출할 수 있습니다")
                 return@setOnClickListener
             }
 
             //정답 판별
             if (checkCorrectAnswer()){
-                Toast.makeText(this, "정답입니다", Toast.LENGTH_SHORT).show()
+                showToastMessage("정답입니다")
                 viewModel.totalScore += 10
             } else{
-                Toast.makeText(this, "오답입니다", Toast.LENGTH_SHORT).show()
+                showToastMessage("오답입니다")
                 //뷰모델에 틀린 문제 넘기기
                 viewModel.addInCorrectQuiz(binding.ActivityMultipleChoiceQuizTextTextView.text.toString(), originAnswer)
             }
@@ -93,6 +91,7 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
         return false
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showNextQuiz() {
         //일단 퀴즈 갱신하고
         setQuizByIndex(quizCount)
@@ -146,6 +145,8 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
         //시작 시간 측정
         startTime = System.currentTimeMillis()
 
+        state.quizList
+
         // 첫번째 문제 세팅하기
         setQuizByIndex(0)
     }
@@ -167,7 +168,7 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
     }
 
     private fun handleErrorState() {
-        Toast.makeText(this, "오류가 발생했습니다", Toast.LENGTH_SHORT).show()
+        showToastMessage("오류가 발생했습니다")
         finish()
     }
 

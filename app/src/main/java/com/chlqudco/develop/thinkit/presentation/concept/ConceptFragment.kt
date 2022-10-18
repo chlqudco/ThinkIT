@@ -1,12 +1,7 @@
 package com.chlqudco.develop.thinkit.presentation.concept
 
 import android.app.AlertDialog
-import android.os.Bundle
-import android.view.View
 import android.widget.EditText
-import android.widget.Toast
-import androidx.navigation.Navigation
-import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
@@ -17,16 +12,6 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
     override val viewModel by inject<ConceptViewModel>()
 
     override fun getViewBinding(): FragmentConceptBinding = FragmentConceptBinding.inflate(layoutInflater)
-
-    override fun observeData() {
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        initViews()
-    }
 
     private fun initViews() {
         //이름 바꾸기
@@ -78,6 +63,25 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         }
     }
 
+    override fun observeData() {
+        viewModel.feedbackLiveData.observe(this){
+            when(it){
+                is ConceptFeedbackState.UnInitialized -> { initViews() }
+                is ConceptFeedbackState.Loading -> { }
+                is ConceptFeedbackState.Success -> { handleFeedbackSuccess() }
+                is ConceptFeedbackState.Error -> { handleFeedbackError() }
+            }
+        }
+    }
+
+    private fun handleFeedbackError() {
+        showToastMessage("전송에 실패했습니다.")
+    }
+
+    private fun handleFeedbackSuccess() {
+        showToastMessage("전송이 완료되었습니다. 감사합니다")
+    }
+
     private fun sendFeedback(feedback: String) {
         //예외처리 : 아무것도 안적은 경우
         if (feedback.isEmpty()){
@@ -85,6 +89,6 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         }
 
         //전송하기
-
+        viewModel.postFeedback(feedback)
     }
 }

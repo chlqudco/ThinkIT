@@ -1,6 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
-import android.widget.Toast
+import android.annotation.SuppressLint
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chlqudco.develop.thinkit.databinding.FragmentKeywordsBinding
@@ -61,10 +61,11 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         viewModel.getKeywords((activity as MainActivity).getSubject())
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun handleSuccessState(state: KeywordsState.Success){
         //비어있는 경우
         if (state.keywordsList.isEmpty()){
-            Toast.makeText(context,"불러오지 못했습니다", Toast.LENGTH_SHORT).show()
+            showToastMessage("불러오지 못했습니다")
             binding.FragmentKeywordsEmptyTextView.isVisible = true
             binding.FragmentKeywordsRecyclerView.isVisible = false
         } else{
@@ -78,7 +79,7 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
     }
 
     private fun handleErrorState(){
-        Toast.makeText(context, "오류가 발생했습니다", Toast.LENGTH_SHORT).show()
+        showToastMessage("오류가 발생했습니다")
         binding.FragmentKeywordsProgressBar.isVisible = false
         binding.FragmentKeywordsEmptyTextView.isVisible = true
     }

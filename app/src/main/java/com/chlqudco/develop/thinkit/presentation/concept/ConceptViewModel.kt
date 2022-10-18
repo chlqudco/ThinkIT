@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.chlqudco.develop.thinkit.domain.feedback.PostFeedbackUseCase
 import com.chlqudco.develop.thinkit.presentation.base.BaseViewModel
-import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

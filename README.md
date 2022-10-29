@@ -45,3 +45,14 @@
 ---
 
 - 2022-10-29 : 출시 전 완성
+
+- ![KakaoTalk_20221029_155200886_11](https://user-images.githubusercontent.com/68932465/198843739-ea411c81-c092-4db9-bc3f-a4ba9de4d658.jpg)
+![KakaoTalk_20221029_155200886_06](https://user-images.githubusercontent.com/68932465/198843742-4ec91cf7-37c2-473f-ae2e-64648aca04a9.jpg)
+![KakaoTalk_20221029_155200886_04](https://user-images.githubusercontent.com/68932465/198843744-ade5f3c4-3c0a-4edd-9a55-1b6bf022a905.jpg)
+![KakaoTalk_20221029_155200886_13](https://user-images.githubusercontent.com/68932465/198843745-fe0532f3-3412-484e-9f80-16d5cf4f9785.jpg)
+![KakaoTalk_20221029_155200886_03](https://user-images.githubusercontent.com/68932465/198843746-9801b9e7-44b0-4252-bdd9-838e3dab2fef.jpg)
+![KakaoTalk_20221029_155200886_10](https://user-images.githubusercontent.com/68932465/198843747-a40ed0da-2876-4208-8592-09d514ecc178.jpg)
+![KakaoTalk_20221029_155200886_14](https://user-images.githubusercontent.com/68932465/198843749-8e2d31a2-cdff-4ddd-982e-f2af4e589061.jpg)
+![KakaoTalk_20221029_155200886_05](https://user-images.githubusercontent.com/68932465/198843751-fedae57c-c5e8-4798-a249-0d8f2b94dded.jpg)
+![KakaoTalk_20221029_155200886_08](https://user-images.githubusercontent.com/68932465/198843752-a31fed66-10e4-4aba-be81-92b0a467584e.jpg)
+

@@ -17,12 +17,6 @@ private val getContentUseCase: GetContentUseCase
 
     override fun fetchData(): Job = viewModelScope.launch {
         _explanationStateLiveData.postValue(ExplanationState.Loading)
-        val response = getContentUseCase("array")
-        if (response.isEmpty()){
-            _explanationStateLiveData.postValue(ExplanationState.Error)
-        } else{
-            _explanationStateLiveData.postValue(ExplanationState.Success(response))
-        }
     }
 
     fun getExplanation(keyword: String){

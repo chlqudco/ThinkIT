@@ -108,14 +108,7 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
     }
 
     fun getSubject(): String{
-        return when(binding.ActivityMainTitleTextView.text.toString()){
-            "자료 구조"-> "dataStructure"
-            "알고리즘"-> "algorithm"
-            "데이터베이스" -> "database"
-            "운영체제" -> "os"
-            "네트워크" -> "네트워크"
-            else -> "오류"
-        }
+        return binding.ActivityMainTitleTextView.text.toString()
     }
 
     override fun onBackPressed() {

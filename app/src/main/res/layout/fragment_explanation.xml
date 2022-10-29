@@ -39,7 +39,7 @@
         android:layout_height="50dp"
         android:background="#FFD2D2"
         android:gravity="center"
-        android:text="광고"
+        android:text="광고 예정"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

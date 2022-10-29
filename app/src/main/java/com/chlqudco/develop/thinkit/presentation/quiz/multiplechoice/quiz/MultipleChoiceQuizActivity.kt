@@ -159,7 +159,15 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
         //보기 보여주기
         val selectList = viewModel.getSelectText(index).split(".")
         originAnswer = selectList[0]
-        val shuffledList = selectList.shuffled()
+
+        val tempList = mutableListOf<String>().apply {
+            add(selectList[0])
+            add(selectList[1])
+            add(selectList[2])
+            add(selectList[3])
+        }
+
+        val shuffledList = tempList.shuffled()
 
         binding.ActivityMultipleChoiceQuizSelect1RadioButton.text = shuffledList[0]
         binding.ActivityMultipleChoiceQuizSelect2RadioButton.text = shuffledList[1]

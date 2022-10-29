@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.data.repository
 
+import android.util.Log
 import com.chlqudco.develop.thinkit.data.entity.MultipleChoiceEntity
 import com.chlqudco.develop.thinkit.data.network.QuizApiService
 import kotlinx.coroutines.CoroutineDispatcher
@@ -31,7 +32,8 @@ class QuizRepositoryImpl(
         try {
             val response = quizApiService.getSubjectiveQuiz(subjects)
             if (response.isSuccessful){
-                return@withContext response.body() ?: listOf()
+                Log.e("asdasd", response.body().toString())
+                return@withContext response.body()?.problems ?: listOf()
             } else{
                 return@withContext listOf()
             }

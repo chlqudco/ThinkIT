@@ -7,6 +7,7 @@ import com.chlqudco.develop.thinkit.databinding.ActivitySubjectiveQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultActivity
 import com.chlqudco.develop.thinkit.utility.AppKey.QUIZ_SUBJECT_LIST
+import com.chlqudco.develop.thinkit.utility.AppKey.SUBJECTIVE_QUIZ_TIME
 import org.koin.android.ext.android.inject
 
 internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, ActivitySubjectiveQuizBinding>() {
@@ -39,6 +40,7 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
 
     private fun handleErrorState() {
         showToastMessage("오류가 발생했습니다")
+        finish()
     }
 
     private fun handleSuccessState(state: SubjectiveQuizState.Success) {
@@ -46,10 +48,10 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
         binding.ActivitySubjectiveQuizProgressBar.isVisible = false
         binding.ActivitySubjectiveQuizGroup.isVisible = true
 
+        binding.ActivitySubjectiveQuizBestAnswerTextView.isVisible = false
+
         //시작 시간 측정
         startTime = System.currentTimeMillis()
-
-        state.quizList
 
         //첫번째 문제 세팅하기
         setQuizByIndex(0)
@@ -107,6 +109,7 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
 
     private fun goResultActivity() {
         val intent = Intent(this, SubjectiveResultActivity::class.java)
+        intent.putExtra(SUBJECTIVE_QUIZ_TIME, System.currentTimeMillis() - startTime)
         startActivity(intent)
         finish()
     }

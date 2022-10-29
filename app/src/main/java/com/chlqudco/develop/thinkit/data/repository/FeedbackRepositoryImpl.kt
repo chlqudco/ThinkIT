@@ -13,7 +13,7 @@ class FeedbackRepositoryImpl(
         try {
             val response = feedbackApiService.postFeedback(feedback)
             if (response.isSuccessful){
-                return@withContext response.body() ?: false
+                return@withContext response.body()?.isSuccess ?: false
             } else{
                 return@withContext false
             }

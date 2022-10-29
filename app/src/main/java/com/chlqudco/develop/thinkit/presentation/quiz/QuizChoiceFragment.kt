@@ -8,6 +8,11 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizActivity
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_NETWORK
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_OS
 import com.chlqudco.develop.thinkit.utility.AppKey.QUIZ_SUBJECT_LIST
 import org.koin.android.ext.android.inject
 
@@ -36,11 +41,11 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
             //과목 뭐뭐 눌렀는지 확인하기
             val subjectList = arrayListOf<String>()
 
-            if (binding.FragmentQuizChoiceDataStructureCheckBox.isChecked) { subjectList.add("dataStructure") }
-            if (binding.FragmentQuizChoiceAlgorithmCheckBox.isChecked) { subjectList.add("algorithm") }
-            if (binding.FragmentQuizChoiceOSCheckBox.isChecked) { subjectList.add("os") }
-            if (binding.FragmentQuizChoiceDataBaseCheckBox.isChecked) { subjectList.add("database") }
-            if (binding.FragmentQuizChoiceNetworkCheckBox.isChecked) { subjectList.add("network") }
+            if (binding.FragmentQuizChoiceDataStructureCheckBox.isChecked) { subjectList.add(KEYWORD_DATA_STRUCTURE) }
+            if (binding.FragmentQuizChoiceAlgorithmCheckBox.isChecked) { subjectList.add(KEYWORD_ALGORITHM) }
+            if (binding.FragmentQuizChoiceOSCheckBox.isChecked) { subjectList.add(KEYWORD_OS) }
+            if (binding.FragmentQuizChoiceDataBaseCheckBox.isChecked) { subjectList.add(KEYWORD_DATABASE) }
+            if (binding.FragmentQuizChoiceNetworkCheckBox.isChecked) { subjectList.add(KEYWORD_NETWORK) }
 
             //아무것도 체크 안한 경우 나가기
             if (subjectList.isEmpty()){

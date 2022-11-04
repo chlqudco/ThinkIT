@@ -9,4 +9,9 @@
     <string name="network">네트워크</string>
     <string name="feedback">피드백</string>
     <string name="button_close">닫기</string>
+
+    <string name="concept_fragment">Concept Fragment</string>
+    <string name="quiz_fragment">Quiz Fragment</string>
+    <string name="keywords_fragment">Keywords Fragment</string>
+    <string name="explanation_web_view_fragment">Explanation WebView Fragment</string>
 </resources>

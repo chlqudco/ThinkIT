@@ -3,6 +3,7 @@ package com.chlqudco.develop.thinkit.presentation.main
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -11,6 +12,7 @@ import com.chlqudco.develop.thinkit.databinding.ActivityMainBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptFragment
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationFragment
+import com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewFragment
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsFragment
 import com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceFragment
 import org.koin.android.ext.android.inject
@@ -41,25 +43,6 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.ActivityMainNavigationHostFragment) as NavHostFragment
         val navController = navHostFragment.findNavController()
         binding.ActivityMainBottomNavigationView.setupWithNavController(navController)
-
-        //바텀 내비게이션 클릭 리스너
-        binding.ActivityMainBottomNavigationView.setOnItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.conceptFragment -> {
-                    supportFragmentManager.beginTransaction().replace(
-                        R.id.ActivityMainNavigationHostFragment, ConceptFragment()
-                    ).commit()
-                }
-                R.id.quizFragment -> {
-                    supportFragmentManager.beginTransaction().replace(
-                        R.id.ActivityMainNavigationHostFragment, QuizChoiceFragment()
-                    ).commit()
-                }
-            }
-            isKeywordsView = false
-            isExplanationView = false
-            true
-        }
     }
 
     override fun observeData() {}
@@ -68,43 +51,22 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
         binding.ActivityMainTitleTextView.text = title
     }
 
-    fun changeFragment(destinationFragment: Fragment){
-        supportFragmentManager.beginTransaction().replace(
-            R.id.ActivityMainNavigationHostFragment, destinationFragment
-        ).commit()
-    }
-
     fun changeFragmentConceptToKeywords(concept: String){
-
         //이름 바꾸기
         binding.ActivityMainTitleTextView.text = concept
         userChoiceConcept = concept
 
         isKeywordsView = true
         isExplanationView = false
-
-        supportFragmentManager.beginTransaction().add(
-            R.id.ActivityMainNavigationHostFragment, KeywordsFragment(), "ConceptToKeywords"
-        ).addToBackStack("ConceptToKeywords").commit()
-
-        //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
 
     fun changeFragmentKeywordsToExplanation(keyword: String){
-
         //이름 바꾸기
         binding.ActivityMainTitleTextView.text = keyword
         userChoiceKeyword = keyword
 
-
         isKeywordsView = false
         isExplanationView = true
-
-        supportFragmentManager.beginTransaction().add(
-            R.id.ActivityMainNavigationHostFragment, ExplanationFragment(), "KeywordsToExplanation"
-        ).addToBackStack("KeywordsToExplanation").commit()
-
-        //Navigation.findNavController(binding.MainTitleTextView).navigate(R.id.action_quizFragment_to_keywordsFragment)
     }
 
     fun getSubject(): String{

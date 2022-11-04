@@ -2,6 +2,9 @@ package com.chlqudco.develop.thinkit.presentation.concept
 
 import android.app.AlertDialog
 import android.widget.EditText
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
@@ -26,30 +29,35 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         binding.FragmentConceptDataStructureLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_DATA_STRUCTURE)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 
         //알고리즘
         binding.FragmentConceptAlgorithmLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_ALGORITHM)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 
         //운영체제
         binding.FragmentConceptOperatingSystemLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_OS)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 
         //데이터베이스
         binding.FragmentConceptDatabaseLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_DATABASE)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 
         //네트워크
         binding.FragmentConceptNetworkLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_NETWORK)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 
         //오류 제보
@@ -95,5 +103,10 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
 
         //전송하기
         viewModel.postFeedback(feedback)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initViews()
     }
 }

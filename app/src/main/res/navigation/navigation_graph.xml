@@ -9,24 +9,30 @@
         android:id="@+id/conceptFragment"
         android:name="com.chlqudco.develop.thinkit.presentation.concept.ConceptFragment"
         android:label="conceptFragment"
-        tools:layout="@layout/fragment_concept" />
+        tools:layout="@layout/fragment_concept" >
+        <action
+            android:id="@+id/action_conceptFragment_to_keywordsFragment"
+            app:destination="@id/keywordsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/quizFragment"
         android:name="com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceFragment"
         android:label="quizFragment"
-        tools:layout="@layout/fragment_quiz_choice" >
-        <action
-            android:id="@+id/action_quizFragment_to_keywordsFragment"
-            app:destination="@id/keywordsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_quiz_choice" />
     <fragment
         android:id="@+id/keywordsFragment"
         android:name="com.chlqudco.develop.thinkit.presentation.keywords.KeywordsFragment"
         android:label="fragment_keywords"
-        tools:layout="@layout/fragment_keywords" />
+        tools:layout="@layout/fragment_keywords" >
+        <action
+            android:id="@+id/action_keywordsFragment_to_explanationWebViewFragment"
+            app:destination="@id/explanationWebViewFragment" />
+        <action
+            android:id="@+id/action_keywordsFragment_to_conceptFragment"
+            app:destination="@id/conceptFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/explanationFragment"
-        android:name="com.chlqudco.develop.thinkit.presentation.explanation.ExplanationFragment"
-        android:label="fragment_explanation"
-        tools:layout="@layout/fragment_explanation" />
+        android:id="@+id/explanationWebViewFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewFragment"
+        android:label="ExplanationWebViewFragment" />
 </navigation>

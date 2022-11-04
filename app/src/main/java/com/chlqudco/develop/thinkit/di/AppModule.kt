@@ -20,6 +20,7 @@ import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetSubjectiveQuizUseCase
 import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
+import com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewViewModel
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
 import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizViewModel
@@ -76,5 +77,6 @@ internal val appModule = module {
     viewModel { SubjectiveQuizViewModel(get()) }
     viewModel { SubjectiveResultViewModel() }
     viewModel { ShowIncorrectQuizViewModel() }
+    viewModel { ExplanationWebViewViewModel() }
 
 }

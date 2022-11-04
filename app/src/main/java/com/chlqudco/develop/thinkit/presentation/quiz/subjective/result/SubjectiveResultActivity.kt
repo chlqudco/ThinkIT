@@ -26,7 +26,7 @@ internal class SubjectiveResultActivity : BaseActivity<SubjectiveResultViewModel
         val delayTime = intent.getLongExtra(SUBJECTIVE_QUIZ_TIME, 0)
 
         val minute = delayTime/1000/60
-        val seconds = delayTime/1000
+        val seconds = delayTime/1000%60
 
         binding.ActivitySubjectiveResultTimeTextView.text = "${minute}분 ${seconds}초"
 

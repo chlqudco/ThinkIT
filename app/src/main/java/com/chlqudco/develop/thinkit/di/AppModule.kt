@@ -1,5 +1,7 @@
 package com.chlqudco.develop.thinkit.di
 
+import com.chlqudco.develop.thinkit.data.database.provideDao
+import com.chlqudco.develop.thinkit.data.database.provideDataBase
 import com.chlqudco.develop.thinkit.data.network.*
 import com.chlqudco.develop.thinkit.data.network.buildOkHttpClient
 import com.chlqudco.develop.thinkit.data.network.provideGsonConverterFactory
@@ -8,7 +10,10 @@ import com.chlqudco.develop.thinkit.data.network.provideThinkITFeedbackApiServic
 import com.chlqudco.develop.thinkit.data.network.provideThinkITQuizApiService
 import com.chlqudco.develop.thinkit.data.network.provideThinkITRetrofit
 import com.chlqudco.develop.thinkit.data.repository.*
+import com.chlqudco.develop.thinkit.domain.concept.*
+import com.chlqudco.develop.thinkit.domain.concept.DeleteKeywordDBUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetContentUseCase
+import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsByQueryUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.domain.feedback.PostFeedbackUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
@@ -35,6 +40,9 @@ internal val appModule = module {
     factory { GetMultipleQuizUseCase(get()) }
     factory { GetSubjectiveQuizUseCase(get()) }
     factory { PostFeedbackUseCase(get()) }
+    factory { DeleteKeywordDBUseCase(get()) }
+    factory { GetKeywordsByQueryUseCase(get()) }
+    factory { InsertKeywordUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -48,8 +56,12 @@ internal val appModule = module {
     single { provideThinkITQuizApiService(get()) }
     single { provideThinkITFeedbackApiService(get()) }
 
+    //RoomDB
+    single { provideDataBase(get()) }
+    single { provideDao(get()) }
+
     //레포지토리
-    single<ConceptRepository> { ConceptRepositoryImpl(get(), get()) }
+    single<ConceptRepository> { ConceptRepositoryImpl(get(), get(), get()) }
     single<QuizRepository> { QuizRepositoryImpl(get(), get()) }
     single<FeedbackRepository> {FeedbackRepositoryImpl(get(), get())}
 
@@ -57,7 +69,7 @@ internal val appModule = module {
     viewModel { MainViewModel() }
     viewModel { QuizChoiceViewModel() }
     viewModel { ConceptViewModel(get()) }
-    viewModel { KeywordsViewModel(get()) }
+    viewModel { KeywordsViewModel(get(), get(), get(), get()) }
     viewModel { ExplanationViewModel(get()) }
     viewModel { MultipleChoiceQuizViewModel(get()) }
     viewModel { MultipleChoiceResultViewModel() }

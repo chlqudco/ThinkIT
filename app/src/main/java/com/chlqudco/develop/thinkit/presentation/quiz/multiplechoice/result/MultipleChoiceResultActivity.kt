@@ -30,8 +30,8 @@ internal class MultipleChoiceResultActivity : BaseActivity<MultipleChoiceResultV
         val delayTime = intent.getLongExtra(MULTIPLE_QUIZ_TIME, -1)
         val userScore = intent.getIntExtra(MULTIPLE_QUIZ_SCORE, -1)
 
-        val minute = delayTime/1000/60
-        val seconds = delayTime/1000
+        val minute = delayTime/1000 / 60
+        val seconds = delayTime/1000 % 60
 
         binding.ActivityMultipleChoiceResultCorrectCountTextView.text = " ${userScore/10} / 10 개"
         binding.ActivityMultipleChoiceResultTimeTextView.text = "${minute}분 ${seconds}초"

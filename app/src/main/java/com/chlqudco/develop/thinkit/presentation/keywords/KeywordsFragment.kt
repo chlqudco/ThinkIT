@@ -1,12 +1,15 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chlqudco.develop.thinkit.databinding.FragmentKeywordsBinding
 import com.chlqudco.develop.thinkit.presentation.adapter.KeywordAdapter
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
+import com.chlqudco.develop.thinkit.utility.AppKey.SEARCH_BOOKS_TIME_DELAY
 import org.koin.android.ext.android.inject
 
 internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>(){
@@ -19,6 +22,9 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
 
     private fun initViews() {
 
+        //DB 초기화
+
+
         //로딩바 초기화
         binding.FragmentKeywordsProgressBar.isVisible = true
         binding.FragmentKeywordsEmptyTextView.isVisible = false
@@ -29,6 +35,39 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         })
         binding.FragmentKeywordsRecyclerView.adapter = adapter
         binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
+
+
+        //검색 창 연결
+
+        //사용자의 입력 시간 간격 조절을 위해
+        var startTime = System.currentTimeMillis()
+        var endTime: Long
+
+
+        binding.FragmentKeywordsSearchEditText.addTextChangedListener { text ->
+
+            Log.e("asdasd", "qweqweqwe")
+
+            endTime = System.currentTimeMillis()
+            if (endTime - startTime >= SEARCH_BOOKS_TIME_DELAY){
+                //입력된게 없는 경우 : 다 지운 경우
+                if(text.toString().isEmpty()){
+                    //일단 하지마
+                    viewModel.getKeywords((activity as MainActivity).getSubject())
+                }
+                //입력된게 있으면 DB 검색
+                else{
+                    viewModel.getKeywordsByQuery((activity as MainActivity).getSubject(), binding.FragmentKeywordsSearchEditText.text.toString())
+                }
+            }
+            startTime = endTime
+        }
+
+        //검색 리스트 옵저빙
+        viewModel.queryKeywords.observe(viewLifecycleOwner){
+            adapter.keywordList = it
+            adapter.notifyDataSetChanged()
+        }
     }
 
     override fun onResume() {

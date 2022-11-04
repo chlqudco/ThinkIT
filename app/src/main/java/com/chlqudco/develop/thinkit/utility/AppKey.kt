@@ -18,5 +18,7 @@ object AppKey {
     const val MULTIPLE_INCORRECT_QUIZ = "InCorrectQuiz"
     const val MULTIPLE_INCORRECT_BOGI = "InCorrectBogi"
 
+    const val SEARCH_BOOKS_TIME_DELAY = 100L
+
 
 }

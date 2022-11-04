@@ -12,13 +12,14 @@ import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.utility.AppKey.SEARCH_BOOKS_TIME_DELAY
 import org.koin.android.ext.android.inject
 
-internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>(){
+internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>() {
 
-    private lateinit var adapter : KeywordAdapter
+    private lateinit var adapter: KeywordAdapter
 
     override val viewModel by inject<KeywordsViewModel>()
 
-    override fun getViewBinding(): FragmentKeywordsBinding = FragmentKeywordsBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentKeywordsBinding =
+        FragmentKeywordsBinding.inflate(layoutInflater)
 
     private fun initViews() {
 
@@ -38,33 +39,23 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
 
 
         //검색 창 연결
-
-        //사용자의 입력 시간 간격 조절을 위해
-        var startTime = System.currentTimeMillis()
-        var endTime: Long
-
-
         binding.FragmentKeywordsSearchEditText.addTextChangedListener { text ->
 
-            Log.e("asdasd", "qweqweqwe")
-
-            endTime = System.currentTimeMillis()
-            if (endTime - startTime >= SEARCH_BOOKS_TIME_DELAY){
-                //입력된게 없는 경우 : 다 지운 경우
-                if(text.toString().isEmpty()){
-                    //일단 하지마
-                    viewModel.getKeywords((activity as MainActivity).getSubject())
-                }
-                //입력된게 있으면 DB 검색
-                else{
-                    viewModel.getKeywordsByQuery((activity as MainActivity).getSubject(), binding.FragmentKeywordsSearchEditText.text.toString())
-                }
+            //입력된게 없는 경우 : 다 지운 경우, 키워드 전체 받아오기
+            if (text.toString().isEmpty()) {
+                viewModel.getKeywordByDB((activity as MainActivity).getSubject())
             }
-            startTime = endTime
+            //입력된게 있으면 DB 검색
+            else {
+                viewModel.getKeywordsByQuery(
+                    (activity as MainActivity).getSubject(),
+                    binding.FragmentKeywordsSearchEditText.text.toString()
+                )
+            }
         }
 
         //검색 리스트 옵저빙
-        viewModel.queryKeywords.observe(viewLifecycleOwner){
+        viewModel.queryKeywords.observe(viewLifecycleOwner) {
             adapter.keywordList = it
             adapter.notifyDataSetChanged()
         }
@@ -78,8 +69,8 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
     }
 
     override fun observeData() {
-        viewModel.keywordsStateLiveData.observe(this){
-            when(it){
+        viewModel.keywordsStateLiveData.observe(this) {
+            when (it) {
                 is KeywordsState.UnInitialized -> {
                     initViews()
                 }
@@ -101,13 +92,13 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun handleSuccessState(state: KeywordsState.Success){
+    private fun handleSuccessState(state: KeywordsState.Success) {
         //비어있는 경우
-        if (state.keywordsList.isEmpty()){
+        if (state.keywordsList.isEmpty()) {
             showToastMessage("불러오지 못했습니다")
             binding.FragmentKeywordsEmptyTextView.isVisible = true
             binding.FragmentKeywordsRecyclerView.isVisible = false
-        } else{
+        } else {
             adapter.keywordList = state.keywordsList
             adapter.notifyDataSetChanged()
             binding.FragmentKeywordsEmptyTextView.isVisible = false
@@ -117,7 +108,7 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         binding.FragmentKeywordsEmptyTextView.isVisible = false
     }
 
-    private fun handleErrorState(){
+    private fun handleErrorState() {
         showToastMessage("오류가 발생했습니다")
         binding.FragmentKeywordsProgressBar.isVisible = false
         binding.FragmentKeywordsEmptyTextView.isVisible = true

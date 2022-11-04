@@ -83,4 +83,13 @@ internal class KeywordsViewModel(
         }
     }
 
+    //DB 키워드 전체 받아오기
+    fun getKeywordByDB(concept: String){
+        //로직은 위랑 똑같은데 거르는 것만 없음
+        viewModelScope.launch {
+            val response = getKeywordsByQueryUseCase(concept)
+            queryKeywords.postValue(response)
+        }
+    }
+
 }

@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.ActivityMainBinding
@@ -42,7 +44,15 @@ internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>()
     private fun initViews(){
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.ActivityMainNavigationHostFragment) as NavHostFragment
         val navController = navHostFragment.findNavController()
-        binding.ActivityMainBottomNavigationView.setupWithNavController(navController)
+
+        binding.ActivityMainBottomNavigationView.apply {
+            setupWithNavController(navController)
+            setOnItemSelectedListener { item ->
+                NavigationUI.onNavDestinationSelected(item, navController)
+                navController.popBackStack(item.itemId, inclusive = false)
+                true
+            }
+        }
     }
 
     override fun observeData() {}

@@ -4,12 +4,18 @@
     <item
         android:id="@+id/conceptFragment"
         android:icon="@drawable/ic_book"
-        android:title="개념"/>
+        android:title="CS 개념"/>
+
+    <item
+        android:id="@+id/jobConceptFragment"
+        android:icon="@drawable/ic_book"
+        android:title="직무 개념"/>
 
     <item
         android:id="@+id/quizFragment"
         android:icon="@drawable/ic_quiz"
         android:title="퀴즈"
         />
+
 
 </menu>

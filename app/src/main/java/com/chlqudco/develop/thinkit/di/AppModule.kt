@@ -2,7 +2,6 @@ package com.chlqudco.develop.thinkit.di
 
 import com.chlqudco.develop.thinkit.data.database.provideDao
 import com.chlqudco.develop.thinkit.data.database.provideDataBase
-import com.chlqudco.develop.thinkit.data.network.*
 import com.chlqudco.develop.thinkit.data.network.buildOkHttpClient
 import com.chlqudco.develop.thinkit.data.network.provideGsonConverterFactory
 import com.chlqudco.develop.thinkit.data.network.provideThinkITApiService
@@ -18,9 +17,10 @@ import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.domain.feedback.PostFeedbackUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetSubjectiveQuizUseCase
-import com.chlqudco.develop.thinkit.presentation.concept.ConceptViewModel
+import com.chlqudco.develop.thinkit.presentation.csconcept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
 import com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewViewModel
+import com.chlqudco.develop.thinkit.presentation.jobconcept.JobConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
 import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizViewModel
@@ -78,5 +78,6 @@ internal val appModule = module {
     viewModel { SubjectiveResultViewModel() }
     viewModel { ShowIncorrectQuizViewModel() }
     viewModel { ExplanationWebViewViewModel() }
+    viewModel { JobConceptViewModel() }
 
 }

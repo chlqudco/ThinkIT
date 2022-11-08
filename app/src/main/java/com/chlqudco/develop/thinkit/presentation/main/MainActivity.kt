@@ -1,22 +1,13 @@
 package com.chlqudco.develop.thinkit.presentation.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.ActivityMainBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
-import com.chlqudco.develop.thinkit.presentation.concept.ConceptFragment
-import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationFragment
-import com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewFragment
-import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsFragment
-import com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceFragment
 import org.koin.android.ext.android.inject
 
 internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {

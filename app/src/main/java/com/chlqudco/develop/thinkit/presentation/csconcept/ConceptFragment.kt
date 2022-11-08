@@ -1,8 +1,7 @@
-package com.chlqudco.develop.thinkit.presentation.concept
+package com.chlqudco.develop.thinkit.presentation.csconcept
 
 import android.app.AlertDialog
 import android.widget.EditText
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding

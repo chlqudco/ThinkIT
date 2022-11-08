@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/conceptFragment"
-        android:name="com.chlqudco.develop.thinkit.presentation.concept.ConceptFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.csconcept.ConceptFragment"
         android:label="conceptFragment"
         tools:layout="@layout/fragment_concept" >
         <action
@@ -30,9 +30,21 @@
         <action
             android:id="@+id/action_keywordsFragment_to_conceptFragment"
             app:destination="@id/conceptFragment" />
+        <action
+            android:id="@+id/action_keywordsFragment_to_jobConceptFragment"
+            app:destination="@id/jobConceptFragment" />
     </fragment>
     <fragment
         android:id="@+id/explanationWebViewFragment"
         android:name="com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewFragment"
         android:label="ExplanationWebViewFragment" />
+    <fragment
+        android:id="@+id/jobConceptFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.jobconcept.JobConceptFragment"
+        android:label="fragment_job_concept"
+        tools:layout="@layout/fragment_job_concept" >
+        <action
+            android:id="@+id/action_jobConceptFragment_to_keywordsFragment"
+            app:destination="@id/keywordsFragment" />
+    </fragment>
 </navigation>

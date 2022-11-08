@@ -1,4 +1,4 @@
-package com.chlqudco.develop.thinkit.presentation.concept
+package com.chlqudco.develop.thinkit.presentation.csconcept
 
 internal sealed class ConceptFeedbackState {
     object UnInitialized: ConceptFeedbackState()

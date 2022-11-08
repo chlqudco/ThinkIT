@@ -8,6 +8,9 @@ object AppKey {
     const val KEYWORD_OS = "운영체제"
     const val KEYWORD_NETWORK = "네트워크"
 
+    const val KEYWORD_ANDROID = "안드로이드"
+    const val KEYWORD_SPRING = "스프링"
+
     const val QUIZ_SUBJECT_LIST = "QuizSubjectList"
 
     const val MULTIPLE_QUIZ_TIME = "TimeTime"

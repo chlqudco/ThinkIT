@@ -11,10 +11,10 @@
         android:id="@+id/FragmentQuizChoiceTopTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="과목 선택"
         android:textColor="@color/black"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/FragmentQuizChoiceConceptsLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/background_explanation"
@@ -66,27 +65,39 @@
             android:layout_height="wrap_content"
             android:text="@string/network" />
 
+        <CheckBox
+            android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="안드로이드" />
+
+        <CheckBox
+            android:id="@+id/FragmentQuizChoiceSpringCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="스프링" />
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/FragmentQuizChoiceGuideLine"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="20dp"
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/FragmentQuizChoiceSelectQuizTextView"
         app:layout_constraintTop_toBottomOf="@id/FragmentQuizChoiceConceptsLayout" />
 
     <TextView
         android:id="@+id/FragmentQuizChoiceSelectQuizTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="퀴즈 유형"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/FragmentQuizChoiceSelectQuizLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FragmentQuizChoiceGuideLine"
         tools:ignore="HardcodedText" />
@@ -96,14 +107,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="40dp"
         android:background="@drawable/background_explanation"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/FragmentQuizChoiceStartButton"
         app:layout_constraintTop_toBottomOf="@id/FragmentQuizChoiceSelectQuizTextView">
 
         <RadioGroup

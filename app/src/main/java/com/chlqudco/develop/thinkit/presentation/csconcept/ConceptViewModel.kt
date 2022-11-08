@@ -1,4 +1,4 @@
-package com.chlqudco.develop.thinkit.presentation.concept
+package com.chlqudco.develop.thinkit.presentation.csconcept
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

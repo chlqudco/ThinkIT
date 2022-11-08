@@ -80,3 +80,7 @@
 
 - 2022-11-05 : Jetpack Navi 재 적용 완료.
 - 2022-11-05 : 개념 설명 화면 WebView로 전환
+- 2022-11-05 : Jetpack Navi & Bottom Navi 화면전환 버그 수정
+---
+
+- 2022-11-08 : Framework 개념 화면 추가 및 퀴즈 목록에도 추가 완료

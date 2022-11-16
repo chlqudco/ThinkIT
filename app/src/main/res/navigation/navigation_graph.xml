@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.choice.QuizChoiceFragment"
         android:label="quizFragment"
         tools:layout="@layout/fragment_quiz_choice" />
     <fragment
@@ -47,4 +47,9 @@
             android:id="@+id/action_jobConceptFragment_to_keywordsFragment"
             app:destination="@id/keywordsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/subjectiveQuizFragment"
+        android:name="com.chlqudco.develop.thinkit.presentation.quiz.subjective.choice.SubjectiveQuizChoiceFragment"
+        android:label="fragment_subjective_quiz_choice"
+        tools:layout="@layout/fragment_subjective_quiz_choice" />
 </navigation>

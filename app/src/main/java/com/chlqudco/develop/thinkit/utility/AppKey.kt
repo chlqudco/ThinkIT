@@ -11,6 +11,9 @@ object AppKey {
     const val KEYWORD_ANDROID = "안드로이드"
     const val KEYWORD_SPRING = "스프링"
 
+    const val KEYWORD_ATTITUDE = "인성"
+    const val KEYWORD_CS = "CS"
+
     const val QUIZ_SUBJECT_LIST = "QuizSubjectList"
 
     const val MULTIPLE_QUIZ_TIME = "TimeTime"

@@ -1,4 +1,4 @@
-package com.chlqudco.develop.thinkit.presentation.quiz
+package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.choice
 
 import androidx.lifecycle.viewModelScope
 import com.chlqudco.develop.thinkit.presentation.base.BaseViewModel

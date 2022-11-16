@@ -1,4 +1,4 @@
-package com.chlqudco.develop.thinkit.presentation.quiz
+package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.choice
 
 import android.content.Intent
 import android.os.Bundle
@@ -35,7 +35,7 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
 
     private fun initViews() {
         //이름 바꾸기
-        (activity as MainActivity).setTopTextViewText("퀴즈 선택")
+        (activity as MainActivity).setTopTextViewText("객관식 퀴즈")
 
         //시작 버튼
         binding.FragmentQuizChoiceStartButton.setOnClickListener {
@@ -57,26 +57,13 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
                 return@setOnClickListener
             }
 
-            //라디오버튼 아무것도 안누른 경우
-            if (binding.FragmentQuizChoiceRadioGroup.checkedRadioButtonId == -1){
-                showToastMessage("퀴즈 종류를 선택해 주세요")
-                return@setOnClickListener
-            }
+            //객관식 퀴즈 시작
+            val intent = Intent(activity, MultipleChoiceQuizActivity::class.java)
 
-            //객관식 누른 경우
-            if (binding.FragmentQuizChoiceMultipleChoiceButton.isChecked){
-                val intent = Intent(activity, MultipleChoiceQuizActivity::class.java)
+            intent.putStringArrayListExtra(QUIZ_SUBJECT_LIST, subjectList)
+            startActivity(intent)
 
-                intent.putStringArrayListExtra(QUIZ_SUBJECT_LIST, subjectList)
-                startActivity(intent)
-            }
 
-            //면접대비 누른 경우
-            else{
-                val intent = Intent(activity, SubjectiveQuizActivity::class.java)
-                intent.putStringArrayListExtra(QUIZ_SUBJECT_LIST, subjectList)
-                startActivity(intent)
-            }
         }
     }
 

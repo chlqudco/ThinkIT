@@ -25,8 +25,9 @@ import com.chlqudco.develop.thinkit.presentation.keywords.KeywordsViewModel
 import com.chlqudco.develop.thinkit.presentation.main.MainViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result.MultipleChoiceResultViewModel
-import com.chlqudco.develop.thinkit.presentation.quiz.QuizChoiceViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.choice.QuizChoiceViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.incorrectquiz.ShowIncorrectQuizViewModel
+import com.chlqudco.develop.thinkit.presentation.quiz.subjective.choice.SubjectiveQuizChoiceViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultViewModel
 import kotlinx.coroutines.Dispatchers
@@ -79,5 +80,6 @@ internal val appModule = module {
     viewModel { ShowIncorrectQuizViewModel() }
     viewModel { ExplanationWebViewViewModel() }
     viewModel { JobConceptViewModel() }
+    viewModel { SubjectiveQuizChoiceViewModel() }
 
 }

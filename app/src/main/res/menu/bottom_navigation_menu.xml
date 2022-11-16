@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/conceptFragment"
         android:icon="@drawable/ic_book"
-        android:title="CS 개념"/>
+        android:title="CS 개념"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/jobConceptFragment"
         android:icon="@drawable/ic_book"
-        android:title="직무 개념"/>
+        android:title="직무 개념"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/quizFragment"
         android:icon="@drawable/ic_quiz"
-        android:title="퀴즈"
-        />
+        android:title="객관식 퀴즈"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/subjectiveQuizFragment"
+        android:icon="@drawable/ic_quiz"
+        android:title="면접 대비"
+        tools:ignore="HardcodedText" />
 
 
 </menu>

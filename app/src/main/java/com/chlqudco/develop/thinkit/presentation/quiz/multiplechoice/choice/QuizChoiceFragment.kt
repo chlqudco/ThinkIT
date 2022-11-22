@@ -8,6 +8,7 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizActivity
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_AI
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ANDROID
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
@@ -48,6 +49,7 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
             if (binding.FragmentQuizChoiceOSCheckBox.isChecked) { subjectList.add(KEYWORD_OS) }
             if (binding.FragmentQuizChoiceDataBaseCheckBox.isChecked) { subjectList.add(KEYWORD_DATABASE) }
             if (binding.FragmentQuizChoiceNetworkCheckBox.isChecked) { subjectList.add(KEYWORD_NETWORK) }
+            if (binding.FragmentQuizChoiceAICheckBox.isChecked) { subjectList.add(KEYWORD_AI) }
             if (binding.FragmentQuizChoiceAndroidCheckBox.isChecked) { subjectList.add(KEYWORD_ANDROID) }
             if (binding.FragmentQuizChoiceSpringCheckBox.isChecked) { subjectList.add(KEYWORD_SPRING) }
 

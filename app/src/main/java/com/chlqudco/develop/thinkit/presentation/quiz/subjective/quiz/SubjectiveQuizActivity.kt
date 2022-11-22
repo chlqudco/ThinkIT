@@ -63,7 +63,7 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
 
         var answer: String = ""
         for (item in answer1){
-            answer += item
+            answer += ("$item.")
         }
 
         binding.ActivitySubjectiveQuizQuizTextView.text = quiz

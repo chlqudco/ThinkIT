@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.chlqudco.develop.thinkit'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.chlqudco.develop.thinkit"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 8
         versionName "8.0"
 

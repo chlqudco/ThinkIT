@@ -7,6 +7,7 @@ import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_AI
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
@@ -56,6 +57,13 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         binding.FragmentConceptNetworkLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_NETWORK)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
+        }
+
+        //인공지능
+        binding.FragmentConceptNetworkLayout.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_AI)
             findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 

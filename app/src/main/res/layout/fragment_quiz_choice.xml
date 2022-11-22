@@ -66,6 +66,12 @@
             android:text="@string/network" />
 
         <CheckBox
+            android:id="@+id/FragmentQuizChoiceAICheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ai" />
+
+        <CheckBox
             android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

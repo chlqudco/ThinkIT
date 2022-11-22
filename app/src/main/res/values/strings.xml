@@ -15,4 +15,5 @@
     <string name="keywords_fragment">Keywords Fragment</string>
     <string name="explanation_web_view_fragment">Explanation WebView Fragment</string>
     <string name="job_concept_fragment">Job Concept Fragment</string>
+    <string name="ai">인공지능</string>
 </resources>

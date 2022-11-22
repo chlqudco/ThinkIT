@@ -256,7 +256,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/content_background">
+            android:background="@color/no_jh">
 
             <ImageView
                 android:id="@+id/FragmentConceptAIImageView"

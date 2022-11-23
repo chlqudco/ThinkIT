@@ -61,7 +61,7 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         }
 
         //인공지능
-        binding.FragmentConceptNetworkLayout.setOnClickListener {
+        binding.FragmentConceptAILayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_AI)
             findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)

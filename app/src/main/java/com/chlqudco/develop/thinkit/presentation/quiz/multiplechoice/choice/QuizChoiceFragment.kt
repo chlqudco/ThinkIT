@@ -11,6 +11,7 @@ import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.Subjective
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_AI
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ANDROID
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_COMPUTER_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_NETWORK
@@ -50,6 +51,7 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
             if (binding.FragmentQuizChoiceDataBaseCheckBox.isChecked) { subjectList.add(KEYWORD_DATABASE) }
             if (binding.FragmentQuizChoiceNetworkCheckBox.isChecked) { subjectList.add(KEYWORD_NETWORK) }
             if (binding.FragmentQuizChoiceAICheckBox.isChecked) { subjectList.add(KEYWORD_AI) }
+            if (binding.FragmentQuizChoiceComputerStructureCheckBox.isChecked) { subjectList.add(KEYWORD_COMPUTER_STRUCTURE) }
             if (binding.FragmentQuizChoiceAndroidCheckBox.isChecked) { subjectList.add(KEYWORD_ANDROID) }
             if (binding.FragmentQuizChoiceSpringCheckBox.isChecked) { subjectList.add(KEYWORD_SPRING) }
 

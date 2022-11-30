@@ -115,6 +115,7 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         showToastMessage("오류가 발생했습니다")
         binding.FragmentKeywordsProgressBar.isVisible = false
         binding.FragmentKeywordsEmptyTextView.isVisible = true
+        findNavController().navigate(R.id.action_keywordsFragment_to_conceptFragment)
     }
 
 }

@@ -16,4 +16,7 @@
     <string name="explanation_web_view_fragment">Explanation WebView Fragment</string>
     <string name="job_concept_fragment">Job Concept Fragment</string>
     <string name="ai">인공지능</string>
+    <string name="computer_structure">컴퓨터 구조</string>
+    <string name="android">안드로이드</string>
+    <string name="spring">스프링</string>
 </resources>

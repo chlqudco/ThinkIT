@@ -35,6 +35,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FragmentQuizChoiceTopTextView">
 
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="컴퓨터 공학"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#000000"/>
+
         <CheckBox
             android:id="@+id/FragmentQuizChoiceDataStructureCheckBox"
             android:layout_width="match_parent"
@@ -66,22 +81,42 @@
             android:text="@string/network" />
 
         <CheckBox
+            android:id="@+id/FragmentQuizChoiceComputerStructureCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/computer_structure" />
+
+        <CheckBox
             android:id="@+id/FragmentQuizChoiceAICheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ai" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="직무"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#000000"/>
+
         <CheckBox
             android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="안드로이드" />
+            android:text="@string/android" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceSpringCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="스프링" />
+            android:text="@string/spring" />
 
     </LinearLayout>
 

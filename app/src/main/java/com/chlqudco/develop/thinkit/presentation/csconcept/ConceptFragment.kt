@@ -9,6 +9,7 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_AI
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_COMPUTER_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_NETWORK
@@ -64,6 +65,13 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         binding.FragmentConceptAILayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_AI)
+            findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
+        }
+
+        //컴퓨터 구조
+        binding.FragmentConceptComputerStructureLayout.setOnClickListener {
+            //프래그먼트 전환
+            (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_COMPUTER_STRUCTURE)
             findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
 

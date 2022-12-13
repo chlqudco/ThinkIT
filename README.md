@@ -84,3 +84,33 @@
 ---
 
 - 2022-11-08 : Framework 개념 화면 추가 및 퀴즈 목록에도 추가 완료
+---
+
+- 2022-11-15 : 면접대비 정답이 제대로 출력이 안되는 현상 해결
+---
+
+- 2022-11-17 : 면접대비 화면 따로 추출 후 인성면접 및 CS면접 기능 추가
+---
+
+- 2022-11-22 : compileSdk를 33으로 업그레이드
+- 2022-11-22 : 주관식 답안 출력 오류 해결
+- 2022-11-22 : 인공지능 과목 추가
+---
+
+- 2022-11-23 : 개념 화면 오류 수정
+---
+
+- 2022-12-01 : 컴퓨터구조 과목 추가 및 화면 오류 수정
+---
+
+## 화면 예시 ##
+- ![1](https://user-images.githubusercontent.com/68932465/204839282-6499c1d9-3b8a-43cc-ba41-88c3c3dbb2ab.jpg)
+![2](https://user-images.githubusercontent.com/68932465/204839289-99af6104-155c-41b2-a7e6-d15664abbe6a.jpg)
+![3](https://user-images.githubusercontent.com/68932465/204839294-21757c2e-b062-4b7b-aeda-5ff228ba276a.jpg)
+![4](https://user-images.githubusercontent.com/68932465/204839295-d6cf852f-926a-46ea-b57b-e702f975a5ad.jpg)
+![5](https://user-images.githubusercontent.com/68932465/204839298-1a018e98-4173-409f-a4dd-249f353cd2ff.jpg)
+![6](https://user-images.githubusercontent.com/68932465/204839302-3766f772-6efa-497d-93e1-87fefe52e5c2.jpg)
+![7](https://user-images.githubusercontent.com/68932465/204839304-bef56d10-5a84-4926-9832-7a6c9664e911.jpg)
+![8](https://user-images.githubusercontent.com/68932465/204839306-7f75482b-c208-48f2-937d-540a458b3a3e.jpg)
+![9](https://user-images.githubusercontent.com/68932465/204839309-570f9285-4384-47d0-8596-fa6d2791561e.jpg)
+![10](https://user-images.githubusercontent.com/68932465/204839311-5af44e8a-c7a8-49c9-b8c6-11c9321a69c0.jpg)

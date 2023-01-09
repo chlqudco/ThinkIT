@@ -22,6 +22,8 @@ internal class KeywordsViewModel(
     private var _keywordsStateLiveData = MutableLiveData<KeywordsState>(KeywordsState.UnInitialized)
     val keywordsStateLiveData: LiveData<KeywordsState> = _keywordsStateLiveData
 
+    var _keywordListLiveData: MutableLiveData<List<String>> = MutableLiveData()
+
     val queryKeywords: MutableLiveData<List<String>> = MutableLiveData()
 
     override fun fetchData(): Job = viewModelScope.launch {
@@ -50,6 +52,7 @@ internal class KeywordsViewModel(
                 //해당 개념 DB 다 지우기
                 deleteKeywordDBUseCase(subject)
 
+
                 //DB에 차곡차곡 모으기
                 for(item in response){
                     var keyword = KeywordsEntity(0, subject, item)
@@ -59,6 +62,8 @@ internal class KeywordsViewModel(
                 //석세스로 들어가기
                 _keywordsStateLiveData.postValue(KeywordsState.UnInitialized)
                 _keywordsStateLiveData.postValue(KeywordsState.Success(response))
+
+
             }
         }
     }
@@ -89,6 +94,8 @@ internal class KeywordsViewModel(
         viewModelScope.launch {
             val response = getKeywordsByQueryUseCase(concept)
             queryKeywords.postValue(response)
+            //테스트를 위한 저장
+            _keywordListLiveData.postValue(response)
         }
     }
 

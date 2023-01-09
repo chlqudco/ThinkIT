@@ -2,10 +2,11 @@ package com.chlqudco.develop.thinkit.data.repository
 
 import com.chlqudco.develop.thinkit.data.entity.KeywordsEntity
 
-class FakeConceptRepository : ConceptRepository {
+class TestConceptRepository : ConceptRepository {
 
     private val keywordList = mutableListOf<String>()
 
+    //원래는 레트로핏
     override suspend fun getKeywordsList(subject: String): List<String> {
         return keywordList
     }
@@ -14,7 +15,9 @@ class FakeConceptRepository : ConceptRepository {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getKeywordsByQuery(concept: String): List<String> {
+
+    //원래는 디비
+   override suspend fun getKeywordsByQuery(concept: String): List<String> {
         TODO("Not yet implemented")
     }
 

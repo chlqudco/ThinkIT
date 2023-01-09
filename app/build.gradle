@@ -38,6 +38,7 @@ android {
     testOptions {
         unitTests.includeAndroidResources = true
         animationsDisabled = true
+        unitTests.returnDefaultValues = true
     }
 }
 
@@ -64,6 +65,12 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.5.1'
     androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.2'
     androidTestImplementation 'org.hamcrest:hamcrest:2.2'
+
+    testImplementation 'org.mockito:mockito-inline:3.4.0'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+    testImplementation 'io.insert-koin:koin-test:3.1.2'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
 
 
     //koin

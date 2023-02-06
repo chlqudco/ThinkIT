@@ -80,11 +80,13 @@
             android:layout_height="wrap_content"
             android:text="@string/network" />
 
+        <!--
         <CheckBox
             android:id="@+id/FragmentQuizChoiceComputerStructureCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/computer_structure" />
+        -->
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceAICheckBox"

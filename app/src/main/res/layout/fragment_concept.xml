@@ -215,7 +215,7 @@
                 app:cardCornerRadius="@dimen/content_cardView_corner"
                 app:cardElevation="@dimen/content_cardView_elevation"
                 android:layout_marginTop="30dp"
-                app:layout_constraintBottom_toTopOf="@id/FragmentConceptComputerStructureLayout"
+                app:layout_constraintBottom_toBottomOf="@id/FragmentConceptAILayout"
                 app:layout_constraintEnd_toEndOf="@id/FragmentConceptDataStructureLayout"
                 app:layout_constraintStart_toStartOf="@id/FragmentConceptDataStructureLayout"
                 app:layout_constraintTop_toBottomOf="@id/FragmentConceptOperatingSystemLayout">
@@ -262,7 +262,6 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="@dimen/content_cardView_corner"
                 app:cardElevation="@dimen/content_cardView_elevation"
-                app:layout_constraintBottom_toBottomOf="@id/FragmentConceptNetworkLayout"
                 app:layout_constraintEnd_toEndOf="@id/FragmentConceptDatabaseLayout"
                 app:layout_constraintStart_toStartOf="@id/FragmentConceptDatabaseLayout"
                 app:layout_constraintTop_toTopOf="@id/FragmentConceptNetworkLayout">
@@ -303,6 +302,7 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!--
             <androidx.cardview.widget.CardView
                 android:id="@+id/FragmentConceptComputerStructureLayout"
                 android:layout_width="wrap_content"
@@ -351,6 +351,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
+            -->
 
             <Button
                 android:id="@+id/FragmentConceptFeedbackButton"
@@ -364,9 +365,8 @@
                 android:text="@string/feedback"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/FragmentConceptAILayout"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

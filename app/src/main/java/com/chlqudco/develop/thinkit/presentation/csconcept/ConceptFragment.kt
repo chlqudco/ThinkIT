@@ -69,11 +69,13 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         }
 
         //컴퓨터 구조
+        /*
         binding.FragmentConceptComputerStructureLayout.setOnClickListener {
             //프래그먼트 전환
             (activity as MainActivity).changeFragmentConceptToKeywords(KEYWORD_COMPUTER_STRUCTURE)
             findNavController().navigate(R.id.action_conceptFragment_to_keywordsFragment)
         }
+        */
 
         //오류 제보
         binding.FragmentConceptFeedbackButton.setOnClickListener {

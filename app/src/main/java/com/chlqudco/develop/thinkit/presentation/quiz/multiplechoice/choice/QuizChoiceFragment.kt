@@ -51,7 +51,7 @@ internal class QuizChoiceFragment : BaseFragment<QuizChoiceViewModel, FragmentQu
             if (binding.FragmentQuizChoiceDataBaseCheckBox.isChecked) { subjectList.add(KEYWORD_DATABASE) }
             if (binding.FragmentQuizChoiceNetworkCheckBox.isChecked) { subjectList.add(KEYWORD_NETWORK) }
             if (binding.FragmentQuizChoiceAICheckBox.isChecked) { subjectList.add(KEYWORD_AI) }
-            if (binding.FragmentQuizChoiceComputerStructureCheckBox.isChecked) { subjectList.add(KEYWORD_COMPUTER_STRUCTURE) }
+            //if (binding.FragmentQuizChoiceComputerStructureCheckBox.isChecked) { subjectList.add(KEYWORD_COMPUTER_STRUCTURE) }
             if (binding.FragmentQuizChoiceAndroidCheckBox.isChecked) { subjectList.add(KEYWORD_ANDROID) }
             if (binding.FragmentQuizChoiceSpringCheckBox.isChecked) { subjectList.add(KEYWORD_SPRING) }
 

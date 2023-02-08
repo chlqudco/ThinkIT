@@ -32,7 +32,7 @@ internal class ExplanationWebViewFragment : BaseFragment<ExplanationWebViewViewM
         //웹 뷰에 링크 올리기
         binding.fragmentExplanationWebViewWebView.apply {
             val keyword = (activity as MainActivity).getSubject()
-            val explanationUrl = "${BuildConfig.baseUrl}/bootstrap?keyword=$keyword"
+            val explanationUrl = "${BuildConfig.baseUrl}/view/concepts/$keyword"
             webViewClient = WebViewClient()
             settings.javaScriptEnabled = true
             loadUrl(explanationUrl)

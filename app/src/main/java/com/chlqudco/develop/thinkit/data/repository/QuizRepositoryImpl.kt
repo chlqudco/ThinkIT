@@ -35,9 +35,11 @@ class QuizRepositoryImpl(
                 Log.e("asdasd", response.body().toString())
                 return@withContext response.body()?.problems ?: listOf()
             } else{
+                Log.e("asdasdsssss", response.body().toString())
                 return@withContext listOf()
             }
         } catch (exception: Exception){
+            Log.e("214124124asd", "asdasdasddas")
             return@withContext listOf()
         }
     }

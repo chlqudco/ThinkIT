@@ -10,14 +10,14 @@ import retrofit2.http.Query
 
 interface ConceptApiService {
 
-    @GET("/api/keywords/{subject}")
+    @GET("/api/keywords/{subjectName}")
     suspend fun getKeywords(
-        @Path("subject") subject: String
+        @Path("subjectName") subjectName: String
     ) : Response<KeywordsResponse>
 
-    @GET("/api/concepts")
+    @GET("/view/concepts/{keywordName}")
     suspend fun getContent(
-        @Query("keyword") keyword: String
+        @Path("keywordName") keywordName: String
     ): Response<ContentResponse>
 
 }

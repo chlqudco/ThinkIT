@@ -13,7 +13,7 @@ interface QuizApiService {
         @Query("subjects") subjects: List<String>
     ): Response<MultipleChoiceQuizResponse>
 
-    @GET("/api/interview-problems")
+    @GET("/api/interviews")
     suspend fun getSubjectiveQuiz(
         @Query("subjects") subjects: List<String>
     ): Response<SubjectQuizResponse>

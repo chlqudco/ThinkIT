@@ -20,8 +20,10 @@ class ConceptRepositoryImpl(
         try {
             val response = conceptApiService.getKeywords(subject)
             return@withContext if (response.isSuccessful){
+                Log.e("qweqw","asfasfasfafs")
                 response.body()?.keywordsList ?: listOf()
             } else{
+                Log.e("qweqw","$222222222222222222")
                 listOf()
             }
         } catch (exception: Exception){

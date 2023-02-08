@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -26,6 +27,7 @@ internal class SubjectiveQuizViewModel(
         viewModelScope.launch{
             val response = getSubjectiveQuizUseCase(subjects)
             if (response.isEmpty()){
+                Log.e("qweqewqew","qwqeqeqeqeweqew")
                 _subjectiveQuizLiveData.postValue(SubjectiveQuizState.Error)
             } else{
                 quizList = response.shuffled()

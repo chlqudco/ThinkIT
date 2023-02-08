@@ -53,17 +53,24 @@
             tools:ignore="HardcodedText" />
 
         <CheckBox
+            android:id="@+id/FragmentQuizChoiceDeveloperCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="개발자 공통"
+            tools:ignore="HardcodedText" />
+
+        <CheckBox
             android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="안드로이드"
+            android:text="안드로이드 with Kotlin"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceSpringCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="스프링"
+            android:text="스프링 with Java"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

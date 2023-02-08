@@ -15,6 +15,7 @@ object AppKey {
 
     const val KEYWORD_ATTITUDE = "인성"
     const val KEYWORD_CS = "CS"
+    const val KEYWORD_DEVELOPER = "개발자 공통"
 
     const val QUIZ_SUBJECT_LIST = "QuizSubjectList"
 

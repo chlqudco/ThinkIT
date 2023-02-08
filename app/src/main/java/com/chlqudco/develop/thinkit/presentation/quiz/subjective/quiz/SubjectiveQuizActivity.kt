@@ -58,16 +58,17 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
     }
 
     private fun setQuizByIndex(index: Int) {
-        val quiz = viewModel.getQuizText(index).split(".")[0]
-        val answer1 = viewModel.getQuizText(index).split(".").drop(1)
+        val quiz = viewModel.getQuizText(index).split("@")[0]
+        val answer1 = viewModel.getQuizText(index).split("@").drop(1)
 
         var answer: String = ""
         for (item in answer1){
-            answer += ("$item.")
+            answer += (" $item.\n\n")
         }
 
         binding.ActivitySubjectiveQuizQuizTextView.text = quiz
-        binding.ActivitySubjectiveQuizBestAnswerTextView.text = answer
+        binding.ActivitySubjectiveQuizBestAnswerTextView.text = answer.dropLast(2)
+
     }
 
     private fun requestQuizList() {

@@ -10,6 +10,7 @@ import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.Subjective
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ANDROID
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ATTITUDE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_CS
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DEVELOPER
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_SPRING
 import com.chlqudco.develop.thinkit.utility.AppKey.QUIZ_SUBJECT_LIST
 import org.koin.android.ext.android.inject
@@ -38,6 +39,7 @@ internal class SubjectiveQuizChoiceFragment : BaseFragment<SubjectiveQuizChoiceV
 
             if (binding.FragmentQuizChoiceAttitudeCheckBox.isChecked) { subjectList.add(KEYWORD_ATTITUDE) }
             if (binding.FragmentQuizChoiceCSCheckBox.isChecked) { subjectList.add(KEYWORD_CS) }
+            if (binding.FragmentQuizChoiceDeveloperCheckBox.isChecked) { subjectList.add(KEYWORD_DEVELOPER) }
             if (binding.FragmentQuizChoiceAndroidCheckBox.isChecked) { subjectList.add(KEYWORD_ANDROID) }
             if (binding.FragmentQuizChoiceSpringCheckBox.isChecked) { subjectList.add(KEYWORD_SPRING) }
 

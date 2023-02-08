@@ -11,7 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:constraint_referenced_ids="ActivitySubjectiveQuizBestAnswerTextView, ActivitySubjectiveQuizBestAnswerView, ActivitySubjectiveQuizGuideLineTextView, ActivitySubjectiveQuizGuideLineTextView2, ActivitySubjectiveQuizNextButton, ActivitySubjectiveQuizQuizTextView, ActivitySubjectiveQuizQuizTopTextView, ActivitySubjectiveQuizShowBestAnswerButton, ActivitySubjectiveQuizTopTextView"/>
+        tools:visibility="visible"
+        app:constraint_referenced_ids="ActivitySubjectiveQuizBestAnswerScrollView, ActivitySubjectiveQuizBestAnswerView, ActivitySubjectiveQuizGuideLineTextView, ActivitySubjectiveQuizGuideLineTextView2, ActivitySubjectiveQuizNextButton, ActivitySubjectiveQuizQuizTextView, ActivitySubjectiveQuizQuizTopTextView, ActivitySubjectiveQuizShowBestAnswerButton, ActivitySubjectiveQuizTopTextView"/>
 
     <ProgressBar
         android:id="@+id/ActivitySubjectiveQuizProgressBar"
@@ -97,19 +98,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveQuizGuideLineTextView2" />
 
-    <TextView
-        android:id="@+id/ActivitySubjectiveQuizBestAnswerTextView"
+    <ScrollView
+        android:id="@+id/ActivitySubjectiveQuizBestAnswerScrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="10dp"
-        android:visibility="invisible"
-        tools:text="프로세\스는 프로세스고 쓰레드는 쓰레드입니다. 이것도 모르셨나요? 깔깔깔"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@id/ActivitySubjectiveQuizBestAnswerView"
         app:layout_constraintEnd_toEndOf="@id/ActivitySubjectiveQuizBestAnswerView"
         app:layout_constraintStart_toStartOf="@id/ActivitySubjectiveQuizBestAnswerView"
-        app:layout_constraintTop_toTopOf="@id/ActivitySubjectiveQuizBestAnswerView"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toTopOf="@id/ActivitySubjectiveQuizBestAnswerView">
+
+        <TextView
+            android:id="@+id/ActivitySubjectiveQuizBestAnswerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="invisible"
+            tools:text="프로세\스는 프로세스고 쓰레드는 쓰레드입니다. 이것도 모르셨나요? 깔깔깔"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+    </ScrollView>
+
 
     <Button
         android:id="@+id/ActivitySubjectiveQuizShowBestAnswerButton"

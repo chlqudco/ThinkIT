@@ -46,6 +46,8 @@ internal abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCom
         if (sToast == null) {
             sToast = Toast.makeText(this, message, Toast.LENGTH_SHORT)
         } else {
+            sToast!!.cancel()
+            Thread.sleep(100)
             sToast!!.setText(message)
         }
         sToast?.show()

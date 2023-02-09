@@ -26,5 +26,11 @@
         android:title="면접 대비"
         tools:ignore="HardcodedText" />
 
+    <item
+        android:id="@+id/myPageFragment"
+        android:icon="@drawable/ic_person"
+        android:title="내 정보"
+        tools:ignore="HardcodedText" />
+
 
 </menu>

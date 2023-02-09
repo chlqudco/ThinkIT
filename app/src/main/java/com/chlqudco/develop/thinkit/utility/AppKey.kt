@@ -27,4 +27,10 @@ object AppKey {
     const val MULTIPLE_INCORRECT_QUIZ = "InCorrectQuiz"
     const val MULTIPLE_INCORRECT_BOGI = "InCorrectBogi"
 
+    const val DATASTORE_NAME = "myPageToken"
+
+    const val SHARED_PREFERENCE_NAME = "myPagePreference"
+    const val USER_TOKEN = "userToken"
+    const val USER_NICK_NAME = "userNickName"
+
 }

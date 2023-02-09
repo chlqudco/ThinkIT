@@ -49,6 +49,8 @@ internal abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragme
         if (sToast == null) {
             sToast = Toast.makeText(context, message, Toast.LENGTH_SHORT)
         } else {
+            sToast!!.cancel()
+            Thread.sleep(100)
             sToast!!.setText(message)
         }
         sToast?.show()

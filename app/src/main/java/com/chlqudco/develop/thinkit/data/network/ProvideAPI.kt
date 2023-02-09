@@ -7,6 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 internal fun provideThinkITApiService(retrofit: Retrofit): ConceptApiService {
@@ -19,6 +20,10 @@ internal fun provideThinkITQuizApiService(retrofit: Retrofit): QuizApiService {
 
 internal fun provideThinkITFeedbackApiService(retrofit: Retrofit): FeedbackApiService {
     return retrofit.create(FeedbackApiService::class.java)
+}
+
+internal fun provideThinkITMyPageApiService(retrofit: Retrofit): MyPageApiService{
+    return retrofit.create(MyPageApiService::class.java)
 }
 
 internal fun provideThinkITRetrofit(

@@ -78,6 +78,7 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
         */
 
         //오류 제보
+        /*
         binding.FragmentConceptFeedbackButton.setOnClickListener {
             val editText = EditText(context)
 
@@ -91,6 +92,8 @@ internal class ConceptFragment : BaseFragment<ConceptViewModel, FragmentConceptB
                 .create()
                 .show()
         }
+
+         */
     }
 
     override fun observeData() {

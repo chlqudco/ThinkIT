@@ -13,8 +13,8 @@ android {
         applicationId "com.chlqudco.develop.thinkit"
         minSdk 26
         targetSdk 33
-        versionCode 14
-        versionName "14.0"
+        versionCode 15
+        versionName "15.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -105,5 +105,8 @@ dependencies {
     kapt "androidx.room:room-compiler:2.4.3"
     implementation "androidx.room:room-ktx:2.4.3"
 
+
+    //DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 
 }

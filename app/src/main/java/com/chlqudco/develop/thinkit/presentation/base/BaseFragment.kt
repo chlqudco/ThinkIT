@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.base
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.chlqudco.develop.thinkit.utility.AppKey
 import kotlinx.coroutines.Job
+import org.koin.android.ext.android.inject
+import org.koin.java.KoinJavaComponent
 
 internal abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragment() {
     var sToast: Toast? = null
+
+
+    private val sharedPreferences: SharedPreferences by inject()
 
     abstract val viewModel: VM
 
@@ -54,5 +61,10 @@ internal abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragme
             sToast!!.setText(message)
         }
         sToast?.show()
+    }
+
+    //유저 토큰 불러오기
+    fun getUserToken(): String {
+        return sharedPreferences.getString(AppKey.USER_TOKEN, "") ?: ""
     }
 }

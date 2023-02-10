@@ -7,11 +7,9 @@ import com.chlqudco.develop.thinkit.databinding.FragmentQuizChoiceBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity
-import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizActivity
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_AI
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ANDROID
-import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_COMPUTER_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_NETWORK

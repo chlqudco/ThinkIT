@@ -36,6 +36,7 @@ internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBind
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initViews() {
         //-1. 이름 바꾸기
         (activity as MainActivity).setTopTextViewText("내 정보")
@@ -48,7 +49,10 @@ internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBind
 
         //2. 로그인 되어 있다면 내 정보 화면 보여주기
         if(isLogIn){
+            //마이페이지 화면 불러오기
             showMyPageView()
+            //이름 초기화
+            binding.myPageNameTextView.text = "${viewModel.getUserNickName()}님 반갑습니다"
         }
 
         //3. 로그인 안되어 있으면 가만히 있어

@@ -1,14 +1,19 @@
 package com.chlqudco.develop.thinkit.presentation.base
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewbinding.ViewBinding
+import com.chlqudco.develop.thinkit.utility.AppKey
 import kotlinx.coroutines.Job
+import org.koin.android.ext.android.inject
 
 internal abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivity() {
     var sToast: Toast? = null
+
+    private val sharedPreferences: SharedPreferences by inject()
 
     abstract val viewModel: VM
 
@@ -51,5 +56,10 @@ internal abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCom
             sToast!!.setText(message)
         }
         sToast?.show()
+    }
+
+    //유저 토큰 불러오기
+    fun getUserToken(): String {
+        return sharedPreferences.getString(AppKey.USER_TOKEN, "") ?: ""
     }
 }

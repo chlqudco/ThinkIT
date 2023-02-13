@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.icu.lang.UCharacter.GraphemeClusterBreak.L
 import android.os.Bundle
@@ -22,6 +23,7 @@ internal class MultipleChoiceResultActivity : BaseActivity<MultipleChoiceResultV
 
     override fun observeData() {}
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

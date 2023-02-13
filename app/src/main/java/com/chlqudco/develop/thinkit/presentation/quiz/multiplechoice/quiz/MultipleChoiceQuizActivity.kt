@@ -80,7 +80,23 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
                 viewModel.addInCorrectQuiz(binding.ActivityMultipleChoiceQuizTextTextView.text.toString(), originAnswer)
             }
 
+            //배경 변신
+            changeBackgroundCorrectAnswer()
+
             isSendButtonChecked = true
+        }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun changeBackgroundCorrectAnswer() {
+        if(binding.ActivityMultipleChoiceQuizSelect1RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect1RadioButton.background = getDrawable(R.drawable.background_multiple_answer)
+        } else if(binding.ActivityMultipleChoiceQuizSelect2RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect2RadioButton.background = getDrawable(R.drawable.background_multiple_answer)
+        } else if(binding.ActivityMultipleChoiceQuizSelect3RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect3RadioButton.background = getDrawable(R.drawable.background_multiple_answer)
+        } else if(binding.ActivityMultipleChoiceQuizSelect4RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect4RadioButton.background = getDrawable(R.drawable.background_multiple_answer)
         }
     }
 
@@ -93,16 +109,12 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
 
     private fun checkCorrectAnswer(): Boolean {
         if (binding.ActivityMultipleChoiceQuizSelect1RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect1RadioButton.text == originAnswer){
-            binding.ActivityMultipleChoiceQuizSelect1RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         } else if (binding.ActivityMultipleChoiceQuizSelect2RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect2RadioButton.text == originAnswer){
-            binding.ActivityMultipleChoiceQuizSelect2RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         } else if (binding.ActivityMultipleChoiceQuizSelect3RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect3RadioButton.text == originAnswer){
-            binding.ActivityMultipleChoiceQuizSelect3RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         } else if (binding.ActivityMultipleChoiceQuizSelect4RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect4RadioButton.text == originAnswer){
-            binding.ActivityMultipleChoiceQuizSelect4RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         }
         return false

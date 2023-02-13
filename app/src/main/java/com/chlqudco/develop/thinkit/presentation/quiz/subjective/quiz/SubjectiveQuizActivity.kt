@@ -6,6 +6,7 @@ import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.ActivitySubjectiveQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultActivity
+import com.chlqudco.develop.thinkit.utility.AppKey
 import com.chlqudco.develop.thinkit.utility.AppKey.QUIZ_SUBJECT_LIST
 import com.chlqudco.develop.thinkit.utility.AppKey.SUBJECTIVE_QUIZ_TIME
 import org.koin.android.ext.android.inject
@@ -67,6 +68,9 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
             answer += (" $item.\n\n")
         }
 
+        //뷰모델에 저장
+        viewModel.addQuiz(quiz, answer.dropLast(3))
+
         binding.ActivitySubjectiveQuizQuizTextView.text = quiz
         binding.ActivitySubjectiveQuizBestAnswerTextView.text = answer.dropLast(3)
 
@@ -116,7 +120,13 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
 
     private fun goResultActivity() {
         val intent = Intent(this, SubjectiveResultActivity::class.java)
+        //걸린 시간
         intent.putExtra(SUBJECTIVE_QUIZ_TIME, System.currentTimeMillis() - startTime)
+        //문제들
+        intent.putStringArrayListExtra(AppKey.MULTIPLE_INCORRECT_QUIZ, viewModel.inCorrectQuizList)
+        //정답들
+        intent.putStringArrayListExtra(AppKey.MULTIPLE_INCORRECT_BOGI, viewModel.inCorrectBogiList)
+
         startActivity(intent)
         finish()
     }

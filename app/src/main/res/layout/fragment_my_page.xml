@@ -9,6 +9,7 @@
 
     <!-- 로그인 유도 화면 -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        tools:visibility="visible"
         android:id="@+id/myPageLogInUdoConstLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
 
         <EditText
             android:id="@+id/myPageEmailEditText"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/sign_up_background2"
@@ -111,7 +112,7 @@
 
         <EditText
             android:id="@+id/myPagePasswordEditText"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/sign_up_background2"
@@ -155,6 +156,7 @@
     <!-- 마이페이지 화면 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/myPageMyPageConstLayout"
+        tools:visibility="invisible"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"

@@ -19,6 +19,11 @@ internal class SubjectiveQuizViewModel(
     //전체 퀴즈 리스트
     lateinit var quizList: List<String>
 
+    //사용자의 문제
+    var inCorrectQuizList: ArrayList<String> = arrayListOf()
+    //시용자의 문제 정답
+    var inCorrectBogiList: ArrayList<String> = arrayListOf()
+
     override fun fetchData(): Job = viewModelScope.launch {
         _subjectiveQuizLiveData.postValue(SubjectiveQuizState.Loading)
     }
@@ -38,5 +43,10 @@ internal class SubjectiveQuizViewModel(
 
     fun getQuizText(index: Int): String{
         return quizList[index]
+    }
+
+    fun addQuiz(quiz: String, bogi: String){
+        inCorrectQuizList.add(quiz)
+        inCorrectBogiList.add(bogi)
     }
 }

@@ -152,6 +152,7 @@
                         android:id="@+id/ActivityMultipleChoiceQuizSelect1RadioButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
                         tools:ignore="HardcodedText"
                         tools:text="쓰레드는 쓰레기라는 단어에서 유래했다" />
 
@@ -159,6 +160,8 @@
                         android:id="@+id/ActivityMultipleChoiceQuizSelect2RadioButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        tools:background="@drawable/background_multiple_answer"
                         tools:ignore="HardcodedText"
                         tools:text="쓰레드래곤볼링장독대나무다리어카센터" />
 
@@ -166,6 +169,7 @@
                         android:id="@+id/ActivityMultipleChoiceQuizSelect3RadioButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
                         tools:ignore="HardcodedText"
                         tools:text="쓰레드는 최대 1개만 존재할 수 있다" />
 
@@ -173,6 +177,7 @@
                         android:id="@+id/ActivityMultipleChoiceQuizSelect4RadioButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
                         tools:ignore="HardcodedText"
                         tools:text="쓰레드는 프로세스와 아무런 연관이 없다." />
 

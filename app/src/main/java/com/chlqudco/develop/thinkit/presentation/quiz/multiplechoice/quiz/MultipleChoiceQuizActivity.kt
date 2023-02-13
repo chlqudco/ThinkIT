@@ -2,7 +2,9 @@ package com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import androidx.core.view.isVisible
+import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.ActivityMultipleChoiceQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.result.MultipleChoiceResultActivity
@@ -41,12 +43,16 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
 
             isSendButtonChecked = false
 
+            //백그라운드 초기화
+            initBackground()
+
             // 마지막 문제인 경우 결과 화면으로 이동
             if (quizCount == 10){
                 goResultActivity()
             } else{
                 showNextQuiz()
             }
+
         }
 
         //제출 버튼 클릭 리스너
@@ -78,14 +84,25 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
         }
     }
 
+    private fun initBackground() = with(binding) {
+        ActivityMultipleChoiceQuizSelect1RadioButton.setBackgroundColor(Color.WHITE)
+        ActivityMultipleChoiceQuizSelect2RadioButton.setBackgroundColor(Color.WHITE)
+        ActivityMultipleChoiceQuizSelect3RadioButton.setBackgroundColor(Color.WHITE)
+        ActivityMultipleChoiceQuizSelect4RadioButton.setBackgroundColor(Color.WHITE)
+    }
+
     private fun checkCorrectAnswer(): Boolean {
         if (binding.ActivityMultipleChoiceQuizSelect1RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect1RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect1RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         } else if (binding.ActivityMultipleChoiceQuizSelect2RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect2RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect2RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         } else if (binding.ActivityMultipleChoiceQuizSelect3RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect3RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect3RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         } else if (binding.ActivityMultipleChoiceQuizSelect4RadioButton.isChecked && binding.ActivityMultipleChoiceQuizSelect4RadioButton.text == originAnswer){
+            binding.ActivityMultipleChoiceQuizSelect4RadioButton.setButtonDrawable(R.drawable.background_multiple_answer)
             return true
         }
         return false
@@ -118,6 +135,7 @@ internal class MultipleChoiceQuizActivity : BaseActivity<MultipleChoiceQuizViewM
         startActivity(intent)
         finish()
     }
+
 
     override fun observeData() {
         viewModel.multipleChoiceQuizLiveData.observe(this){

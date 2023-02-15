@@ -9,7 +9,7 @@
 
     <!-- 로그인 유도 화면 -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        tools:visibility="visible"
+        tools:visibility="invisible"
         android:id="@+id/myPageLogInUdoConstLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
     <!-- 마이페이지 화면 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/myPageMyPageConstLayout"
-        tools:visibility="invisible"
+        tools:visibility="visible"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -251,6 +251,14 @@
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(미구현)"
+                    android:gravity="end"
+                    android:layout_gravity="center"
+                    tools:ignore="HardcodedText" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -277,6 +285,13 @@
                     android:text="저장된 틀린 문제 보기"
                     android:textColor="@color/black"
                     android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(미구현)"
+                    android:gravity="end"
+                    android:layout_gravity="center"
                     tools:ignore="HardcodedText" />
 
             </LinearLayout>
@@ -307,6 +322,13 @@
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(미구현)"
+                    android:gravity="end"
+                    android:layout_gravity="center"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <LinearLayout
@@ -334,6 +356,13 @@
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(미구현)"
+                    android:gravity="end"
+                    android:layout_gravity="center"
+                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
 

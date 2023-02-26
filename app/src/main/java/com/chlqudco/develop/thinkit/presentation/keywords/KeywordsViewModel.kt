@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.chlqudco.develop.thinkit.data.entity.KeywordsEntity
+import com.chlqudco.develop.thinkit.domain.concept.*
 import com.chlqudco.develop.thinkit.domain.concept.DeleteKeywordDBUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsByQueryUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
@@ -16,7 +17,8 @@ internal class KeywordsViewModel(
     private val getKeywordsUseCase: GetKeywordsUseCase,
     private val getKeywordsByQueryUseCase: GetKeywordsByQueryUseCase,
     private val deleteKeywordDBUseCase: DeleteKeywordDBUseCase,
-    private val insertKeywordUseCase: InsertKeywordUseCase
+    private val insertKeywordUseCase: InsertKeywordUseCase,
+    private val sendKeywordUseCase: SendFavoriteKeywordUseCase
 ): BaseViewModel() {
 
     private var _keywordsStateLiveData = MutableLiveData<KeywordsState>(KeywordsState.UnInitialized)
@@ -96,6 +98,13 @@ internal class KeywordsViewModel(
             queryKeywords.postValue(response)
             //테스트를 위한 저장
             _keywordListLiveData.postValue(response)
+        }
+    }
+
+    //즐겨찾기 전송 메소드
+    fun sendFavoriteKeyword(keyword: String, token: String, isClicked: Boolean){
+        viewModelScope.launch {
+            sendKeywordUseCase(keyword, token, isClicked)
         }
     }
 

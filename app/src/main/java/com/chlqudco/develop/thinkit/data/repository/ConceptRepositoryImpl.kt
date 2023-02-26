@@ -13,47 +13,58 @@ class ConceptRepositoryImpl(
     private val conceptApiService: ConceptApiService,
     private val keywordDao: KeywordDao,
     private val ioDispatcher: CoroutineDispatcher
-): ConceptRepository {
+) : ConceptRepository {
 
     //Retrofit
-    override suspend fun getKeywordsList(subject: String): List<String> = withContext(ioDispatcher) {
-        try {
-            val response = conceptApiService.getKeywords(subject)
-            return@withContext if (response.isSuccessful){
-                Log.e("qweqw","asfasfasfafs")
-                response.body()?.keywordsList ?: listOf()
-            } else{
-                Log.e("qweqw","$222222222222222222")
-                listOf()
+    override suspend fun getKeywordsList(subject: String): List<String> =
+        withContext(ioDispatcher) {
+            try {
+                val response = conceptApiService.getKeywords(subject)
+                return@withContext if (response.isSuccessful) {
+                    Log.e("qweqw", "asfasfasfafs")
+                    response.body()?.keywordsList ?: listOf()
+                } else {
+                    Log.e("qweqw", "$222222222222222222")
+                    listOf()
+                }
+            } catch (exception: Exception) {
+                Log.e("ERROOR", exception.message ?: "")
+                return@withContext listOf()
             }
-        } catch (exception: Exception){
-            Log.e("ERROOR",exception.message ?: "")
-            return@withContext listOf()
         }
-    }
 
     override suspend fun getContent(keyword: String): String = withContext(ioDispatcher) {
         try {
             val response = conceptApiService.getContent(keyword)
-            return@withContext if (response.isSuccessful){
+            return@withContext if (response.isSuccessful) {
                 response.body()?.content ?: ""
-            } else{
+            } else {
                 ""
             }
-        } catch (exception: Exception){
+        } catch (exception: Exception) {
             return@withContext ""
         }
     }
 
-    // DB
-    override suspend fun getKeywordsByQuery(concept: String): List<String> = withContext(ioDispatcher) {
-        val response = keywordDao.getFindKeywords(concept)
-        val resultList: MutableList<String> = mutableListOf()
-        for (item in response){
-            resultList.add(item.keyword)
-        }
-        return@withContext resultList.toList()
+    //즐겨찾기
+    override suspend fun sendFavoriteKeyword(
+        keyword: String,
+        token: String,
+        isClicked: Boolean
+    ): String {
+        return ""
     }
+
+    // DB
+    override suspend fun getKeywordsByQuery(concept: String): List<String> =
+        withContext(ioDispatcher) {
+            val response = keywordDao.getFindKeywords(concept)
+            val resultList: MutableList<String> = mutableListOf()
+            for (item in response) {
+                resultList.add(item.keyword)
+            }
+            return@withContext resultList.toList()
+        }
 
     override suspend fun deleteKeywords(concept: String) {
         keywordDao.deleteKeywords(concept)

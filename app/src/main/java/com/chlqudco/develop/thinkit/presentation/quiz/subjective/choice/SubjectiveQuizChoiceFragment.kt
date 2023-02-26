@@ -9,6 +9,7 @@ import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizActivity
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ANDROID
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ATTITUDE
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_CBC
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_CS
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DEVELOPER
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_SPRING
@@ -42,6 +43,9 @@ internal class SubjectiveQuizChoiceFragment : BaseFragment<SubjectiveQuizChoiceV
             if (binding.FragmentQuizChoiceDeveloperCheckBox.isChecked) { subjectList.add(KEYWORD_DEVELOPER) }
             if (binding.FragmentQuizChoiceAndroidCheckBox.isChecked) { subjectList.add(KEYWORD_ANDROID) }
             if (binding.FragmentQuizChoiceSpringCheckBox.isChecked) { subjectList.add(KEYWORD_SPRING) }
+
+            //최병채
+            if (binding.FragmentQuizChoiceCBCCheckBox.isChecked) { subjectList.add(KEYWORD_CBC) }
 
             //아무것도 체크 안한 경우 나가기
             if (subjectList.isEmpty()){

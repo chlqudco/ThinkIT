@@ -1,6 +1,8 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
 import android.annotation.SuppressLint
+import android.util.Log
+import android.widget.ImageView
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
@@ -31,10 +33,14 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         binding.FragmentKeywordsEmptyTextView.isVisible = false
 
         //어댑터 연결
-        adapter = KeywordAdapter(keywordClickListener = {
-            (activity as MainActivity).changeFragmentKeywordsToExplanation(it)
-            findNavController().navigate(R.id.action_keywordsFragment_to_explanationWebViewFragment)
-        })
+        adapter = KeywordAdapter(getUserToken(),
+            keywordClickListener = {
+                (activity as MainActivity).changeFragmentKeywordsToExplanation(it)
+                findNavController().navigate(R.id.action_keywordsFragment_to_explanationWebViewFragment)
+            },
+            favoriteClickListener = { keyword, isClicked ->
+                sendKeyword(keyword, isClicked)
+            })
 
         binding.FragmentKeywordsRecyclerView.adapter = adapter
         binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -61,6 +67,20 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
             adapter.keywordList = it
             adapter.notifyDataSetChanged()
         }
+
+        //즐겨찾기 여부 다 표시해야 되잖아, 가능 한 일?
+
+    }
+
+    private fun sendKeyword(keyword: String, isClicked: Boolean) {
+        // 토큰 값 확인
+        val userToken = getUserToken()
+        if (userToken.isEmpty()){
+            showToastMessage("로그인 해주세요")
+            return
+        }
+        // 전송
+        viewModel.sendFavoriteKeyword(keyword, userToken, isClicked)
     }
 
     override fun onResume() {

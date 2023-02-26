@@ -15,6 +15,14 @@ class TestConceptRepository : ConceptRepository {
         TODO("Not yet implemented")
     }
 
+    override suspend fun sendFavoriteKeyword(
+        keyword: String,
+        token: String,
+        isClicked: Boolean
+    ): String {
+        TODO("Not yet implemented")
+    }
+
 
     //원래는 디비
    override suspend fun getKeywordsByQuery(concept: String): List<String> {

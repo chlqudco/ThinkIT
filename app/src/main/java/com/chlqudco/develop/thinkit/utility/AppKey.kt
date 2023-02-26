@@ -8,10 +8,11 @@ object AppKey {
     const val KEYWORD_OS = "운영체제"
     const val KEYWORD_NETWORK = "네트워크"
     const val KEYWORD_AI = "인공지능"
-    const val KEYWORD_COMPUTER_STRUCTURE = "컴퓨터 구조"
 
     const val KEYWORD_ANDROID = "안드로이드"
     const val KEYWORD_SPRING = "스프링"
+
+    const val KEYWORD_CBC = "private"
 
     const val KEYWORD_ATTITUDE = "인성"
     const val KEYWORD_CS = "CS"

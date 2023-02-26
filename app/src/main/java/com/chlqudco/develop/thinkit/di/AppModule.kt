@@ -61,6 +61,7 @@ internal val appModule = module {
     factory { InsertKeywordUseCase(get()) }
     factory { GetLogInTokenUseCase(get()) }
     factory { SignUpUseCase(get()) }
+    factory { SendFavoriteKeywordUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -89,7 +90,7 @@ internal val appModule = module {
     viewModel { MainViewModel() }
     viewModel { QuizChoiceViewModel() }
     viewModel { ConceptViewModel(get()) }
-    viewModel { KeywordsViewModel(get(), get(), get(), get()) }
+    viewModel { KeywordsViewModel(get(), get(), get(), get(), get()) }
     viewModel { ExplanationViewModel(get()) }
     viewModel { MultipleChoiceQuizViewModel(get()) }
     viewModel { MultipleChoiceResultViewModel() }

@@ -93,7 +93,7 @@
         android:layout_height="0dp"
         android:layout_margin="30dp"
         android:background="@drawable/background_explanation"
-        app:layout_constraintBottom_toTopOf="@id/ActivitySubjectiveQuizNextButton"
+        app:layout_constraintBottom_toTopOf="@id/ActivitySubjectQuizResetRecordButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ActivitySubjectiveQuizGuideLineTextView2" />
@@ -146,6 +146,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ActivitySubjectQuizResetRecordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:visibility="invisible"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/ActivitySubjectiveQuizRecordButton"
+        app:layout_constraintEnd_toEndOf="@id/ActivitySubjectiveQuizRecordButton"
+        app:layout_constraintBottom_toTopOf="@id/ActivitySubjectiveQuizRecordButton"
+        android:text="reset"
+        android:textColor="@color/black"
+        android:background="@null"
+        tools:ignore="HardcodedText" />
+
+    <com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.RecordButton
+        android:id="@+id/ActivitySubjectiveQuizRecordButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@id/ActivitySubjectiveQuizNextButton"
+        app:layout_constraintBottom_toBottomOf="@id/ActivitySubjectiveQuizNextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:src="@drawable/ic_record"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

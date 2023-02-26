@@ -10,6 +10,9 @@ interface ConceptRepository {
 
     suspend fun getContent(keyword: String): String
 
+    //즐겨찾기
+    suspend fun sendFavoriteKeyword(keyword: String, token: String, isClicked: Boolean): String
+
 
     //DB
     suspend fun getKeywordsByQuery(concept: String): List<String>

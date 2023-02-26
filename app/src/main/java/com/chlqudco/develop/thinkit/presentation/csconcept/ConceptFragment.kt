@@ -1,7 +1,5 @@
 package com.chlqudco.develop.thinkit.presentation.csconcept
 
-import android.app.AlertDialog
-import android.widget.EditText
 import androidx.navigation.fragment.findNavController
 import com.chlqudco.develop.thinkit.R
 import com.chlqudco.develop.thinkit.databinding.FragmentConceptBinding
@@ -9,7 +7,6 @@ import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_AI
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_ALGORITHM
-import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_COMPUTER_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATABASE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
 import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_NETWORK

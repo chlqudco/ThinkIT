@@ -1,10 +1,14 @@
 package com.chlqudco.develop.thinkit.data.network
 
+import com.chlqudco.develop.thinkit.data.entity.KeywordFavoriteEntity
 import com.chlqudco.develop.thinkit.data.response.ContentResponse
+import com.chlqudco.develop.thinkit.data.response.KeywordFavoriteResponse
 import com.chlqudco.develop.thinkit.data.response.KeywordsResponse
 import com.chlqudco.develop.thinkit.data.response.MultipleChoiceQuizResponse
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -19,5 +23,10 @@ interface ConceptApiService {
     suspend fun getContent(
         @Path("keywordName") keywordName: String
     ): Response<ContentResponse>
+
+    @POST("auth/favorites/keywords/{keyword}")
+    suspend fun favoriteKeyword(
+        @Body keywordFavoriteEntity: KeywordFavoriteEntity
+    ): Response<KeywordFavoriteResponse>
 
 }

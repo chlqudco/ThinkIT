@@ -22,4 +22,8 @@
     <string name="android">안드로이드</string>
     <string name="spring">스프링</string>
     <string name="underlineLogIn"><u>회원가입</u></string>
+
+    <color name="gray">#FFBDBDBD</color>
+    <color name="light_gray">#FFEFEFEF</color>
+    <color name="dark_gray">#FF212121</color>
 </resources>

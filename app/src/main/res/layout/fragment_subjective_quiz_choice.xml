@@ -73,6 +73,13 @@
             android:text="스프링 with Java"
             tools:ignore="HardcodedText" />
 
+        <CheckBox
+            android:id="@+id/FragmentQuizChoiceCBCCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="최병채"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 
 

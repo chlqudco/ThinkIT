@@ -49,7 +49,7 @@
             android:id="@+id/FragmentQuizChoiceCSCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="컴퓨터 공학 (194문제)"
+            android:text="컴퓨터 공학 (211문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox

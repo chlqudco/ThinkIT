@@ -42,42 +42,42 @@
             android:id="@+id/FragmentQuizChoiceAttitudeCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="인성 면접"
+            android:text="인성 면접 (207문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceCSCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CS(컴퓨터 공학)"
+            android:text="컴퓨터 공학 (194문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceDeveloperCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="개발자 공통"
+            android:text="개발자 공통 (130문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="안드로이드 with Kotlin"
+            android:text="Android with Kotlin (436문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceSpringCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="스프링 with Java"
+            android:text="Spring with Java (미구현)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceCBCCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="최병채"
+            android:text="최병채 (369문제)"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

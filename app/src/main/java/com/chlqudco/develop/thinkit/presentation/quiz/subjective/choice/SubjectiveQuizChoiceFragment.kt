@@ -3,6 +3,7 @@ package com.chlqudco.develop.thinkit.presentation.quiz.subjective.choice
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.FragmentSubjectiveQuizChoiceBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
@@ -29,6 +30,9 @@ internal class SubjectiveQuizChoiceFragment : BaseFragment<SubjectiveQuizChoiceV
     }
 
     private fun initViews() {
+        //최병채 감추기
+        binding.FragmentQuizChoiceCBCCheckBox.isVisible = viewModel.clickCount >= 5
+
         //이름 바꾸기
         (activity as MainActivity).setTopTextViewText("면접 대비")
 
@@ -58,6 +62,14 @@ internal class SubjectiveQuizChoiceFragment : BaseFragment<SubjectiveQuizChoiceV
             intent.putStringArrayListExtra(QUIZ_SUBJECT_LIST, subjectList)
             startActivity(intent)
 
+        }
+
+        //최병채 나타나게 하기
+        binding.FragmentSubjectiveQuizChoiceTopTextView.setOnClickListener {
+            viewModel.clickCount++
+            if(viewModel.clickCount > 5){
+                binding.FragmentQuizChoiceCBCCheckBox.isVisible = true
+            }
         }
     }
 

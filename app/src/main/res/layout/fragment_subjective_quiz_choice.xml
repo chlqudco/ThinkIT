@@ -49,14 +49,14 @@
             android:id="@+id/FragmentQuizChoiceCSCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="컴퓨터 공학 (211문제)"
+            android:text="컴퓨터 공학 (307문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceDeveloperCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="개발자 공통 (130문제)"
+            android:text="개발자 공통 (194문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox

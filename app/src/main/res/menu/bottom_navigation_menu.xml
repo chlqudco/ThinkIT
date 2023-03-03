@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/subjectiveQuizFragment"
+        android:icon="@drawable/ic_quiz"
+        android:title="면접 대비"
+        tools:ignore="HardcodedText" />
+
+    <item
         android:id="@+id/conceptFragment"
         android:icon="@drawable/ic_book"
         android:title="CS 개념"
@@ -18,12 +24,6 @@
         android:id="@+id/quizFragment"
         android:icon="@drawable/ic_quiz"
         android:title="객관식 퀴즈"
-        tools:ignore="HardcodedText" />
-
-    <item
-        android:id="@+id/subjectiveQuizFragment"
-        android:icon="@drawable/ic_quiz"
-        android:title="면접 대비"
         tools:ignore="HardcodedText" />
 
     <item

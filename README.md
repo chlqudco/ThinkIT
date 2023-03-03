@@ -1,4 +1,4 @@
-- 버전 : Android Studio Dolphin | 2021.3.1
+- 버전 : Android Studio Dolphin | 2021.3.1  ->  Android Studio Electric Eel | 2022.1.1 Patch 1
 
 - 기술 스택
 
@@ -102,6 +102,8 @@
 
 - 2022-12-01 : 컴퓨터구조 과목 추가 및 화면 오류 수정
 ---
+
+- 이후는 업데이트 현황에서 확인 가능
 
 ## 화면 예시 ##
 - ![1](https://user-images.githubusercontent.com/68932465/204839282-6499c1d9-3b8a-43cc-ba41-88c3c3dbb2ab.jpg)

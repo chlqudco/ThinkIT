@@ -7,7 +7,6 @@
     android:background="@color/white"
     tools:context=".presentation.quiz.subjective.choice.SubjectiveQuizChoiceFragment">
 
-
     <TextView
         android:id="@+id/FragmentSubjectiveQuizChoiceTopTextView"
         android:layout_width="wrap_content"
@@ -49,7 +48,7 @@
             android:id="@+id/FragmentQuizChoiceCSCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="컴퓨터 공학 (307문제)"
+            android:text="컴퓨터 공학 (268문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
@@ -70,7 +69,7 @@
             android:id="@+id/FragmentQuizChoiceSpringCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Spring with Java (미구현)"
+            android:text="Spring with Java (15문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox

@@ -9,6 +9,7 @@ import android.net.Uri
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import androidx.lifecycle.MutableLiveData
 import com.chlqudco.develop.thinkit.databinding.ActivitySubjectiveQuizBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultActivity
@@ -82,21 +83,25 @@ internal class SubjectiveQuizActivity : BaseActivity<SubjectiveQuizViewModel, Ac
     }
 
     private fun setQuizByIndex(index: Int) {
-        val quiz = viewModel.getQuizText(index).split("@")[0]
-        val answer1 = viewModel.getQuizText(index).split("@")[1]
-        val answer2 = answer1.split(".")
+        try{
+            val quiz = viewModel.getQuizText(index).split("@")[0]
+            val answer1 = viewModel.getQuizText(index).split("@")[1]
+            val answer2 = answer1.split(".")
 
-        var answer: String = ""
-        for (item in answer2){
-            answer += (" $item.\n\n")
+            var answer: String = ""
+            for (item in answer2){
+                answer += (" $item.\n\n")
+            }
+
+            //뷰모델에 저장
+            viewModel.addQuiz(quiz, answer.dropLast(3))
+
+            binding.ActivitySubjectiveQuizQuizTextView.text = quiz
+            binding.ActivitySubjectiveQuizBestAnswerTextView.text = answer.dropLast(3)
+        } catch (e: Exception){
+            showToastMessage("오류가 발생했습니다. 다시 시도해주세요.")
+            finish()
         }
-
-        //뷰모델에 저장
-        viewModel.addQuiz(quiz, answer.dropLast(3))
-
-        binding.ActivitySubjectiveQuizQuizTextView.text = quiz
-        binding.ActivitySubjectiveQuizBestAnswerTextView.text = answer.dropLast(3)
-
     }
 
     private fun requestQuizList() {

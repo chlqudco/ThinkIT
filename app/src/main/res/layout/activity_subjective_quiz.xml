@@ -68,6 +68,7 @@
         android:layout_margin="30dp"
         android:background="@drawable/background_explanation"
         android:padding="10dp"
+        android:fontFamily="@font/app_font_2"
         tools:text="프로세스와 쓰레드의 차이에 대해 말하시오"
         android:textColor="@color/black"
         android:textSize="25sp"

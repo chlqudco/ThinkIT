@@ -247,6 +247,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="개념 즐겨찾기 목록 보기"
+                    android:fontFamily="@font/appfont"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
@@ -283,6 +284,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="저장된 틀린 문제 보기"
+                    android:fontFamily="@font/appfont"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
@@ -319,6 +321,7 @@
                     android:layout_gravity="center"
                     android:text="오류 제보 기능"
                     android:textColor="@color/black"
+                    android:fontFamily="@font/appfont"
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
 
@@ -352,6 +355,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="나만의 문제 만들기"
+                    android:fontFamily="@font/appfont"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />

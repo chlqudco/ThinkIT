@@ -9,6 +9,7 @@ import com.chlqudco.develop.thinkit.domain.concept.DeleteKeywordDBUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsByQueryUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.domain.concept.InsertKeywordUseCase
+import com.chlqudco.develop.thinkit.domain.mypage.GetUserTokenUseCase
 import com.chlqudco.develop.thinkit.presentation.base.BaseViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -18,7 +19,8 @@ internal class KeywordsViewModel(
     private val getKeywordsByQueryUseCase: GetKeywordsByQueryUseCase,
     private val deleteKeywordDBUseCase: DeleteKeywordDBUseCase,
     private val insertKeywordUseCase: InsertKeywordUseCase,
-    private val sendKeywordUseCase: SendFavoriteKeywordUseCase
+    private val sendKeywordUseCase: SendFavoriteKeywordUseCase,
+    private val getUserTokenUseCase: GetUserTokenUseCase
 ): BaseViewModel() {
 
     private var _keywordsStateLiveData = MutableLiveData<KeywordsState>(KeywordsState.UnInitialized)
@@ -106,6 +108,10 @@ internal class KeywordsViewModel(
         viewModelScope.launch {
             sendKeywordUseCase(keyword, token, isClicked)
         }
+    }
+
+    suspend fun getUserToken(): String{
+        return getUserTokenUseCase()
     }
 
 }

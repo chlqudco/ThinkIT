@@ -1,8 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
 import android.annotation.SuppressLint
-import android.util.Log
-import android.widget.ImageView
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
@@ -12,6 +10,9 @@ import com.chlqudco.develop.thinkit.databinding.FragmentKeywordsBinding
 import com.chlqudco.develop.thinkit.presentation.adapter.KeywordAdapter
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
 internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywordsBinding>() {
@@ -32,19 +33,21 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
         binding.FragmentKeywordsProgressBar.isVisible = true
         binding.FragmentKeywordsEmptyTextView.isVisible = false
 
-        //어댑터 연결
-        adapter = KeywordAdapter(getUserToken(),
-            keywordClickListener = {
-                (activity as MainActivity).changeFragmentKeywordsToExplanation(it)
-                findNavController().navigate(R.id.action_keywordsFragment_to_explanationWebViewFragment)
-            },
-            favoriteClickListener = { keyword, isClicked ->
-                sendKeyword(keyword, isClicked)
-            })
+        CoroutineScope(Dispatchers.Main).launch {
+            //어댑터 연결
+            adapter = KeywordAdapter(viewModel.getUserToken(),
+                keywordClickListener = {
+                    (activity as MainActivity).changeFragmentKeywordsToExplanation(it)
+                    findNavController().navigate(R.id.action_keywordsFragment_to_explanationWebViewFragment)
+                },
+                favoriteClickListener = { keyword, isClicked ->
+                    sendKeyword(keyword, isClicked)
+                })
 
-        binding.FragmentKeywordsRecyclerView.adapter = adapter
-        binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
+            binding.FragmentKeywordsRecyclerView.adapter = adapter
+            binding.FragmentKeywordsRecyclerView.layoutManager = LinearLayoutManager(context)
 
+        }
 
         //검색 창 연결
         binding.FragmentKeywordsSearchEditText.addTextChangedListener { text ->
@@ -73,14 +76,16 @@ internal class KeywordsFragment : BaseFragment<KeywordsViewModel, FragmentKeywor
     }
 
     private fun sendKeyword(keyword: String, isClicked: Boolean) {
-        // 토큰 값 확인
-        val userToken = getUserToken()
-        if (userToken.isEmpty()){
-            showToastMessage("로그인 해주세요")
-            return
+        CoroutineScope(Dispatchers.Main).launch {
+            // 토큰 값 확인
+            val userToken = viewModel.getUserToken()
+            if (userToken.isEmpty()){
+                showToastMessage("로그인 해주세요")
+                return@launch
+            }
+            // 전송
+            viewModel.sendFavoriteKeyword(keyword, userToken, isClicked)
         }
-        // 전송
-        viewModel.sendFavoriteKeyword(keyword, userToken, isClicked)
     }
 
     override fun onResume() {

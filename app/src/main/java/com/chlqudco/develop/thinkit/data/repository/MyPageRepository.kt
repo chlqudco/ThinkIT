@@ -8,4 +8,11 @@ interface MyPageRepository {
 
     suspend fun requestSignUp(userName: String, password: String, nickName: String): String
 
+    suspend fun getUserToken(): String
+
+    suspend fun getUserNickName(): String
+
+    suspend fun initUserInfo()
+
+    suspend fun saveTokenAndNickName(token: String, nickname: String)
 }

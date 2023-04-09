@@ -1,12 +1,9 @@
 package com.chlqudco.develop.thinkit.di
 
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.preferencesDataStoreFile
 import com.chlqudco.develop.thinkit.data.database.provideDao
 import com.chlqudco.develop.thinkit.data.database.provideDataBase
-import com.chlqudco.develop.thinkit.data.network.*
 import com.chlqudco.develop.thinkit.data.network.buildOkHttpClient
 import com.chlqudco.develop.thinkit.data.network.provideGsonConverterFactory
 import com.chlqudco.develop.thinkit.data.network.provideThinkITApiService
@@ -21,7 +18,10 @@ import com.chlqudco.develop.thinkit.domain.concept.GetContentUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsByQueryUseCase
 import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.domain.feedback.PostFeedbackUseCase
+import com.chlqudco.develop.thinkit.domain.mypage.*
 import com.chlqudco.develop.thinkit.domain.mypage.GetLogInTokenUseCase
+import com.chlqudco.develop.thinkit.domain.mypage.GetUserNickNameUseCase
+import com.chlqudco.develop.thinkit.domain.mypage.GetUserTokenUseCase
 import com.chlqudco.develop.thinkit.domain.mypage.SignUpUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetSubjectiveQuizUseCase
@@ -40,9 +40,7 @@ import com.chlqudco.develop.thinkit.presentation.quiz.subjective.choice.Subjecti
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.quiz.SubjectiveQuizViewModel
 import com.chlqudco.develop.thinkit.presentation.quiz.subjective.result.SubjectiveResultViewModel
 import com.chlqudco.develop.thinkit.presentation.signup.SignUpViewModel
-import com.chlqudco.develop.thinkit.utility.AppKey
 import com.chlqudco.develop.thinkit.utility.AppKey.DATASTORE_NAME
-import com.chlqudco.develop.thinkit.utility.AppKey.SHARED_PREFERENCE_NAME
 import kotlinx.coroutines.Dispatchers
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -62,6 +60,10 @@ internal val appModule = module {
     factory { GetLogInTokenUseCase(get()) }
     factory { SignUpUseCase(get()) }
     factory { SendFavoriteKeywordUseCase(get()) }
+    factory { GetUserNickNameUseCase(get()) }
+    factory { GetUserTokenUseCase(get()) }
+    factory { InitUserInfoUseCase(get()) }
+    factory { SaveTokenAndNickNameUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -84,13 +86,13 @@ internal val appModule = module {
     single<ConceptRepository> { ConceptRepositoryImpl(get(), get(), get()) }
     single<QuizRepository> { QuizRepositoryImpl(get(), get()) }
     single<FeedbackRepository> {FeedbackRepositoryImpl(get(), get())}
-    single<MyPageRepository> { MyPageRepositoryImpl(get(), get()) }
+    single<MyPageRepository> { MyPageRepositoryImpl(get(), get(), get()) }
 
     //뷰모델
     viewModel { MainViewModel() }
     viewModel { QuizChoiceViewModel() }
     viewModel { ConceptViewModel(get()) }
-    viewModel { KeywordsViewModel(get(), get(), get(), get(), get()) }
+    viewModel { KeywordsViewModel(get(), get(), get(), get(), get(), get()) }
     viewModel { ExplanationViewModel(get()) }
     viewModel { MultipleChoiceQuizViewModel(get()) }
     viewModel { MultipleChoiceResultViewModel() }
@@ -100,13 +102,11 @@ internal val appModule = module {
     viewModel { ExplanationWebViewViewModel() }
     viewModel { JobConceptViewModel() }
     viewModel { SubjectiveQuizChoiceViewModel() }
-    viewModel { MyPageViewModel(get(), get()) }
+    viewModel { MyPageViewModel(get(), get(), get(), get(), get()) }
     viewModel { SignUpViewModel(get()) }
 
 
     //dataStore
     single { PreferenceDataStoreFactory.create( produceFile = { androidContext().preferencesDataStoreFile(DATASTORE_NAME) }) }
 
-    //Shared Preference
-    single { androidContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE) }
 }

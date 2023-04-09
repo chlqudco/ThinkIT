@@ -11,21 +11,26 @@ import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity
 import com.chlqudco.develop.thinkit.presentation.signup.SignUpActivity
 import com.chlqudco.develop.thinkit.utility.AppKey
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 
-internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBinding>(){
+internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBinding>() {
 
     override val viewModel by inject<MyPageViewModel>()
 
-    override fun getViewBinding(): FragmentMyPageBinding = FragmentMyPageBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentMyPageBinding =
+        FragmentMyPageBinding.inflate(layoutInflater)
 
     override fun observeData() {
-        viewModel.logInStateLiveData.observe(this){
-            when(it){
+        viewModel.logInStateLiveData.observe(this) {
+            when (it) {
                 is MyPageState.UnInitialized -> {
                     initViews()
                 }
-                is MyPageState.Loading -> { }
+                is MyPageState.Loading -> {}
                 is MyPageState.Success -> {
                     handleSuccessState(it)
                 }
@@ -45,19 +50,21 @@ internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBind
         registerListener()
 
         //1. 로그인 되어 있는지 확인하기
-        val isLogIn = viewModel.checkLogIn()
+        CoroutineScope(Dispatchers.Main).launch {
+            val isLogIn = viewModel.checkLogIn()
 
-        //2. 로그인 되어 있다면 내 정보 화면 보여주기
-        if(isLogIn){
-            //마이페이지 화면 불러오기
-            showMyPageView()
-            //이름 초기화
-            binding.myPageNameTextView.text = "${viewModel.getUserNickName()}님 반갑습니다"
-        }
+            //2. 로그인 되어 있다면 내 정보 화면 보여주기
+            if (isLogIn) {
+                //마이페이지 화면 불러오기
+                showMyPageView()
+                //이름 초기화
+                binding.myPageNameTextView.text = "${viewModel.getNickName()}님 반갑습니다"
+            }
 
-        //3. 로그인 안되어 있으면 가만히 있어
-        else {
-            hideMyPageView()
+            //3. 로그인 안되어 있으면 가만히 있어
+            else {
+                hideMyPageView()
+            }
         }
 
     }
@@ -67,7 +74,7 @@ internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBind
         binding.myPageLogInUdoConstLayout.isVisible = false
     }
 
-    private fun hideMyPageView(){
+    private fun hideMyPageView() {
         binding.myPageMyPageConstLayout.isVisible = false
         binding.myPageLogInUdoConstLayout.isVisible = true
     }
@@ -117,8 +124,10 @@ internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBind
     }
 
     private fun logOut() {
-        viewModel.logOut()
-        hideMyPageView()
+        CoroutineScope(Dispatchers.Main).launch{
+            viewModel.logOut()
+            hideMyPageView()
+        }
     }
 
     private fun moveSignUpActivity() {

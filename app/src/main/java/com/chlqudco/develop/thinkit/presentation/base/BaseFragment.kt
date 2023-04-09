@@ -63,8 +63,4 @@ internal abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragme
         sToast?.show()
     }
 
-    //유저 토큰 불러오기
-    fun getUserToken(): String {
-        return sharedPreferences.getString(AppKey.USER_TOKEN, "") ?: ""
-    }
 }

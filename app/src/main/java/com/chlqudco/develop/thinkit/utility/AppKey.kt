@@ -1,5 +1,7 @@
 package com.chlqudco.develop.thinkit.utility
 
+import androidx.datastore.preferences.core.stringPreferencesKey
+
 object AppKey {
 
     const val KEYWORD_DATA_STRUCTURE = "자료구조"
@@ -29,9 +31,7 @@ object AppKey {
     const val MULTIPLE_INCORRECT_BOGI = "InCorrectBogi"
 
     const val DATASTORE_NAME = "myPageToken"
-
-    const val SHARED_PREFERENCE_NAME = "myPagePreference"
-    const val USER_TOKEN = "userToken"
-    const val USER_NICK_NAME = "userNickName"
+    val DATASTORE_USER_TOKEN = stringPreferencesKey("user_token")
+    val DATASTORE_USER_NICKNAME = stringPreferencesKey("user_nickname")
 
 }

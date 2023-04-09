@@ -58,8 +58,4 @@ internal abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCom
         sToast?.show()
     }
 
-    //유저 토큰 불러오기
-    fun getUserToken(): String {
-        return sharedPreferences.getString(AppKey.USER_TOKEN, "") ?: ""
-    }
 }

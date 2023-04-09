@@ -1,4 +1,4 @@
-- 버전 : Android Studio Dolphin | 2021.3.1  ->  Android Studio Electric Eel | 2022.1.1 Patch 1
+- 버전 : Android Studio Dolphin | 2021.3.1  ->  Android Studio Electric Eel | 2022.1.1 Patch 2
 
 - 기술 스택
 
@@ -10,6 +10,7 @@
 6. Retrofit2
 7. Room DB
 8. ViewBinding
+9. DataStore
 
 ---
 

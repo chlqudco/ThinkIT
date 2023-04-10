@@ -10,7 +10,7 @@ import com.chlqudco.develop.thinkit.utility.AppKey
 import kotlinx.coroutines.Job
 import org.koin.android.ext.android.inject
 
-internal abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivity() {
+abstract class BaseActivity<VM: BaseViewModel, VB: ViewBinding>: AppCompatActivity() {
     var sToast: Toast? = null
 
     private val sharedPreferences: SharedPreferences by inject()

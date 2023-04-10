@@ -10,7 +10,7 @@ import com.chlqudco.develop.thinkit.databinding.ActivityMainBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseActivity
 import org.koin.android.ext.android.inject
 
-internal class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
+class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override val viewModel by inject<MainViewModel>()
 

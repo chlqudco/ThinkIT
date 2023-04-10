@@ -59,8 +59,8 @@ internal class KeywordsViewModel(
 
                 //DB에 차곡차곡 모으기
                 for(item in response){
-                    var keyword = KeywordsEntity(0, subject, item)
-                    insertKeywordUseCase(keyword)
+                    val keyword = KeywordsEntity(0, subject, item)
+                    insertKeyword(keyword)
                 }
 
                 //석세스로 들어가기
@@ -99,7 +99,7 @@ internal class KeywordsViewModel(
             val response = getKeywordsByQueryUseCase(concept)
             queryKeywords.postValue(response)
             //테스트를 위한 저장
-            _keywordListLiveData.postValue(response)
+            testKeywordsList.addAll(response)
         }
     }
 
@@ -114,4 +114,13 @@ internal class KeywordsViewModel(
         return getUserTokenUseCase()
     }
 
+    // DB에 키워드 저장
+    fun insertKeyword(keyword: KeywordsEntity){
+        viewModelScope.launch {
+            insertKeywordUseCase(keyword)
+        }
+    }
+
+    // for test
+    val testKeywordsList = mutableListOf<String>()
 }

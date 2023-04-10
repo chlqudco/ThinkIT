@@ -13,7 +13,7 @@ import kotlinx.coroutines.Job
 import org.koin.android.ext.android.inject
 import org.koin.java.KoinJavaComponent
 
-internal abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragment() {
+abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding>: Fragment() {
     var sToast: Toast? = null
 
 

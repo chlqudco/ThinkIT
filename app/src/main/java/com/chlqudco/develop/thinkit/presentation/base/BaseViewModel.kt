@@ -6,8 +6,7 @@ import com.chlqudco.develop.thinkit.domain.mypage.GetUserTokenUseCase
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-internal abstract class BaseViewModel(): ViewModel() {
-
+abstract class BaseViewModel(): ViewModel() {
     abstract fun fetchData(): Job
 
 }

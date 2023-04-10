@@ -48,21 +48,21 @@
             android:id="@+id/FragmentQuizChoiceCSCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="컴퓨터 공학 (268문제)"
+            android:text="컴퓨터 공학 (278문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceDeveloperCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="개발자 공통 (194문제)"
+            android:text="개발자 공통 (186문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android with Kotlin (436문제)"
+            android:text="Android with Kotlin (457문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
@@ -76,7 +76,7 @@
             android:id="@+id/FragmentQuizChoiceCBCCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="최병채 (369문제)"
+            android:text="최병채 (377문제)"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

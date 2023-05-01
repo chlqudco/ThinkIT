@@ -5,6 +5,7 @@ import com.chlqudco.develop.thinkit.data.response.ContentResponse
 import com.chlqudco.develop.thinkit.data.response.KeywordFavoriteResponse
 import com.chlqudco.develop.thinkit.data.response.KeywordsResponse
 import com.chlqudco.develop.thinkit.data.response.MultipleChoiceQuizResponse
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -28,5 +29,11 @@ interface ConceptApiService {
     suspend fun favoriteKeyword(
         @Body keywordFavoriteEntity: KeywordFavoriteEntity
     ): Response<KeywordFavoriteResponse>
+
+    // Flow 적용 연습
+    @GET("/api/keywords/{subjectName}")
+    suspend fun getKeywordsToFlow(
+        @Path("subjectName") subjectName: String
+    ) : Flow<Response<KeywordsResponse>>
 
 }

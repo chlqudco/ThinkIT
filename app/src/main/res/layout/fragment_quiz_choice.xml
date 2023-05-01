@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="과목 선택"
         android:textColor="@color/black"
+        android:fontFamily="@font/app_font_2"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/FragmentQuizChoiceConceptsLayout"
         app:layout_constraintEnd_toEndOf="parent"

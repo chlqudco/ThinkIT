@@ -21,10 +21,11 @@ import com.chlqudco.develop.thinkit.domain.feedback.PostFeedbackUseCase
 import com.chlqudco.develop.thinkit.domain.mypage.*
 import com.chlqudco.develop.thinkit.domain.mypage.GetLogInTokenUseCase
 import com.chlqudco.develop.thinkit.domain.mypage.GetUserNickNameUseCase
-import com.chlqudco.develop.thinkit.domain.mypage.GetUserTokenUseCase
+import com.chlqudco.develop.thinkit.domain.mypage.GetUserRefreshTokenUseCase
 import com.chlqudco.develop.thinkit.domain.mypage.SignUpUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetMultipleQuizUseCase
 import com.chlqudco.develop.thinkit.domain.quiz.GetSubjectiveQuizUseCase
+import com.chlqudco.develop.thinkit.presentation.chat.ChatViewModel
 import com.chlqudco.develop.thinkit.presentation.csconcept.ConceptViewModel
 import com.chlqudco.develop.thinkit.presentation.explanation.ExplanationViewModel
 import com.chlqudco.develop.thinkit.presentation.explanationwebview.ExplanationWebViewViewModel
@@ -61,9 +62,13 @@ internal val appModule = module {
     factory { SignUpUseCase(get()) }
     factory { SendFavoriteKeywordUseCase(get()) }
     factory { GetUserNickNameUseCase(get()) }
-    factory { GetUserTokenUseCase(get()) }
+    factory { GetUserRefreshTokenUseCase(get()) }
     factory { InitUserInfoUseCase(get()) }
     factory { SaveTokenAndNickNameUseCase(get()) }
+    factory { GetChatListUseCase(get()) }
+    factory { GetChatRoomIdUseCase(get()) }
+    factory { GetUserAccessTokenUseCase(get()) }
+    factory { GetChatRoomIdDataStoreUseCase(get()) }
 
     //코루틴
     single { Dispatchers.IO }
@@ -104,6 +109,7 @@ internal val appModule = module {
     viewModel { SubjectiveQuizChoiceViewModel() }
     viewModel { MyPageViewModel(get(), get(), get(), get(), get()) }
     viewModel { SignUpViewModel(get()) }
+    viewModel { ChatViewModel(get(), get(), get(), get()) }
 
 
     //dataStore

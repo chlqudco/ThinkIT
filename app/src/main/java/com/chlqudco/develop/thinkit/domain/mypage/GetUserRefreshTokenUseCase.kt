@@ -3,10 +3,10 @@ package com.chlqudco.develop.thinkit.domain.mypage
 import com.chlqudco.develop.thinkit.data.repository.MyPageRepository
 import com.chlqudco.develop.thinkit.domain.Usecase
 
-internal class SaveTokenAndNickNameUseCase(
+class GetUserRefreshTokenUseCase(
     private val myPageRepository: MyPageRepository
 ): Usecase {
-    suspend operator fun invoke(token: String, nickname: String) {
-        myPageRepository.saveRefreshTokenAndNickName(token, nickname)
+    suspend operator fun invoke(): String {
+        return myPageRepository.getUserRefreshToken()
     }
 }

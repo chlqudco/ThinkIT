@@ -7,6 +7,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import com.chlqudco.develop.thinkit.databinding.FragmentMyPageBinding
 import com.chlqudco.develop.thinkit.presentation.base.BaseFragment
+import com.chlqudco.develop.thinkit.presentation.chat.ChatActivity
 import com.chlqudco.develop.thinkit.presentation.main.MainActivity
 import com.chlqudco.develop.thinkit.presentation.quiz.multiplechoice.quiz.MultipleChoiceQuizActivity
 import com.chlqudco.develop.thinkit.presentation.signup.SignUpActivity
@@ -107,13 +108,18 @@ internal class MyPageFragment : BaseFragment<MyPageViewModel, FragmentMyPageBind
 
         //오류 제보
         myPageSendErrorButton.setOnClickListener {
-            showToastMessage("미구현입니다")
+            moveToChatActivity()
         }
 
         //나만의 문제
         myPageMyQuizButton.setOnClickListener {
             showToastMessage("미구현입니다")
         }
+    }
+
+    private fun moveToChatActivity() {
+        val intent = Intent(activity, ChatActivity::class.java)
+        startActivity(intent)
     }
 
     private fun logIn() {

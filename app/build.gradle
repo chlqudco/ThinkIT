@@ -13,8 +13,8 @@ android {
         applicationId "com.chlqudco.develop.thinkit"
         minSdk 26
         targetSdk 33
-        versionCode 26
-        versionName "26.0"
+        versionCode 27
+        versionName "27.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -113,4 +113,8 @@ dependencies {
     //DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
+    // socket.io
+    implementation('io.socket:socket.io-client:2.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
 }

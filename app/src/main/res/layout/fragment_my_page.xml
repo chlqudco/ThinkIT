@@ -319,19 +319,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="오류 제보 기능"
+                    android:text="오류 제보 하기"
                     android:textColor="@color/black"
                     android:fontFamily="@font/appfont"
                     android:textSize="20sp"
                     tools:ignore="HardcodedText" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="(미구현)"
-                    android:gravity="end"
-                    android:layout_gravity="center"
-                    tools:ignore="HardcodedText" />
             </LinearLayout>
 
             <LinearLayout

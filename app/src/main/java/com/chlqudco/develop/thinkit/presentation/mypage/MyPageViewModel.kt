@@ -9,12 +9,12 @@ import kotlinx.coroutines.launch
 import com.chlqudco.develop.thinkit.domain.mypage.*
 import com.chlqudco.develop.thinkit.domain.mypage.GetLogInTokenUseCase
 import com.chlqudco.develop.thinkit.domain.mypage.GetUserNickNameUseCase
-import com.chlqudco.develop.thinkit.domain.mypage.GetUserTokenUseCase
+import com.chlqudco.develop.thinkit.domain.mypage.GetUserRefreshTokenUseCase
 import com.chlqudco.develop.thinkit.domain.mypage.InitUserInfoUseCase
 
 internal class MyPageViewModel(
     private val getLogInTokenUseCase: GetLogInTokenUseCase,
-    private val getUserTokenUseCase : GetUserTokenUseCase,
+    private val getUserTokenUseCase : GetUserRefreshTokenUseCase,
     private val getUserNickNameUseCase: GetUserNickNameUseCase,
     private val initUserInfoUseCase: InitUserInfoUseCase,
     private val saveTokenAndNickNameUseCase: SaveTokenAndNickNameUseCase
@@ -45,13 +45,13 @@ internal class MyPageViewModel(
                 //성공한 경우
                 _logInStateLiveData.postValue(
                     MyPageState.Success(
-                        token = response.token,
+                        token = response.refreshToken,
                         nickName = response.nickname
                     )
                 )
 
                 //DataStore 에 토큰과 닉네임 저장
-                saveTokenAndNickNameUseCase(response.token, response.nickname)
+                saveTokenAndNickNameUseCase(response.refreshToken, response.nickname)
             }
         }
     }

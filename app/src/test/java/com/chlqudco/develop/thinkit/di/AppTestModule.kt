@@ -47,7 +47,7 @@ internal val appTestModule = module {
     factory { SignUpUseCase(get()) }
     factory { SendFavoriteKeywordUseCase(get()) }
     factory { GetUserNickNameUseCase(get()) }
-    factory { GetUserTokenUseCase(get()) }
+    factory { GetUserRefreshTokenUseCase(get()) }
     factory { InitUserInfoUseCase(get()) }
     factory { SaveTokenAndNickNameUseCase(get()) }
 

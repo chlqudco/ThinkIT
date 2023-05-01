@@ -31,7 +31,7 @@ abstract class BaseViewModelTest: KoinTest {
     val instantExecutorRule = InstantTaskExecutorRule()
 
     @Mock
-    private lateinit var context: Application
+    internal lateinit var context: Application
 
     private val dispatcher = TestCoroutineDispatcher()
 

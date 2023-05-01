@@ -1,6 +1,6 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
-internal sealed class KeywordsState {
+sealed class KeywordsState {
 
     object UnInitialized: KeywordsState()
 

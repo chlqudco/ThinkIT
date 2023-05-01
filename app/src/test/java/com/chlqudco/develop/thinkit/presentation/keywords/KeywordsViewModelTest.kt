@@ -1,49 +1,52 @@
 package com.chlqudco.develop.thinkit.presentation.keywords
 
+import androidx.room.Room
+import androidx.test.core.app.ApplicationProvider
+import com.chlqudco.develop.thinkit.data.database.KeywordsDatabase
 import com.chlqudco.develop.thinkit.data.entity.KeywordsEntity
+import com.chlqudco.develop.thinkit.domain.concept.GetKeywordsUseCase
 import com.chlqudco.develop.thinkit.domain.concept.InsertKeywordUseCase
 import com.chlqudco.develop.thinkit.presentation.base.BaseViewModelTest
+import com.chlqudco.develop.thinkit.utility.AppKey
+import com.chlqudco.develop.thinkit.utility.AppKey.KEYWORD_DATA_STRUCTURE
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.ObsoleteCoroutinesApi
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.test.runTest
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.koin.test.inject
 
-@OptIn(ObsoleteCoroutinesApi::class)
+@ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
-class KeywordsViewModelTest: BaseViewModelTest() {
+class KeywordsViewModelTest: BaseViewModelTest(){
 
-    private val keywordsViewModel: KeywordsViewModel by inject()
+    private val viewModel : KeywordsViewModel by inject()
 
     private val insertKeywordUseCase: InsertKeywordUseCase by inject()
+    private val getKeywordsUseCase: GetKeywordsUseCase by inject()
 
-    private val keyword = KeywordsEntity(
+    private val testKeyword = KeywordsEntity(
         id = 0,
-        concept = "자료구조",
+        concept = KEYWORD_DATA_STRUCTURE,
         keyword = "스택"
     )
 
     @Before
-    fun setUp(){
+    fun init(){
         initData()
     }
 
-    private fun initData() = runTest {
-        insertKeywordUseCase(keyword)
+    private fun initData() = runTest{
+        insertKeywordUseCase(testKeyword)
     }
 
     @Test
-    fun insert_keyword_test() = runTest {
-
-        delay(2000)
-
-        keywordsViewModel.getKeywordByDB("자료구조")
-
-        delay(2000)
-
-
+    fun test_get_keywords_by_db() = runTest {
+        viewModel.getKeywordByDB(KEYWORD_DATA_STRUCTURE)
+        val result = getKeywordsUseCase(KEYWORD_DATA_STRUCTURE)
+        assertThat(result).contains("스택")
     }
+
 }

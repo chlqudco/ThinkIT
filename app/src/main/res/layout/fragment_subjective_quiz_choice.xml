@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="과목 선택"
         android:textColor="@color/black"
+        android:fontFamily="@font/app_font_2"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/FragmentSubjectiveQuizChoiceConceptsLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
             android:id="@+id/FragmentQuizChoiceAttitudeCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="인성 면접 (207문제)"
+            android:text="인성 면접 (265문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
@@ -62,21 +63,21 @@
             android:id="@+id/FragmentQuizChoiceAndroidCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android with Kotlin (457문제)"
+            android:text="Android with Kotlin (461문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceSpringCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Spring with Java (15문제)"
+            android:text="Spring with Java (22문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceCBCCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="최병채 (377문제)"
+            android:text="최병채 (423문제)"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

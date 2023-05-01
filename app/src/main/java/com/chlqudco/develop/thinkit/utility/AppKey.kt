@@ -1,5 +1,6 @@
 package com.chlqudco.develop.thinkit.utility
 
+import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 
 object AppKey {
@@ -31,7 +32,10 @@ object AppKey {
     const val MULTIPLE_INCORRECT_BOGI = "InCorrectBogi"
 
     const val DATASTORE_NAME = "myPageToken"
-    val DATASTORE_USER_TOKEN = stringPreferencesKey("user_token")
+
+    val DATASTORE_USER_ACCESS_TOKEN = stringPreferencesKey("user_access_token")
+    val DATASTORE_USER_REFRESH_TOKEN = stringPreferencesKey("user_refresh_token")
     val DATASTORE_USER_NICKNAME = stringPreferencesKey("user_nickname")
+    val DATASTORE_USER_CHAT_ROOM_ID = longPreferencesKey("user_chat_room_id")
 
 }

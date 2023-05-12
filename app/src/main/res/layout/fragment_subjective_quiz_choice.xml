@@ -42,14 +42,14 @@
             android:id="@+id/FragmentQuizChoiceAttitudeCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="인성 면접 (265문제)"
+            android:text="인성 면접 (300문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceCSCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="컴퓨터 공학 (278문제)"
+            android:text="컴퓨터 공학 (288문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
@@ -70,14 +70,14 @@
             android:id="@+id/FragmentQuizChoiceSpringCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Spring with Java (22문제)"
+            android:text="Spring with Java (23문제)"
             tools:ignore="HardcodedText" />
 
         <CheckBox
             android:id="@+id/FragmentQuizChoiceCBCCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="최병채 (423문제)"
+            android:text="최병채 (490문제)"
             tools:ignore="HardcodedText" />
 
     </LinearLayout>

@@ -119,7 +119,7 @@
             android:visibility="invisible"
             tools:text="프로세\스는 프로세스고 쓰레드는 쓰레드입니다. 이것도 모르셨나요? 깔깔깔"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="23sp"
             tools:ignore="HardcodedText" />
 
     </ScrollView>
